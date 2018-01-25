@@ -1,39 +1,31 @@
-body, ul, ol, li, p, h1, h2, h3, h4, h5, h6, form, table, td, img, div, dl, dt, dd, input, header, nav, footer {
-  margin: 0;
-  padding: 0;
+body {
+  background-color: #cccccc;
 }
 
-a, input, select, button, textarea {
-  outline: none;
-  color: #333;
-}
-
-h2, h3 {
+h2 {
+  font-size: 2.0rem;
   text-align: center;
-  padding-top: 10px;
+  margin: 10px auto;
 }
 
-.author {
-  text-indent: 6em;
+h3 {
+  font-size: 1.8rem;
+  text-align: left;
+  padding-left: 2em;
+  margin: 10px auto;
 }
 
-div {
-  display: block;
+p {
+  text-indent: 2em;
+  font-size: 1.6rem;
+  padding: 5px;
+  margin: 0;
+  line-height: 28px;
 }
 
-.post-content {
-  overflow: hidden;
-  background: #ffffff;
-  padding: 20px 0;
-  border-radius: 10px;
-  margin: 20px;
-  transition: all 0.28s;
-  box-shadow: 0 6px 12px 0 rgba(0, 0, 0, .15);
-}
-
-.post-content a > img {
-  float: left;
-  width: 26%;
-  height: 134px;
-  padding-left: 25px;
+a {
+  color: #7B68EE;
+  &:hover {
+    color: #fff;
+  }
 }
