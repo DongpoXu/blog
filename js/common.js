@@ -106,25 +106,25 @@ function backToTop() {
     }
     // 用定时过渡滚动效果
     var dTimer = null;
-    // 返回顶部函数
-    var slowBack = function () {
-        // 解决各浏览器在scrollTop上的不同
-        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-        // 不同速度向上移动
-        var speed = Math.floor(-scrollTop / 6);
-        if (scrollTop === 0) {
-            clearInterval(dTimer);
-        }
-        document.documentElement.scrollTop = document.body.scrollTop = scrollTop + speed;
-        //console.log("slowBack正常");
-    };
     // 滚动触发
     var hide = function () {
         // 此处一定要注意，各个浏览器的不同，有坑！
-        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        var dScrollTop = document.documentElement.scrollTop || document.body.scrollTop;
         var oBackToTop;
+        // 缓慢返回顶部
+        var slowBack = function () {
+            // 解决各浏览器在scrollTop上的不同
+            var dScrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            // 不同速度向上移动
+            var speed = Math.floor(-dScrollTop / 6);
+            if (dScrollTop === 0) {
+                clearInterval(dTimer);
+            }
+            document.documentElement.scrollTop = document.body.scrollTop = dScrollTop + speed;
+            //console.log("slowBack正常");
+        };
         // safari浏览器在顶部会上弹，导致导航栏异常
-        if (scrollTop > window.innerHeight) {
+        if (dScrollTop > window.innerHeight) {
             if (!document.getElementsByClassName("back-to-top")[0]) {
                 //console.log("长度超出，自动创建back-to-top按钮");
                 var oFirst = document.body.firstChild;
