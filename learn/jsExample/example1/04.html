@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用循环将三个Div变成红色</title>
+    <style>
+        #btBlock {
+            width: 500px;
+            height: 25px;
+            margin: 10px auto;
+            text-align: center;
+        }
+
+        #divBlock {
+            width: 330px;
+            height: 100px;
+            margin: 10px auto;
+        }
+
+        #divBlock div {
+            float: left;
+            width: 100px;
+            height: 100px;
+            margin: 0 5px;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+<div id="btBlock">
+    <button>点击变红</button>
+</div>
+<div id="divBlock">
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+<script>
+    window.onload = function () {
+        var oBtn = document.getElementById("btBlock");
+        var oDiv = document.getElementById("divBlock").getElementsByTagName("div");
+
+        oBtn.onclick = function () {
+            for (var i = 0; i < oDiv.length; i++) {
+                oDiv[i].style.backgroundColor = "red";
+            }
+        }
+    }
+</script>
+</body>
+</html>

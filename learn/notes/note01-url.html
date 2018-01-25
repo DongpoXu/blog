@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="../../img/icon/radish.ico" rel="shortcut icon">
+    <title>URL</title>
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="note.css">
+</head>
+<body>
+
+<h1>
+    <a href="">URL学习</a>
+</h1>
+<div>
+
+</div>
+<div>
+    <div>
+        <h2> 在互联网中，无论什么资源，一定要有一个具体的地址才有意义。</h2>
+        <p>
+            这个具体的地址就由URL来表示，
+            互联网上一幅图片，一首歌曲，一个电影，
+            甚至一个html页面，都会有唯一的一个URL.
+        </p>
+        <p>
+            说到URL，就要提一提URI，经常有人搞不清楚URL和URI 区别，
+            URI：统一资源标识符（Uniform Resource Identifier），
+            是在某一规则下能把一个资源独一无二的标识出来。
+            用人做例子，假设这个世界上所有人的名字都不能重复，
+            那么名字就是URI的一个实例，
+            通过名字这个字符串就可以标识出唯一的一个人。
+            当然现实中名字是会重复的，所以身份证号码才是URI，
+            通过一个身份证号仅能确定一个人。
+            URL：统一资源定位符（Uniform Resource Location），同样是标识人。
+            但是URL的不同之处，
+            如下：地球://中国/xx省/xx市/xx大学/xx号楼/xx号寝/xx.人
+            URL通过定位也是标识除了唯一的一个人。
+            所以说URL是URI的一个子集。
+        </p>
+
+        <h2>URL语法：URL由基本的9个部分组成</h2>
+        <table>
+            <tbody>
+            <tr>
+                <th>scheme</th><th>:</th><th>//</th><th>user</th><th>:</th><th>password</th><th>@</th><th>host</th><th>:</th><th>port</th><th>/</th><th>path</th><th>;</th><th>params</th><th>?</th><th>query</th><th>#</th><th>fragment</th>
+            </tr>
+            <tr>
+                <td>方案</td><td>:</td><td>//</td><td>用户名</td><td>:</td><td>密码</td><td>@</td><td>主机名</td><td>:</td><td>端口</td><td>/</td><td>服务器上资源的路径</td><td>;</td><td>参数</td><td>?</td><td>查询</td><td>#</td><td>片段</td>
+            </tr>
+            </tbody>
+        </table>
+        <h3>
+            1.方案（scheme）访问服务器以获取资源时使用的是哪种协议。
+            例如：http、https和ftp等。
+        </h3>
+        <h3>
+            2.用户名和密码（user&password）：很多服务器都要求输入用户名和密码才会允许用户访问数据，如FTP服务器。<br />
+            例子：joe是用户名、joepasswd是密码
+            ftp://joe:joepasswd@ftp.prep.edu/pub/name
+        </h3>
+        <h3>
+            3.主机名和端口（host&port）指资源宿主服务器的主机名或IP地址。
+            端口是指资源宿主服务器正在监听的端口，很多HTTP的默认端口号是80。<br />
+            例如，120.12.12.120:800，这里的IP地址是主机名，端口是800
+        </h3>
+        <h3>
+            4、路径（path）：路径说明了资源位于服务器的什么地方。<br />
+            例子：/cans/index.html就是URL中的路径
+            http://www.hda.com/cans/index.html
+        </h3>
+        <h3>
+            5、参数（params）：为了向应用程序提供它们所需要的输入参数，
+            以便正确地与服务器进行交互，URL中有个参数组件。由字符“;”将其与URL的其余部分分隔开来。<br />
+            例子：;type=7;nam=true就是两个参数。ftp://prep.mit.edu/pub;type=7;nam=true
+        </h3>
+        <h3>
+            6、查询（query）：很多资源，比如数据库服务、搜索引擎，都可以通过提问题或进行查询来缩小请求资源的范围。由字符“?”将其与URL的其余部分分隔开来。<br />
+            例子：查询组件有两个名/值对：name=csh和age=24 http://www.cheng.cn/si.html?name=csh&age=24
+        </h3>
+        <h3>
+            7、片段（fragment）：#代表网页中的一个位置，其右面的字符就是该位置的标识符(一般情况下，锚链接会用到)
+        </h3>
+
+        <h2>nodejs中URL的API</h2>
+
+        parse：解析url地址为对象
+        format：对象到一个字符串
+        resolve：将两个参数拼接为浏览器可以识别的。
+
+        node
+
+        url
+
+
+        url.parse('http://././././')
+        {slashes 是否有//
+        host ip地址，或域名
+        port 端口
+        hostname 主机名
+        hash 哈希值 锚点
+        search 查询字符串参数
+        pathname 访问资源路径名
+        path 路径
+        href 完整名}
+        重要！！！！！！
+
+        url.format()将上面的对象传入
+
+        url.resolve('http://imooc.com/','/course/list')
+
+
+    </div>
+</div>
+
+<footer class="ICP">
+    <div>吉ICP备17008861号</div>
+</footer>
+
+</body>
+</html>

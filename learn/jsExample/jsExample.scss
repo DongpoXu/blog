@@ -1,0 +1,49 @@
+#divBlock {
+  background: #FFF;
+  border: 12px solid #EEE;
+  border-radius: 10px;
+  margin: 10px auto 0;
+  padding: 5px 5px 4px;
+  width: 350px;
+  dl {
+    //高度变化动画效果
+    -webkit-transition: height 0.4s linear;
+    -moz-transition: height 0.4s linear;
+    -ms-transition: height 0.4s linear;
+    -o-transition: height 0.4s linear;
+    transition: height 0.4s linear;
+    background: #7CF;
+    color: #FFF;
+    overflow: hidden;
+    dt, dd {
+      border-bottom: 1px solid #FFF;
+    }
+    dt {
+      background: #9C0;
+      cursor: pointer;
+      font: 700 14px/30px Tahoma;
+      line-height: 30px;
+      padding: 2px 15px;
+      .current {
+        background: #09F;
+      }
+    }
+    dd {
+      background: #7CF;
+      font: 12px/25px Tahoma;
+      line-height: 25px;
+      a {
+        display: block;
+        padding: 2px 15px;
+        width: 320px;
+        &:link, &:visited {
+          color: #FFF;
+          text-decoration: none;
+        }
+        &:hover {
+          color: #23527c;
+        }
+      }
+    }
+  }
+}

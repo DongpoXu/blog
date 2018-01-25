@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TweetShirt</title>
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="app04.css">
+    <script src="app04.js"></script>
+</head>
+<body>
+
+<canvas width="600" height="200" id="tshirtCanvas">
+    <p>You need canvas to use Tweetshirt!</p>
+    <p>This example requires a browser that supports the
+        <a href="http://www.w3.org/html/wg/html5/">HTML5</a>
+        &lt;canvas&gt; feature.</p>
+</canvas>
+
+<form>
+    <p>
+        <label for="backgroundColor">选择背景颜色：</label>
+        <select id="backgroundColor">
+            <option value="white" selected="selected">白色</option>
+            <option value="black">黑色</option>
+        </select>
+    </p>
+    <p>
+        <label for="shape">选择形状：</label>
+        <select id="shape">
+            <option value="none" selected="selected">Neither</option>
+            <option value="circles">圆形</option>
+            <option value="squares">方形</option>
+        </select>
+    </p>
+    <p>
+        <label for="foregroundColor">字体颜色：</label>
+        <select id="foregroundColor">
+            <option value="black" selected="selected">黑色</option>
+            <option value="white">白色</option>
+        </select>
+    </p>
+    <p>
+        <label for="tweets">选择tweet文字：</label>
+        <select id="tweets">
+
+        </select>
+    </p>
+    <p>
+        <input type="button" id="previewButton" value="预览">
+    </p>
+</form>
+
+<!--<script src="http://twitter.com/statuses/user_timeline/wickedsmartly.json?callback=updateTweets"></script>-->
+
+<footer class="ICP">
+    <div>吉ICP备17008861号</div>
+</footer>
+
+</body>
+</html>

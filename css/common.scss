@@ -1,0 +1,314 @@
+@charset "utf-8";
+
+/*图标字体的链接头*/
+@import "font-awesome.min.css";
+
+/* CSS Document */
+/*reset*/
+//清除padding和margin
+body, ul, ol, li, p, h1, h2, h3, h4, h5, h6, form, table, td, img, div, dl, dt, dd, input, header, nav, footer {
+  margin: 0;
+  padding: 0;
+}
+
+//设定字体大小
+html {
+  font-size: 62.5%;
+}
+
+//清除图片边框
+img {
+  border: none;
+}
+
+//清除列表样式
+li {
+  list-style: none;
+}
+
+//清除链接下划线,改变链接颜色
+a {
+  text-decoration: none;
+  color: #000000;
+}
+
+/*固定样式*/
+//导航栏
+.navBar {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  height: 60px;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  -webkit-transition: top 0.4s ease-out;
+  -moz-transition: top 0.4s ease-out;
+  -ms-transition: top 0.4s ease-out;
+  -o-transition: top 0.4s ease-out;
+  transition: top 0.4s ease-out;
+  a {
+    line-height: 20px;
+    letter-spacing: 1px;
+  }
+  > a {
+    font-weight: 800;
+    font-size: 1.8rem;
+    float: left;
+    padding: 20px 0 20px 25px;
+  }
+  //导航栏移动适配
+  @media only screen and (max-width: 768px) {
+    background-color: rgba(230, 230, 250, 0.85);
+    a {
+      color: black;
+    }
+    #backHome {
+      display: block;
+    }
+    #dropDownList {
+      display: block;
+      padding-top: 60px;
+      i {
+        float: right;
+        font-size: 1.8rem;
+      }
+      ul {
+        height: 0;
+        overflow: hidden;
+        -webkit-transition: height 0.4s ease-out;
+        -moz-transition: height 0.4s ease-out;
+        -ms-transition: height 0.4s ease-out;
+        -o-transition: height 0.4s ease-out;
+        transition: height 0.4s ease-out;
+        width: 100%;
+        li {
+          //使用block有浏览器兼容问题
+          display: inline-block;
+          width: 100%;
+          background-color: rgba(230, 230, 250, 0.8);
+          border-bottom: 1px solid #800080;
+          -webkit-transition: background-color 0.7s ease-out;
+          -moz-transition: background-color 0.7s ease-out;
+          -ms-transition: background-color 0.7s ease-out;
+          -o-transition: background-color 0.7s ease-out;
+          transition: background-color 0.7s ease-out;
+          &:first-child {
+            border-top: 1px solid #800080;
+          }
+          a {
+            display: block;
+            font-size: 1.8rem;
+            letter-spacing: 3px;
+            padding: 15px 25px;
+          }
+        }
+      }
+      button {
+        background-color: transparent;
+        border-radius: 5px;
+        border: 1px solid #999;
+        color: #777;
+        display: block;
+        font-size: 1.8rem;
+        padding: 10px 25px;
+        position: absolute;
+        right: 10px;
+        top: 8.5px;
+        text-align: left;
+        width: 180px;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+    > ul {
+      display: none;
+    }
+  }
+  //定义颜色，给li元素上色
+  $colors: #7B68EE, #2F4F4F, #BA55D3, #FF4500, #483D8B, #8A2BE2;
+  @for $i from 1 through length($colors) {
+    #dropDownList ul li:nth-child(#{$i}) {
+      .fa {
+        color: nth($colors, $i);
+      }
+      &:hover {
+        background-color: nth($colors, $i);
+        color: black;
+        a {
+          color: #fff;
+        }
+        .fa {
+          color: black;
+        }
+      }
+    }
+  }
+  //导航栏PC适配
+  //min-width要比max-width大1
+  @media only screen and (min-width: 769px) {
+    background: rgba(230, 230, 250, 0.6);
+    a {
+      color: #8B5742;
+    }
+    ul {
+      float: right;
+      li {
+        float: left;
+        margin-right: 20px;
+        &:hover {
+          background-color: #7B68EE;
+        }
+        a {
+          color: #8B5742;
+          display: block;
+          font-weight: 800;
+          font-size: 1.3rem;
+          padding: 20px;
+          i {
+            display: none;
+          }
+        }
+      }
+    }
+    #dropButton {
+      display: none;
+    }
+    #backHome {
+      display: none;
+    }
+  }
+}
+
+//头部
+.intro-header {
+  background: no-repeat left center;
+  background-size: cover;
+  overflow: hidden;
+  width: 100%;
+  //头部移动适配
+  @media only screen and (max-width: 768px) {
+    height: 220px;
+    margin-top: 60px;
+  }
+  //头部过渡
+  @media only screen and (max-width: 992px) and (min-width: 769px) {
+    height: 310px;
+  }
+  //头部PC适配
+  @media only screen and (min-width: 993px) {
+    height: 400px;
+  }
+}
+
+//页脚ICP备案信息
+#ICP {
+  bottom: 0;
+  background: rgba(88, 88, 88, .2);
+  font-size: 1.2rem;
+  position: fixed;
+  text-align: center;
+  width: 100%;
+  z-index: 5;
+}
+
+//通用样式
+//各种分隔线样式
+hr {
+  //渐变弱
+  &.hr-style-one {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+  }
+  //渐变强
+  &.hr-style-two {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+  }
+  //虚线
+  &.hr-style-three {
+    border: 0;
+    border-bottom: 1px dashed #ccc;
+    background-color: #999;
+  }
+  //阴影
+  &.hr-style-four {
+    height: 12px;
+    border: 0;
+    box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
+  }
+  //细线
+  &.hr-style-five {
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  //云状
+  &.hr-style-six {
+    border: 0;
+    height: 0; /* Firefox... */
+    box-shadow: 0 0 10px 1px black;
+    &:after { /* Not really supposed to work, but does */
+      content: "\00a0"; /* Prevent margin collapse */
+    }
+  }
+  //文字插入
+  &.hr-style-seven {
+    overflow: visible; /* For IE */
+    height: 30px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px 0 0 0;
+    border-radius: 20px;
+    &:before { /* Not really supposed to work, but does */
+      display: block;
+      content: "";
+      height: 30px;
+      margin-top: -31px;
+      border-style: solid;
+      border-color: black;
+      border-width: 0 0 1px 0;
+      border-radius: 20px;
+    }
+  }
+  //符号插入
+  &.hr-style-eight {
+    overflow: visible; /* For IE */
+    padding: 0;
+    border: none;
+    border-top: medium double #333;
+    color: #333;
+    text-align: center;
+    &:after {
+      content: "§";
+      display: inline-block;
+      position: relative;
+      top: -0.7em;
+      font-size: 1.5em;
+      padding: 0 0.25em;
+      background: white;
+    }
+  }
+}
+
+//回到顶部按钮
+.back-to-top {
+  bottom: 100px;
+  border: 1px solid #0593d3;
+  border-radius: 3px;
+  background-color: #fafafa;
+  cursor: pointer;
+  display: none;
+  font-size: 2.5rem;
+  padding: 6px;
+  position: fixed;
+  right: 5%;
+  z-index: 1;
+  &:hover {
+    background-color: #39f;
+  }
+}

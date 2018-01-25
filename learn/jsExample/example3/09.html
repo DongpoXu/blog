@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>倒计时100秒</title>
+    <style>
+        body, div {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            color: #fff;
+            font: 16px/1.5 \5fae\8f6f\96c5\9ed1;
+        }
+
+        #divBlock {
+            width: 300px;
+            text-align: center;
+            background: #1a1a1a;
+            margin: 10px auto;
+            padding: 20px 0;
+        }
+
+        button {
+            border: 0;
+            width: 283px;
+            height: 50px;
+            cursor: pointer;
+            margin-top: 20px;
+            background: url(http://www.fgm.cc/learn/lesson3/img/btn-1.png) no-repeat;
+        }
+
+        button.cancel {
+            background-position: 0 -50px;
+        }
+
+        span {
+            color: #000;
+            width: 80px;
+            line-height: 2;
+            background: #fbfbfb;
+            border: 2px solid #b4b4b4;
+            margin: 0 10px;
+            padding: 0 10px;
+        }
+    </style>
+</head>
+<body>
+<div id="divBlock">
+    <span>01</span>分
+    <span>40</span>秒
+    <button type="button"></button>
+</div>
+<script>
+    window.onload = function () {
+        var oSpan = document.getElementsByTagName("span");
+        var oBtn = document.getElementsByTagName("button")[0];
+//        用于定时器
+        var count = null;
+
+        var changeTime = function () {
+//            获取值
+            var eTime = parseInt(oSpan[0].innerHTML) * 60 + parseInt(oSpan[1].innerHTML);
+//            值减一
+            eTime--;
+//            打印
+            console.log(eTime);
+//            解析并写入
+            var eHour = Math.floor(eTime / 60);
+            var eMinute = eTime % 60;
+            console.log(eHour);
+            console.log(eMinute);
+            oSpan[0].innerHTML = format(eHour);
+            oSpan[1].innerHTML = format(eMinute);
+        };
+        var format = function (a) {
+//            如果a为一位数字，则在前面加上0返回字符串"0a"
+            return a.toString().replace(/^(\d)$/, '0$1');
+        };
+
+        oBtn.onclick = function () {
+            oBtn.className = oBtn.className === "cancel" ? "" : "cancel";
+
+            if (oBtn.className === "cancel") {
+//                如果类名等于cancel，表示按下按键，开始倒计时。
+//                setInterval()，一秒一次
+                count = setInterval(changeTime, 1000);
+            } else {
+//                清掉setInterval()
+                clearTimeout(count);
+            }
+        };
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

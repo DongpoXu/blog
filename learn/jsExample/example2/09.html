@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>单一按钮显示/隐藏一播放列表收缩展开</title>
+    <style>
+        ul {
+            display: none;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        h2 {
+            display: block;
+            font-size: 16px;
+            font-weight: normal;
+            padding: 8px;
+            margin: 0;
+            cursor: pointer;
+            background: #999999 url("http://www.fgm.cc/learn/lesson2/img/ico.gif") 270px -12px no-repeat;
+        }
+
+        h2.close {
+            background-position: 270px 15px;
+        }
+
+        #divBlock {
+            width: 300px;
+            margin: 10px auto;
+            text-align: left;
+            border: 1px solid #ff9900;
+        }
+
+        #divBlock a {
+            display: block;
+            color: #6b7980;
+            background: #e9edf2;
+            text-decoration: none;
+            padding: 3px 10px;
+        }
+
+        #divBlock a:hover {
+            background: #fff;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<div id="divBlock">
+    <h2>播放列表...</h2>
+    <ul>
+        <li><a href="#">原谅我就是这样的女生-戴佩妮</a></li>
+        <li><a href="#">原谅我就是这样的女生-戴佩妮</a></li>
+        <li><a href="#">原谅我就是这样的女生-戴佩妮</a></li>
+        <li><a href="#">原谅我就是这样的女生-戴佩妮</a></li>
+        <li><a href="#">原谅我就是这样的女生-戴佩妮</a></li>
+        <li><a href="#">原谅我就是这样的女生-戴佩妮</a></li>
+        <li><a href="#">原谅我就是这样的女生-戴佩妮</a></li>
+        <li><a href="#">原谅我就是这样的女生-戴佩妮</a></li>
+        <li><a href="#">原谅我就是这样的女生-戴佩妮</a></li>
+        <li><a href="#">原谅我就是这样的女生-戴佩妮</a></li>
+        <li><a href="#">原谅我就是这样的女生-戴佩妮</a></li>
+        <li><a href="#">原谅我就是这样的女生-戴佩妮</a></li>
+    </ul>
+    <h2>播放列表...</h2>
+    <ul>
+        <li><a href="#">原谅我就是这样的女生-戴佩妮</a></li>
+        <li><a href="#">原谅我就是这样的女生-戴佩妮</a></li>
+        <li><a href="#">原谅我就是这样的女生-戴佩妮</a></li>
+        <li><a href="#">原谅我就是这样的女生-戴佩妮</a></li>
+        <li><a href="#">原谅我就是这样的女生-戴佩妮</a></li>
+        <li><a href="#">原谅我就是这样的女生-戴佩妮</a></li>
+        <li><a href="#">原谅我就是这样的女生-戴佩妮</a></li>
+        <li><a href="#">原谅我就是这样的女生-戴佩妮</a></li>
+        <li><a href="#">原谅我就是这样的女生-戴佩妮</a></li>
+        <li><a href="#">原谅我就是这样的女生-戴佩妮</a></li>
+        <li><a href="#">原谅我就是这样的女生-戴佩妮</a></li>
+        <li><a href="#">原谅我就是这样的女生-戴佩妮</a></li>
+    </ul>
+</div>
+<script>
+    window.onload = function () {
+        var oH2 = document.getElementsByTagName("h2")[0];
+        var oUl = document.getElementsByTagName("ul")[0];
+
+        oH2.onclick = function () {
+            oUl.style.display = oUl.style.display === "block" ? "none" : "block";
+            oH2.className = oUl.style.display === "block" ? "close" : "";
+        };
+    };
+</script>
+</body>
+</html>

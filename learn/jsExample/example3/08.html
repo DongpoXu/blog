@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>简易网页时钟</title>
+    <style>
+        body {
+            color: #fff;
+            vertical-align: middle;
+        }
+
+        #divBlock {
+            width: 300px;
+            margin: 10px auto;
+            text-align: center;
+            background-color: #000;
+            padding: 20px 0;
+        }
+
+        span {
+            height: 30px;
+            line-height: 30px;
+            color: #000;
+            vertical-align: middle;
+            display: inline-block;
+            width: 30px;
+            margin: 0 10px;
+            border: 2px solid #cc6600;
+            background-color: #fffdfd;
+        }
+    </style>
+</head>
+<body>
+<div id="divBlock">
+    <span></span>时
+    <span></span>分
+    <span></span>秒
+</div>
+<script>
+    window.onload = function () {
+        var oSpan = document.getElementsByTagName("span");
+        var getTime = function () {
+            var myDate = new Date();
+            oSpan[0].innerHTML = myDate.getHours();
+            oSpan[1].innerHTML = myDate.getMinutes();
+            oSpan[2].innerHTML = myDate.getSeconds();
+        };
+        setInterval(getTime, 1000);
+    };
+</script>
+</body>
+</html>

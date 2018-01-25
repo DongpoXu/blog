@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>控制Div属性</title>
+    <style>
+        #buttonBlock {
+            width: 900px;
+            margin: 10px auto;
+            text-align: center;
+        }
+
+        #buttonBlock button {
+            margin: 8px;
+        }
+
+        #brick {
+            width: 100px;
+            height: 100px;
+            background-color: black;
+            margin: 10px auto;
+        }
+    </style>
+</head>
+<body>
+<div id="buttonBlock">
+    <button type="button">变高</button>
+    <button type="button">变宽</button>
+    <button type="button">变色</button>
+    <button type="button">隐藏</button>
+    <button type="button">重置</button>
+</div>
+<div id="brick"></div>
+<script>
+    var changeStyle = function (elem, attr, value) {
+        elem.style[attr] = value;
+    };
+    window.onload = function () {
+        var oBtn = document.getElementsByTagName("button");
+        var oDiv = document.getElementById("brick");
+        var oAtt = ["height", "width", "backgroundColor", "display", "display"];
+        var oVal = ["200px", "200px", "red", "none", "block"];
+
+        for (var i = 0; i < oBtn.length; i++) {
+            oBtn[i].index = i;
+            oBtn[i].onclick = function () {
+//                重置样式，当(this.index === oBtn.length - 1)为真时，执行(oDiv.style.cssText = "")重置样式
+                (this.index === oBtn.length - 1) && (oDiv.style.cssText = "");
+                changeStyle(oDiv, oAtt[this.index], oVal[this.index])
+            }
+        }
+    };
+</script>
+</body>
+</html>

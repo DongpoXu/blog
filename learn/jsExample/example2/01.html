@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>输入法下拉切换</title>
+    <style>
+        body {
+            font: 12px/1.5 Tahoma;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        #divBlock {
+            width: 120px;
+            margin: 10px auto;
+        }
+
+        #dropDown {
+            display: none;
+            text-align: center;
+            width: 106px;
+            list-style: none;
+            border: 1px solid #1ABC9C;
+            padding: 5px 0 0 0;
+        }
+
+        #dropDown li {
+            display: block;
+            width: 100%;
+            line-height: 24px;
+        }
+
+        #dropDown li a {
+            color: #00c;
+            text-decoration: none;
+            line-height: 24px;
+            display: block;
+        }
+
+        #close {
+            border-top: 1px solid #9a99ff;
+            padding-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+<div id="divBlock">
+    <button type="button">
+        点击切换输入法
+    </button>
+    <ul id="dropDown">
+        <li>
+            <a href="#">手写</a>
+        </li>
+        <li>
+            <a href="#">拼音</a>
+        </li>
+        <li id="close"><a href="#">关闭</a></li>
+    </ul>
+</div>
+<script>
+    window.onload = function () {
+        var oBtn = document.getElementsByTagName("button")[0];
+        var oDrop = document.getElementById("dropDown");
+        var oClose = document.getElementById("close");
+
+        oBtn.onclick = function () {
+//            使用三目运算设定display，如果当前(display==="block")，则设定为"none",否则设定为"block"。
+            oDrop.style.display = oDrop.style.display === "block" ? "none" : "block";
+        };
+        oClose.onclick = function () {
+            oDrop.style.display = "none";
+        };
+    };
+</script>
+</body>
+</html>

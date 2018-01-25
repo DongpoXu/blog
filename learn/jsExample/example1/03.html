@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数接收参数并弹出</title>
+    <style>
+        body {
+            font: 12px/1.5 Tahoma;
+            text-align: center;
+        }
+
+        input {
+            border: 1px solid #ccc;
+            padding: 3px;
+        }
+    </style>
+</head>
+<body>
+<form>
+    <p>
+        <input type="text" name="firstname" value="吉林省" title="省">
+    </p>
+    <p>
+        <input type="text" name="lastname" value="长春市" title="市">
+    </p>
+    <button type="button" name="submit" title="提交">提交</button>
+</form>
+<script>
+    var alertFun = function (a, b) {
+        alert(a);
+        alert(b);
+    };
+    window.onload = function () {
+        var oInput = document.getElementsByTagName("input");
+        var oBtn = document.getElementsByTagName("button")[0];
+
+        oBtn.onclick = function () {
+            alertFun(oInput[0].value, oInput[1].value)
+        }
+    };
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+#tshirtCanvas {
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+  border: 1px solid black; }
+
+form {
+  margin: 0 auto; }
+  form > p {
+    float: left; }
+
+@media only screen and (max-width: 850px) {
+  body {
+    background-color: lightblue; }
+
+  form {
+    float: right; }
+    form > p {
+      display: inline-block;
+      width: 100%;
+      margin: 8px auto;
+      text-align: left; } }
+
+/*# sourceMappingURL=app04.css.map */

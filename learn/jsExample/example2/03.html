@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>求出数组中所有数字的和</title>
+    <style>
+        body {
+            font: 12px/1.5 Tahoma;
+            color: #999;
+        }
+
+        #divBlock {
+            width: 500px;
+            margin: 0 auto;
+        }
+
+        #divBlock input {
+            padding: 3px;
+            border: 1px solid #ccc;
+            width: 220px;
+            margin-right: 10px;
+        }
+
+        #sum {
+            font-size: 30px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<div id="divBlock">
+    <label>
+        <input type="text" value="1,2,3,4,5,6">
+        <span>数字求和，数字之间用“，”分隔</span>
+    </label>
+    <p>
+        <button>求和</button>
+    </p>
+    <strong id="sum"></strong>
+</div>
+<script>
+    window.onload = function () {
+        var oBtn = document.getElementsByTagName("button")[0];
+        var oInput = document.getElementsByTagName("input")[0];
+        var oStrong = document.getElementsByTagName("strong")[0];
+
+        oInput.onkeyup = function () {
+//            js匹配正则表达式，将不是0-9和，的都删除
+            this.value = this.value.replace(/[^0-9，]/g, "");
+        };
+        oBtn.onclick = function () {
+            var sum = 0;
+            var oInput = document.getElementsByTagName("input")[0].value.split(",");
+            for (var i in oInput) {
+                sum += parseInt(oInput[i]);
+            }
+            oStrong.innerHTML = sum;
+        };
+    };
+</script>
+</body>
+</html>

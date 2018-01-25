@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>判断数字是否为两位数</title>
+    <style>
+        .divBlock {
+            width: 300px;
+            margin: 10px auto;
+            text-align: center;
+        }
+
+        button, input {
+            border: 1px solid #999;
+            border-radius: 5px;
+            display: inline-block;
+            text-align: center;
+            width: 150px;
+            padding: 10px 0;
+            margin: 10px;
+        }
+
+        h3 {
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+<div class="divBlock">
+    <input type="text" title="输入值">
+    <button type="button">检测是否为两位数</button>
+</div>
+<div class="divBlock">
+    <h3>???</h3>
+</div>
+<script>
+    window.onload = function () {
+        var oBtn = document.getElementsByTagName("button")[0];
+        var oInput = document.getElementsByTagName("input")[0];
+        var oH3 = document.getElementsByTagName("h3")[0];
+        var check = function (a) {
+            var length = a.toString().length;
+            oH3.innerHTML = "数字长度为" + length;
+            if (length === 2) {
+                oH3.innerHTML += ",你赢了！";
+            } else {
+                oH3.innerHTML += ",不等于2~~~";
+            }
+        };
+//        检测输入的值是否为数字
+//        不是数字则替换为空字符
+        oInput.onkeyup = function () {
+            this.value = this.value.replace(/[^\d]/, "");
+        };
+        oBtn.onclick = function () {
+            check(oInput.value);
+        };
+    };
+</script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>set/get对象属性</title>
+    <style>
+        #container {
+            width: 900px;
+            height: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .divBlock {
+            display: block;
+            float: left;
+            margin: 10px auto;
+            text-align: center;
+        }
+
+        #elementContainer {
+            width: 300px;
+        }
+
+        #propertyContainer {
+            width: 600px;
+        }
+
+        input {
+            font: 12px Tahoma;
+            width: 120px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="elementContainer" class="divBlock">
+        <div id="element">
+
+        </div>
+    </div>
+    <div id="propertyContainer" class="divBlock">
+        <p id="set">
+            <input type="text" title="width" value="300px">
+            <input type="text" title="height" value="300px">
+            <input type="text" title="background-color" value="blue">
+            <input type="button" id="setProperty" value="setProperty">
+        </p>
+        <p id="get">
+            <input type="text" title="width">
+            <input type="text" title="height">
+            <input type="text" title="background-color">
+            <input type="button" id="getProperty" value="getProperty">
+        </p>
+        <p>
+            先设置属性，再获取属性。
+        </p>
+    </div>
+</div>
+</body>
+<script>
+    window.onload = function () {
+        var oSetInput = document.getElementById("set").getElementsByTagName("input");
+        var oGetInput = document.getElementById("get").getElementsByTagName("input");
+        var oElement = document.getElementById("element");
+
+//        set点击时间
+        oSetInput[3].onclick = function () {
+//            遍历属性的input
+            for (var i = 0; i < oSetInput.length - 1; i++) {
+                console.log(i);
+                var pro = oSetInput[i].title;
+                console.log(pro);
+                var price = oSetInput[i].value;
+                console.log(price);
+//                注意啦！！！此处必须用"[]"符号。具体原因红宝书上有写~
+                oElement.style[pro] = price;
+            }
+        };
+//        get点击时间
+        oGetInput[3].onclick = function () {
+            for (var i = 0; i < oGetInput.length - 1; i++) {
+                console.log(i);
+                var pro = oGetInput[i].title;
+                console.log(oElement.style[pro]);
+                oGetInput[i].value = oElement.style[pro];
+                console.log(oGetInput[i].value);
+            }
+        };
+    };
+</script>
+</html>

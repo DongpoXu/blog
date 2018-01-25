@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>网页换肤</title>
+    <style>
+        body, ul, li {
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            font: 12px/1.5 Tahoma;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        a:link, a:visited {
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        #divBlock {
+            width: 500px;
+            margin: 0 auto;
+            overflow: hidden;
+            zoom: 1;
+        }
+
+        #changeColor, #navBar {
+            overflow: hidden;
+            zoom: 1;
+        }
+
+        #changeColor {
+            margin: 10px 0;
+        }
+
+        #changeColor li {
+            float: left;
+            width: 6px;
+            height: 6px;
+            cursor: pointer;
+            overflow: hidden;
+            margin-right: 10px;
+            text-indent: -9999px;
+            border-width: 4px;
+            border-style: solid;
+        }
+
+        #changeColor li.current {
+            background: #fff !important;
+        }
+
+        #red {
+            border-color: red;
+            background: red;
+        }
+
+        #green {
+            border-color: green;
+            background: green;
+        }
+
+        #black {
+            border-color: black;
+            background: black;
+        }
+
+        #navBar {
+            border: 1px solid #fff;
+        }
+
+        #navBar li {
+            float: left;
+            width: 82px;
+            line-height: 25px;
+            text-align: center;
+            border-right: 1px solid #fff;
+        }
+
+        #navBar li a {
+            color: #fff;
+        }
+
+    </style>
+    <link rel="stylesheet" href="http://www.fgm.cc/learn/lesson1/green.css">
+</head>
+<body>
+<div id="divBlock">
+    <ul id="changeColor">
+        <li id="red"></li>
+        <li id="green" class="current"></li>
+        <li id="black"></li>
+    </ul>
+    <ul id="navBar">
+        <li><a href="#">新闻</a></li>
+        <li><a href="#">娱乐</a></li>
+        <li><a href="#">体育</a></li>
+        <li><a href="#">电影</a></li>
+        <li><a href="#">音乐</a></li>
+        <li><a href="#">旅游</a></li>
+    </ul>
+</div>
+
+<script>
+    window.onload = function () {
+        var oLink = document.getElementsByTagName("link")[0];
+        var oColor = document.getElementById("changeColor").getElementsByTagName("li");
+
+        for (var i = 0; i < oColor.length; i++) {
+            oColor[i].onclick = function () {
+//                清除类
+                for (var p in oColor) oColor[p].className = "";
+//                选中的类
+                this.className = "current";
+//                背景色改为id
+                oLink['href'] = "http://www.fgm.cc/learn/lesson1/" + this.id + ".css"
+            }
+        }
+    };
+</script>
+</body>
+</html>

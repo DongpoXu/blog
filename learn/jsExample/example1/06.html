@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>悬浮提示</title>
+    <style>
+        #divBlock {
+            width: 200px;
+            margin: 10px auto;
+        }
+
+        #divBlock input {
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+
+        #tips {
+            padding: 5px;
+            margin-top: 5px;
+            background-color: #ffefa4;
+            border: 1px solid #f90;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="divBlock">
+    <label>
+        <input type="checkbox">
+        两周内自动登陆
+    </label>
+    <div id="tips" style="display: none;">
+        为了您的信息安全，请不要在网吧或公用电脑上使用此功能！
+    </div>
+</div>
+<script>
+    window.onload = function () {
+        var oTips = document.getElementById("tips");
+        var oLabel = document.getElementsByTagName("label")[0];
+
+        oLabel.onmouseover = function () {
+            oTips.style.display = "block";
+        };
+        oLabel.onmouseout = function () {
+            oTips.style.display = "none";
+        };
+    };
+</script>
+</body>
+</html>

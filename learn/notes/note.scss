@@ -1,0 +1,30 @@
+h1 {
+  margin: 0 auto;
+  text-align: center;
+}
+
+div {
+  margin: 10px 20px;
+  h2,
+  h3,
+  p {
+    margin: 10px;
+    font-size: 1rem;
+  }
+}
+
+h3 {
+  font-weight: normal;
+}
+
+table {
+  display: inline-block;
+  margin: 10px;
+  border-collapse: collapse;
+  th, td {
+    border: 1px solid #123123;
+    font-weight: normal;
+    text-align: center;
+    padding: 5px;
+  }
+}
