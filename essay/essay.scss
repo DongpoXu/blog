@@ -1,5 +1,5 @@
 body {
-  background-color: #cccccc;
+  background-color: #efefef;
 }
 
 h2 {
@@ -15,19 +15,36 @@ h3 {
   margin: 10px auto;
 }
 
+h5 {
+  margin-left: 65%;
+}
+
 p {
   text-indent: 2em;
   font-size: 1.6rem;
   padding: 5px;
   margin: 0;
   line-height: 28px;
+  img {
+    display: block;
+    width: 60%;
+    padding-left: 2em;
+    @media only screen and (max-width: 1080px){
+      width: 90%;
+    }
+  }
 }
 
 a {
   color: #7B68EE;
   &:hover {
-    color: #fff;
+    color: #3b7c4b;
+    text-decoration: underline;
   }
+}
+
+header {
+  margin: 10px 5%;
 }
 
 article {
