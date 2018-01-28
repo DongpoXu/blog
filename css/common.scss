@@ -101,7 +101,7 @@ a {
           }
         }
       }
-      button {
+      #dropButton {
         background-color: transparent;
         border-radius: 5px;
         border: 1px solid #999;
@@ -149,22 +149,25 @@ a {
     a {
       color: #8B5742;
     }
-    ul {
-      float: right;
-      li {
-        float: left;
-        margin-right: 20px;
-        &:hover {
-          background-color: #7B68EE;
-        }
-        a {
-          color: #8B5742;
-          display: block;
-          font-weight: 800;
-          font-size: 1.3rem;
-          padding: 20px;
-          i {
-            display: none;
+    #dropDownList{
+      display: block;
+      ul {
+        float: right;
+        li {
+          float: left;
+          margin-right: 20px;
+          &:hover {
+            background-color: #7B68EE;
+          }
+          a {
+            color: #8B5742;
+            display: block;
+            font-weight: 800;
+            font-size: 1.3rem;
+            padding: 20px;
+            i {
+              display: none;
+            }
           }
         }
       }
