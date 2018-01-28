@@ -149,7 +149,7 @@ a {
     a {
       color: #8B5742;
     }
-    #dropDownList{
+    #dropDownList {
       display: block;
       ul {
         float: right;
@@ -182,23 +182,25 @@ a {
 }
 
 //头部
-.intro-header {
-  background: no-repeat left center;
-  background-size: cover;
-  overflow: hidden;
-  width: 100%;
-  //头部移动适配
-  @media only screen and (max-width: 768px) {
-    height: 220px;
-    margin-top: 60px;
-  }
-  //头部过渡
-  @media only screen and (max-width: 992px) and (min-width: 769px) {
-    height: 310px;
-  }
-  //头部PC适配
-  @media only screen and (min-width: 993px) {
-    height: 400px;
+#common-header {
+  .intro-header {
+    background: no-repeat left center;
+    background-size: cover;
+    overflow: hidden;
+    width: 100%;
+    //头部移动适配
+    @media only screen and (max-width: 768px) {
+      height: 220px;
+      margin-top: 60px;
+    }
+    //头部过渡
+    @media only screen and (max-width: 992px) and (min-width: 769px) {
+      height: 310px;
+    }
+    //头部PC适配
+    @media only screen and (min-width: 993px) {
+      height: 400px;
+    }
   }
 }
 
