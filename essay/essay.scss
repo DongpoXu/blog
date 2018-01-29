@@ -5,17 +5,11 @@ h2 {
 }
 
 a {
-  color: #000;
+  color: #a247e2;
   &:hover {
     color: #3b7c4b;
     text-decoration: underline;
   }
-}
-
-.navBar {
-  position: fixed;
-  background-color: #cccccc;
-
 }
 
 #essay-header {
@@ -32,13 +26,6 @@ a {
 }
 
 @media only screen and (max-width: 768px) {
-  .navBar {
-    #dropDownList {
-      #dropButton {
-        display: none;
-      }
-    }
-  }
   aside {
     display: none;
   }
@@ -88,7 +75,7 @@ article {
     line-height: 28px;
     img {
       display: block;
-      width: 60%;
+      //width: 60%;
       padding-left: 2em;
       @media only screen and (max-width: 1080px) {
         width: 90%;
