@@ -82,4 +82,15 @@ article {
       }
     }
   }
+  pre {
+    border: 1px solid #000000;
+    border-radius: 20px;
+    background-color: #dddddd;
+    color: #2b2bac;
+    code {
+      line-height: 20px;
+      height: 20px;
+      font-size: 1.6rem;
+    }
+  }
 }
