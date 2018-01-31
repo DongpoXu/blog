@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yahoo军规</title>
+    <link rel="stylesheet" href="../../css/common.css">
+    <style>
+        body {
+            background-color: #E0FFFF;
+            letter-spacing: 1px;
+            font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+
+        div {
+            width: 80%;
+            margin: 15px auto;
+            border: 1px solid #A020F0;
+            border-radius: 20px;
+            padding: 10px 20px;
+        }
+
+        h1 {
+            color: #9400D3;
+            font-size: 2.4rem;
+            padding: 5px 0;
+            margin-bottom: 5px;
+        }
+
+        h2 {
+            color: #EE0000;
+            font-size: 1.8rem;
+            border-bottom: 4px solid #EE6363;
+            margin: 5px 5px 10px 0;
+            padding: 10px 0;
+        }
+
+        h3 {
+            font-size: 1.6rem;
+            color: #CD1076;
+            padding: 5px 0;
+        }
+
+        span {
+            padding: 5px 0;
+            font-size: 1.5rem;
+            line-height: 30px;
+        }
+
+        ul {
+            padding: 5px 20px;
+        }
+
+        ul li, ul li a {
+            color: #EE6363;
+        }
+
+        ul li {
+            list-style: square;
+        }
+
+        ul li a {
+            padding: 2px 0;
+            font-size: 1.6rem;
+        }
+
+        p {
+            padding: 5px 0;
+            font-size: 1.5rem;
+            line-height: 30px;
+            text-indent: 2em;
+        }
+
+        pre {
+            margin: 0;
+            padding: 0;
+            font-size: 1.5rem;
+            font-family: Consolas monospace;
+            line-height: 25px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <h1 style="color: #2160f9;">雅虎军规</h1>
+</div>
+<div>
+    <h1><strong>阅读目录</strong></h1>
+    <ul>
+        <li><a href="#01">内容部分</a></li>
+        <li><a href="#02">css部分</a></li>
+        <li><a href="#03">js部分</a></li>
+        <li><a href="#04">JavaScript，css</a></li>
+        <li><a href="#05">图片</a></li>
+        <li><a href="#06">cookie</a></li>
+        <li><a href="#07">移动端</a></li>
+        <li><a href="#08">服务端</a></li>
+    </ul>
+    <span>
+        <strong>摘要：</strong>网络的使用者希望用更快的速度去访问想要访问的网站，网络的创建者希望以较低的成本和较快的速度来服务用户，那么，如何让用户更快的打开自己的网站呢？互联网的先行者YAHOO!给了我们答案，它总结了一些如何提高网站速度的一些知识，至今总计35条，大家习惯称之为YAHOO!军规。
+    </span>
+</div>
+<div>
+    <h2 id="01">内容部分</h2>
+    <h3>1.尽量减少HTTP请求数</h3>
+    <p>
+        <strong>当你打开网页的时候，你所看到文字，图片，多媒体等等，这一切内容都是从服务器获取的。每一个内容的获取，都是一个HTTP请求。当文件较多时，这个请求数就会很庞大。</strong>
+    </p>
+    <p>
+        80%的终端用户响应时间都花在了前端上，其中大部分时间都在下载页面上的各种组件：图片，样式表，脚本，Flash等等。减少组件数必然能够减少页面提交的HTTP请求数。这是让页面更快的关键。
+        减少页面组件数的一种方式是简化页面设计。但有没有一种方法可以在构建复杂的页面同时加快响应时间呢？嗯，确实有鱼和熊掌兼得的办法。<strong>下面几种方法就是减少HTTP请求的常用方法：</strong>
+    </p>
+    <p>
+        <strong>合并文件</strong>是通过把所有脚本放在一个文件中的方式来减少请求数的，当然，也可以合并所有的CSS。如果各个页面的脚本和样式不一样的话，合并文件就是一项比较麻烦的工作了，但把这个作为站点发布过程的一部分确实可以提高响应时间。
+    </p>
+    <p>
+        <strong>CSS Sprites（即雪碧图）</strong>是减少图片请求数量的首选方式。把背景图片都整合到一张图片中，然后用CSS的background-image和background-position属性来定位要显示的部分。
+    </p>
+    <p>
+        <strong>图像映射</strong>可以把多张图片合并成单张图片，总大小是一样的，但减少了请求数并加速了页面加载。图片映射只有在图像在页面中连续的时候才有用，比如导航条。给image
+        map设置坐标的过程既无聊又容易出错，用image map来做导航也不容易，所以不推荐用这种方式。
+    </p>
+    <p>
+        <strong>行内图片（Base64编码）</strong>用data:
+        URL模式来把图片嵌入页面。这样会增加HTML文件的大小，把行内图片放在（缓存的）样式表中是个好办法，而且成功避免了页面变“重”。但目前主流浏览器并不能很好地支持行内图片。
+    </p>
+    <p>
+        减少页面的HTTP请求数是个起点，这是提升站点首次访问速度的重要指导原则。
+    </p>
+    <h3>2.减少DNS查找</h3>
+    <p>
+        域名系统建立了主机名和IP地址间的映射，就像电话簿上人名和号码的映射一样。当你在浏览器输入www.yahoo.com的时候，浏览器就会联系DNS解析器返回服务器的IP地址。DNS是有成本的，它需要20到120毫秒去查找给定主机名的IP地址。在DNS查找完成之前，浏览器无法从主机名下载任何东西。
+    </p>
+    <p>
+        DNS查找被缓存起来更高效，由用户的ISP（网络服务提供商）或者本地网络存在一个特殊的缓存服务器上，但还可以缓存在个人用户的计算机上。DNS信息被保存在操作系统的DNS
+        cache(微软Windows上的”DNS客户端服务”)里。大多数浏览器有独立于操作系统的自己的cache。只要浏览器在自己的cache里还保留着这条记录，它就不会向操作系统查询DNS。
+    </p>
+    <p>
+        IE默认缓存DNS查找30分钟，写在DnsCacheTimeout注册表设置中。Firefox缓存1分钟，可以用network.dnsCacheExpiration配置项设置。(Fasterfox把缓存时间改成了1小时
+        P.S. Fasterfox是FF的一个提速插件)
+    </p>
+    <p>
+        如果客户端的DNS cache是空的（包括浏览器的和操作系统的），DNS查找数等于页面上不同的主机名数，包括页面URL，图片，脚本文件，样式表，Flash对象等等组件中的主机名，减少不同的主机名就可以减少DNS查找。
+    </p>
+    <p>
+        减少不同主机名的数量同时也减少了页面能够并行下载的组件数量，避免DNS查找削减了响应时间，而减少并行下载数量却增加了响应时间。我的原则是把组件分散在2到4个主机名下，这是同时减少DNS查找和允许高并发下载的折中方案。
+    </p>
+    <h3>3.避免重定向</h3>
+    <p>
+        重定向用301和302状态码，下面是一个有301状态码的HTTP头：
+    </p>
+    <pre>
+            HTTP/1.1 301 Moved Permanently
+            Location: http://example.com/newuri
+            Content-Type: text/html
+    </pre>
+    <p>
+        浏览器会自动跳转到Location域指明的URL。重定向需要的所有信息都在HTTP头部，而响应体一般是空的。其实额外的HTTP头，比如Expires和Cache-Control也表示重定向。除此之外还有别的跳转方式：refresh元标签和JavaScript，但如果你必须得做重定向，最好用标准的3xxHTTP状态码，主要是为了让返回按钮能正常使用。
+    </p>
+    <p>
+        牢记重定向会拖慢用户体验，在用户和HTML文档之间插入重定向会延迟页面上的所有东西，页面无法渲染，组件也无法开始下载，直到HTML文档被送达浏览器。
+    </p>
+    <p>
+        有一种常见的极其浪费资源的重定向，而且web开发人员一般都意识不到这一点，就是URL尾部缺少一个斜线的时候。例如，跳转到http://astrology.yahoo.com/astrology会返回一个重定向到http://astrology.yahoo.com/astrology/的301响应（注意添在尾部的斜线）。在Apache中可以用Alias，mod_rewrite或者DirectorySlash指令来取消不必要的重定向。
+    </p>
+    <p>
+        重定向最常见的用途是把旧站点连接到新的站点，还可以连接同一站点的不同部分，针对用户的不同情况（浏览器类型，用户帐号类型等等）做一些处理。用重定向来连接两个网站是最简单的，只需要少量的额外代码。虽然在这些时候使用重定向减少了开发人员的开发复杂度，但降低了用户体验。一种替代方案是用Alias和mod_rewrite，前提是两个代码路径都在相同的服务器上。如果是因为域名变化而使用了重定向，就可以创建一条CNAME（创建一个指向另一个域名的DNS记录作为别名）结合Alias或者mod_rewrite指令。
+    </p>
+    <h3>4.让Ajax可缓存</h3>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium alias architecto assumenda beatae
+        dolore,
+        ex explicabo facilis magni officia quaerat quas quos rem sapiente sint sunt temporibus, totam unde!
+    </p>
+    <h3>5.延迟加载组件</h3>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur debitis earum non officiis optio quos rem
+        sed voluptate? Architecto ex laboriosam perferendis quae quas quod totam veniam! Ad, est, ipsum.
+    </p>
+    <h3>6.预加载组件</h3>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci architecto asperiores beatae distinctio
+        dolore
+        enim et ex, hic illum, in ipsam laudantium magni quae quaerat, similique tempora tempore unde? Non!
+    </p>
+    <h3>7.减少DOM元素的数量</h3>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias architecto commodi, debitis doloribus eius esse
+        illo nesciunt nihil similique veritatis. Amet aspernatur distinctio doloribus eius enim neque nobis praesentium
+        quasi?
+    </p>
+    <h3>8.跨域分离组件</h3>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad consequatur minima officia quae quis, quod ratione
+        sunt! Amet atque, commodi hic laborum quisquam quos voluptatem. Beatae incidunt maxime quod tempora?
+    </p>
+    <h3>9.尽量少用iframe</h3>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. At atque, consequuntur cum enim ex expedita explicabo
+        illo iste minus modi nobis officiis perferendis quia quos rem repudiandae voluptatum. Consectetur, ut!
+    </p>
+    <h3>10.杜绝404</h3>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ad consequatur eos est exercitationem in,
+        ipsum labore magni mollitia nostrum, placeat quisquam quo rem sunt ullam? A laboriosam rem velit.
+    </p>
+</div>
+<div>
+    <h2 id="02">css部分</h2>
+    <h3>11.将CSS放在页面最上面</h3>
+    <p>
+        <abbr title="Cascading Style Sheets">CSS</abbr>(层叠样式表单)，层叠说明后面的CSS样式表可以<strong>覆盖</strong>前面的样式表，为什么要将层叠样式表放在页面最上面呢？一部分原因是因为，ie、firefox等浏览器在css全部传输完全之前不会去渲染任何东西。另一部分原因是在Yahoo!研究性能的时候，我们发现把样式表放到文档的HEAD部分能让页面<strong>看起来</strong>加载地更快。这是因为把样式表放在head里能让页面<strong>逐步渲染</strong>。
+    </p>
+    <p>
+        关注性能的前端工程师想让页面逐步渲染。也就是说，我们想让浏览器尽快显示已有内容，这在页面上有一大堆内容或者用户网速很慢时显得尤为重要。给用户显示反馈（比如进度指标）的重要性已经被广泛研究过，并且被记录下来了。在我们的例子中，HTML页面就是进度指标！当浏览器逐渐加载页面头部，导航条，顶部logo等等内容的时候，这些都被正在等待页面加载的用户当作反馈，能够提高整体用户体验。
+    </p>
+    <h3>12.选择&lt;link&gt;舍弃@import</h3>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae error facere fugiat ipsam magnam nulla placeat
+        provident quae, totam veritatis. Amet at consequatur cupiditate molestias nihil quibusdam reprehenderit
+        voluptate voluptatem.
+    </p>
+    <h3>13.避免使用滤镜</h3>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur commodi dolorum, ducimus, esse est
+        explicabo, facilis illo impedit ipsa ipsam laborum maiores nesciunt nihil praesentium quos ratione recusandae
+        rem sint.
+    </p>
+    <h3>14.避免使用CSS表达式</h3>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus deleniti enim excepturi ipsum nesciunt
+        praesentium. Aut eius expedita iure neque quibusdam rem sapiente sint tempore. Accusamus consequuntur
+        dignissimos eos incidunt!
+    </p>
+</div>
+<div>
+    <h2 id="03">js部分</h2>
+    <h3>15.将script放在页面最下面</h3>
+    <p>
+        为什么要将script脚本文件放在页面最下面呢？
+    </p>
+    <p>
+        原因一是为了防止script脚本阻塞页面，在页面载入的过程中，DOM是顺序读取，如果先督导js执行语句的时候一定会将其全部解释完毕再读后面的内容。所以将script放在页面后面，可以有效的减少页面可视元素（主要是html）的加载时间。
+    </p>
+    <p>
+        原因二是因为，script的加载会阻塞并行下载数量，HTTP/1.1规范建议浏览器每个主机的并行下载数不超过2个，IE只能为2个，其他浏览器默认设置为2，ie8可以达到6个。因此，如果你的图像文件，分布在多台机器上，你可以达到超过2个的并行下载，但是当脚本文件下载时，浏览器不会启动其他的并行下载。
+    </p>
+    <h3>16.尽量减少DOM访问</h3>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium blanditiis commodi, facere itaque maiores
+        maxime nihil obcaecati quos reiciendis rem repudiandae tempore voluptatum? Amet dolores, ea pariatur ut vitae
+        voluptas.
+    </p>
+    <h3>17.用智能的事件处理器</h3>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo iure labore magnam placeat quasi soluta
+        voluptatum? Fuga impedit laboriosam, nam placeat ratione sint. Autem ipsum nam odit quas rem sunt!
+    </p>
+    <h3>18.去除重复脚本</h3>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto dignissimos hic iste maxime nulla! Autem
+        commodi dignissimos maxime minus nobis odit quidem sequi unde! Aut dolorum ducimus quod rem ullam.
+    </p>
+</div>
+<div>
+    <h2 id="04">javascript, css</h2>
+    <h3>19.把JavaScript和CSS放到外面</h3>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem laborum molestias non porro quasi saepe sed
+        soluta, vero voluptatum. Accusamus aut debitis inventore iusto labore porro quisquam sequi tenetur voluptates?
+    <h3>20.压缩JavaScript和CSS</h3>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur commodi consectetur doloribus dolorum
+        exercitationem, fuga id illo, libero molestias nulla praesentium quaerat recusandae repellendus sapiente sunt
+        vitae voluptates? Eveniet, in.
+    </p>
+</div>
+<div>
+    <h2 id="05">图片</h2>
+    <h3>21.优化图片</h3>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab ad aut autem error excepturi, magni quos recusandae
+        temporibus? Atque commodi dolorum itaque labore nemo quae recusandae reprehenderit sapiente sequi, soluta!
+    <h3>22.优化CSS Sprite</h3>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, assumenda atque beatae commodi esse ipsum
+        magnam quibusdam. Accusamus, adipisci beatae doloremque harum incidunt iusto maxime modi, obcaecati odit, soluta
+        tenetur?
+    </p>
+    <h3>23.不要用HTML缩放图片</h3>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab amet consequuntur dolor error eveniet magni modi
+        mollitia natus, necessitatibus nisi obcaecati perferendis placeat possimus, praesentium saepe sunt ut. Autem,
+        corporis.
+    </p>
+    <h3>24.用小的可缓存的favicon.ico（P.S. 收藏夹图标）</h3>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur distinctio dolor dolores est, eum fuga
+        ipsum laboriosam nemo pariatur, repudiandae tempore ullam vitae, voluptatibus! Aspernatur dolorum eveniet iste
+        modi similique.
+    </p>
+</div>
+<div>
+    <h2 id="06">cookie</h2>
+    <h3>25.给Cookie减肥</h3>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam aut ea explicabo, minima molestiae mollitia
+        nulla optio provident quaerat rem! Error excepturi quod similique! Dignissimos impedit possimus quae similique
+        velit?
+    </p>
+    <h3>26.把组件放在不含cookie的域下</h3>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores consequatur earum error laboriosam maiores
+        quis sed. Ad delectus doloremque facilis modi nihil omnis, perferendis perspiciatis quae quidem quod rem,
+        voluptates.
+    </p>
+</div>
+<div>
+    <h2 id="07">移动端</h2>
+    <h3>27.保证所有组件都小于25K</h3>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores doloribus eaque laudantium neque quidem.
+        Cupiditate debitis deleniti distinctio eveniet. Dolores dolorum exercitationem facere maxime neque qui unde.
+        Commodi eligendi, soluta!
+    </p>
+    <h3>28.把组件打包到一个复合文档里</h3>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ad debitis dignissimos ea expedita ipsa
+        iure laudantium, maxime minus nemo neque pariatur, quia quisquam repellat repellendus sed tempore veniam
+        veritatis.
+    </p>
+</div>
+<div>
+    <h2 id="08">服务端</h2>
+    <h3>29.使用CDN（内容分发网络）</h3>
+    <p>
+        什么是CDN？
+        <strong>简单的说：就是在距离你最近的地方，放置一台性能好、链接顺畅的副本服务器，让你能够以最近的距离，最快的速度获取内容。</strong>
+    </p>
+    <p>
+        用户与服务器的物理距离对响应时间也有影响。把内容部署在多个地理位置分散的服务器上能让用户更快地载入页面。但具体要怎么做呢？
+    </p>
+    <p>
+        实现内容在地理位置上分散的第一步是：不要尝试去重新设计你的web应用程序来适应分布式结构。这取决于应用程序，改变结构可能包括一些让人望而生畏的任务，比如同步会话状态和跨服务器复制数据库事务（翻译可能不准确）。缩短用户和内容之间距离的提议可能被推迟，或者根本不可能通过，就是因为这个难题。
+    </p>
+    <p>
+        记住终端用户80%到90%的响应时间都花在下载页面组件上了：图片，样式，脚本，Flash等等，这是业绩黄金法则。最好先分散静态内容，而不是一开始就重新设计应用程序结构。这不仅能够大大减少响应时间，还更容易表现出CDN的功劳。
+    </p>
+    <p>
+        内容分发网络（CDN）是一组分散在不同地理位置的web服务器，用来给用户更高效地发送内容。典型地，选择用来发送内容的服务器是基于网络距离的衡量标准的。<strong>例如：选跳数（hop）最少的或者响应时间最快的服务器。</strong>
+    </p>
+    <h3>30.添加Expires/Cache-Control头</h3>
+    <p>
+        Expires头的内容是一个时间值，值就是资源在本地的<strong>过期时间</strong>，存在本地，在本地缓存阶段，找到一个对应的资源值，当前时间还没超过资源的过期时间，就直接使用这一个资源，不会发送http请求。这样可以节省很多资源。
+    </p>
+    <p>
+        这条规则有两个方面：
+    </p>
+    <p>
+        1.对于静态组件：通过设置一个遥远的将来时间作为Expires来实现永不失效
+    </p>
+    <p>
+        2.多余动态组件：用合适的Cache-ControlHTTP头来让浏览器进行条件性的请求
+    </p>
+    <p>
+        网页设计越来越丰富，这意味着页面里有更多的脚本，图片和Flash。站点的新访客可能还是不得不提交几个HTTP请求，但通过使用有效期能让组件变得可缓存，这避免了在接下来的浏览过程中不必要的HTTP请求。有效期HTTP头通常被用在图片上，但它们应该用在所有组件上，包括脚本、样式和Flash组件。
+    </p>
+    <p>
+        浏览器（和代理）用缓存来减少HTTP请求的数目和大小，让页面能够更快加载。web服务器通过有效期HTTP响应头来告诉客户端，页面的各个组件应该被缓存多久。用一个遥远的将来时间做有效期，告诉浏览器这个响应在2010年4月15日前不会改变。
+    </p>
+    <pre>
+        Expires: Thu, 15 Apr 2010 20:00:00 GMT
+    </pre>
+    <p>
+        如果你用的是Apache服务器，用ExpiresDefault指令来设置相对于当前日期的有效期。下面的例子设置了从请求时间起10年的有效期：
+    </p>
+    <pre>
+        ExpireDefault "access plus 10 years"
+    </pre>
+    <h3>31.启用Gzip压缩</h3>
+    <p>
+        什么是Gzip压缩？其思想类似于，将文件在服务器进行压缩，然后再对文件进行传输，传输完成之后，浏览器再对文件进行解压缩然后执行，目前各类浏览器都可以很好的支持Gzip压缩，YAHOO特别强调了，所有的文本内容都应该被Gzip压缩，这些文本内容可能包括HTML、PHP、JS、CSS、XML、TXT等，启用Gzip的好处就是让文件体积变小。
+    </p>
+    <p>
+        前端工程师可以想办法明显地缩短通过网络传输HTTP请求和响应的时间。毫无疑问，终端用户的带宽速度，网络服务商，对等交换点的距离等等，都是开发团队所无法控制的。但还有别的能够影响响应时间的因素，压缩可以通过减少HTTP响应的大小来缩短响应时间。
+    </p>
+    <p>
+        从HTTP/1.1开始，web客户端就有了支持压缩的Accept-Encoding HTTP请求头。
+    </p>
+    <pre>
+        Accept-Encoding: gzip, deflate
+    </pre>
+    <p>
+        如果web服务器看到这个请求头，它就会用客户端列出的一种方式来压缩响应。web服务器通过Content-Encoding相应头来通知客户端。
+    </p>
+    <pre>
+        Content-Encoding: gzip
+    </pre>
+    <p>
+        尽可能多地用gzip压缩能够给页面减肥，这也是提升用户体验最简单的方法。
+    </p>
+    <h3>32.对Ajax用GET请求</h3>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores consectetur eaque et incidunt
+        ipsa maiores nemo nulla quam quibusdam soluta temporibus unde, voluptas? Dolorem error nihil qui suscipit
+        voluptate!
+    </p>
+    <h3>33.尽早清空缓冲区</h3>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab architecto debitis dolorem eligendi laboriosam
+        numquam, odit perferendis provident quisquam rerum similique sit temporibus unde. At beatae et omnis quod
+        voluptas.
+    </p>
+    <h3>34.配置ETags</h3>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquam animi maiores veniam. Dolore explicabo
+        fuga illo quibusdam quis, recusandae? Accusamus assumenda culpa doloremque in minus nam reiciendis rerum?
+        Temporibus.
+    </p>
+    <h3>35.避免图片src属性为空</h3>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi aperiam autem commodi, cupiditate
+        dolor ea esse et laborum mollitia nisi obcaecati officiis porro praesentium, provident quasi similique tenetur
+        voluptatem!
+    </p>
+</div>
+<script src="../../common/icp.js"></script>
+<script src="../../js/common.js"></script>
+</body>
+</html>
