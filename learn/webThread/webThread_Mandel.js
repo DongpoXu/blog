@@ -35,7 +35,7 @@ function init() {
     // 	Add each worker to the workers array.
     //
     for (var i = 0; i < numberOfWorkers; i++) {
-        var worker = new Worker("app03_Worker.js");
+        var worker = new Worker("webThread_Worker.js");
 
         worker.onmessage = function(event) {
             processWork(event.target, event.data)
