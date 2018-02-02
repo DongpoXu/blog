@@ -2,7 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Yahoo军规</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1, user-scalable=no">
+    <!--关键词&描述-->
+    <meta name="keywords" content="Aelousdp,XDP,卤蛋咩的老公,xudongpo.xin">
+    <meta name="description" content="XDP的个人博客,用于记录学习、生活。">
+    <meta name="author" content="Aelousdp">
+    <!--网页图标-->
+    <link rel="shortcut icon" type="image/x-icon" href="https://xudongpo.xin/img/icon/radish.ico">
+    <!--收藏图标-->
+    <link rel="bookmark" type="image/x-icon" href="https://xudongpo.xin/img/icon/radish.ico">
+    <title>YaHoo军规</title>
     <link rel="stylesheet" href="../../css/common.css">
     <style>
         body {
@@ -13,9 +23,9 @@
 
         div {
             width: 80%;
+            border-radius: 20px;
             margin: 15px auto;
             border: 1px solid #A020F0;
-            border-radius: 20px;
             padding: 10px 20px;
         }
 
@@ -56,10 +66,10 @@
 
         ul li {
             list-style: square;
+            padding: 2px 0;
         }
 
         ul li a {
-            padding: 2px 0;
             font-size: 1.6rem;
         }
 
@@ -170,7 +180,8 @@
     </p>
     <h3>4.使Ajax可缓存</h3>
     <p>
-        Ajax还要去缓存？做jax请求的时候往往还要增加一个时间戳去避免他缓存。It’s important to remember that “asynchronous” does not imply “instantaneous”.（记住“异步”不是“瞬间”这一点很重要）。记住，即使Ajax是动态产生的而且只对一个用户起作用，他们依然可以被缓存。
+        Ajax还要去缓存？做jax请求的时候往往还要增加一个时间戳去避免他缓存。It’s important to remember that “asynchronous” does not imply
+        “instantaneous”.（记住“异步”不是“瞬间”这一点很重要）。记住，即使Ajax是动态产生的而且只对一个用户起作用，他们依然可以被缓存。
     </p>
     <p>
         Ajax的一个好处是可以给用户提供即时反馈，因为它能够从后台服务器异步请求信息。然而，用了Ajax就无法保证用户在等待异步JavaScript和XML响应返回期间不会非常无聊。在很多应用程序中，用户能够一直等待取决于如何使用Ajax。例如，在基于web的电子邮件客户端中，用户为了寻找符合他们搜索标准的邮件消息，将会保持对Ajax请求返回结果的关注。重要的是，要记得“异步”并不意味着“即时”。
@@ -179,7 +190,10 @@
         要提高性能，优化这些Ajax响应至关重要。最重要的提高Ajax性能的方法就是让响应变得可缓存，就像在添上Expires或者Cache-Control HTTP头中讨论的一样。
     </p>
     <p>
-        我们一起看看例子，一个Web 2.0的电子邮件客户端用了Ajax来下载用户的通讯录，以便实现自动完成功能。如果用户从上一次使用之后再没有修改过她的通讯录，而且Ajax响应是可缓存的，有尚未过期的Expires或者Cache-Control HTTP头，那么之前的通讯录就可以从缓存中读出。必须通知浏览器，应该继续使用之前缓存的通讯录响应，还是去请求一个新的。可以通过给通讯录的Ajax URL里添加一个表明用户通讯录最后修改时间的时间戳来实现，例如&t=1190241612。如果通讯录从上一次下载之后再没有被修改过，时间戳不变，通讯录就将从浏览器缓存中直接读出，从而避免一次额外的HTTP往返消耗。如果用户已经修改了通讯录，时间戳也可以确保新的URL不会匹配缓存的响应，浏览器将请求新的通讯录条目。
+        我们一起看看例子，一个Web
+        2.0的电子邮件客户端用了Ajax来下载用户的通讯录，以便实现自动完成功能。如果用户从上一次使用之后再没有修改过她的通讯录，而且Ajax响应是可缓存的，有尚未过期的Expires或者Cache-Control
+        HTTP头，那么之前的通讯录就可以从缓存中读出。必须通知浏览器，应该继续使用之前缓存的通讯录响应，还是去请求一个新的。可以通过给通讯录的Ajax
+        URL里添加一个表明用户通讯录最后修改时间的时间戳来实现，例如&t=1190241612。如果通讯录从上一次下载之后再没有被修改过，时间戳不变，通讯录就将从浏览器缓存中直接读出，从而避免一次额外的HTTP往返消耗。如果用户已经修改了通讯录，时间戳也可以确保新的URL不会匹配缓存的响应，浏览器将请求新的通讯录条目。
     </p>
     <p>
         　　即使Ajax响应是动态创建的，而且可能只适用于单用户，它们也可以被缓存，而这样会让你的Web 2.0应用更快。
@@ -285,10 +299,12 @@
     </p>
     <h3>20.压缩JavaScript和CSS</h3>
     <p>
-        压缩具体来说就是从代码中去除不必要的字符以减少大小，从而提升加载速度。代码最小化就是去掉所有注释和不必要的空白字符（空格，换行和tab）。在JavaScript中这样做能够提高响应性能，因为要下载的文件变小了。两个最常用的JavaScript代码压缩工具是JSMin和YUI Compressor，YUI compressor还可以压缩CSS。
+        压缩具体来说就是从代码中去除不必要的字符以减少大小，从而提升加载速度。代码最小化就是去掉所有注释和不必要的空白字符（空格，换行和tab）。在JavaScript中这样做能够提高响应性能，因为要下载的文件变小了。两个最常用的JavaScript代码压缩工具是JSMin和YUI
+        Compressor，YUI compressor还可以压缩CSS。
     </p>
     <p>
-        当然，压缩带来的一个弊端就是代码的可读性没了。相信很多做前端的朋友都遇到过这个问题：看Google的效果很酷，可是去看他的源代码却是一大堆 挤在一起的字符，连函数名都是替换过的，汗死！自己的代码也这样岂不是对维护非常不方便。所有阿里巴巴中文站目前采用的做法是在js和css发布的时候在 服务器端进行压缩。这样在我们很方便地维护自己的代码。
+        当然，压缩带来的一个弊端就是代码的可读性没了。相信很多做前端的朋友都遇到过这个问题：看Google的效果很酷，可是去看他的源代码却是一大堆
+        挤在一起的字符，连函数名都是替换过的，汗死！自己的代码也这样岂不是对维护非常不方便。所有阿里巴巴中文站目前采用的做法是在js和css发布的时候在 服务器端进行压缩。这样在我们很方便地维护自己的代码。
     </p>
     <p>
         混淆是一种可选的源码优化措施，要比压缩更复杂，所以混淆过程也更容易产生bug。在对美国前十的网站调查中，压缩可以缩小21%，而混淆能缩小25%。虽然混淆的缩小程度更高，但比压缩风险更大。
