@@ -4,7 +4,7 @@ window.onload = init;
 
 function init() {
     // JSON
-    // var url = "http://localhost:63342/blog/apps/app02/app02.json";
+    // var url = "https://xudongpo.xin/learn/WebSales/sales.json";
     // var request = new XMLHttpRequest();
     // request.open("GET",url);
     // request.onload = function () {
@@ -48,7 +48,7 @@ function updateSales(sales) {
         div.setAttribute("class","saleItem");
         div.innerHTML = sale.name + " sold " + sale.sales + " gumballs ";
         // salesDiv.appendChild(div);
-        if (salesDiv.childElementCount == 0) {
+        if (salesDiv.childElementCount === 0) {
             salesDiv.appendChild(div);
         }
         else {
