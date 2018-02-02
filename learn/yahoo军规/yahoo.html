@@ -128,6 +128,9 @@
     </p>
     <h3>2.减少DNS查找</h3>
     <p>
+        在Internet上域名与IP地址之间是一一对应的，域名（kuqin.com）很好记，但计算机不认识，计算机之间的“相认”还要转成ip地址。在网络上每台计算机都对应有一个独立的ip地址。在域名和ip地址之间的转换工作称为域名解析，也称DNS查询。一次DNS的解析过程会消耗20-120毫秒的时间,在dns查询结束之前，浏览器不会下载该域名下的任何东西。所以减少dns查询的时间可以加快页面的加载速度。yahoo的建议一个页面所包含的域名数尽量控制在2-4个。这就需要对页面整体有一个很好的规划。目前我们这点做的不好，很多打点的广告投放系统拖累了我们。
+    </p>
+    <p>
         域名系统建立了主机名和IP地址间的映射，就像电话簿上人名和号码的映射一样。当你在浏览器输入www.yahoo.com的时候，浏览器就会联系DNS解析器返回服务器的IP地址。DNS是有成本的，它需要20到120毫秒去查找给定主机名的IP地址。在DNS查找完成之前，浏览器无法从主机名下载任何东西。
     </p>
     <p>
@@ -213,11 +216,9 @@
     <p>
         关注性能的前端工程师想让页面逐步渲染。也就是说，我们想让浏览器尽快显示已有内容，这在页面上有一大堆内容或者用户网速很慢时显得尤为重要。给用户显示反馈（比如进度指标）的重要性已经被广泛研究过，并且被记录下来了。在我们的例子中，HTML页面就是进度指标！当浏览器逐渐加载页面头部，导航条，顶部logo等等内容的时候，这些都被正在等待页面加载的用户当作反馈，能够提高整体用户体验。
     </p>
-    <h3>12.选择&lt;link&gt;舍弃@import</h3>
+    <h3>12.避免使用CSS表达式</h3>
     <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae error facere fugiat ipsam magnam nulla placeat
-        provident quae, totam veritatis. Amet at consequatur cupiditate molestias nihil quibusdam reprehenderit
-        voluptate voluptatem.
+        用CSS表达式动态设置CSS属性，是一种强大又危险的方式。从IE5开始支持，但从IE8起就不推荐使用了。毕竟功能重复，会导致无意义的情况出现。
     </p>
     <h3>13.避免使用滤镜</h3>
     <p>
@@ -225,7 +226,7 @@
         explicabo, facilis illo impedit ipsa ipsam laborum maiores nesciunt nihil praesentium quos ratione recusandae
         rem sint.
     </p>
-    <h3>14.避免使用CSS表达式</h3>
+    <h3>14.选择&lt;link&gt;舍弃@import</h3>
     <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus deleniti enim excepturi ipsum nesciunt
         praesentium. Aut eius expedita iure neque quibusdam rem sapiente sint tempore. Accusamus consequuntur
@@ -265,8 +266,15 @@
     <h2 id="04">javascript, css</h2>
     <h3>19.把JavaScript和CSS放到外面</h3>
     <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem laborum molestias non porro quasi saepe sed
-        soluta, vero voluptatum. Accusamus aut debitis inventore iusto labore porro quisquam sequi tenetur voluptates?
+        很多性能原则都是关于如何管理外部组件的，然而，在这些顾虑出现之前你应该问一个更基础的问题：应该把JavaScript和CSS放到外部文件中还是直接写在页面里？
+    </p>
+    <p>
+        实际上，用外部文件可以让页面更快，因为JavaScript和CSS文件会被缓存在浏览器。HTML文档中的行内JavaScript和CSS在每次请求该HTML文档的时候都会重新下载。这样做减少了所需的HTTP请求数，但增加了HTML文档的大小。另一方面，如果JavaScript和CSS在外部文件中，并且已经被浏览器缓存起来了，那么我们就成功地把HTML文档变小了，而且还没有增加HTTP请求数。
+    </p>
+    <p>
+        不仅从性能优化上会这么做，用代码易于维护的角度看也应该这么做。把css和js写在页面内容可以减少2次请求，但也增
+        大了页面的大小。如果已经对css和js做了缓存，那也就没有2次多余的http请求了。当然，我在前面中也说过，有些特殊的页面开发人员还是会选择内联 的css和js文件。
+    </p>
     <h3>20.压缩JavaScript和CSS</h3>
     <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur commodi consectetur doloribus dolorum

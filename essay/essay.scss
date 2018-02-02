@@ -83,14 +83,13 @@ article {
     }
   }
   pre {
+    display: block;
     border: 1px solid #000000;
     border-radius: 20px;
     background-color: #dddddd;
     color: #2b2bac;
-    code {
-      line-height: 20px;
-      height: 20px;
-      font-size: 1.6rem;
-    }
+    line-height: 30px;
+    font-size: 1.6rem;
+    vertical-align: middle;
   }
 }
