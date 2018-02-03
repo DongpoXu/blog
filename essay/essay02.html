@@ -27,6 +27,8 @@
 <aside>
     <h3>相关文章</h3>
     <a href="essay01.html">建站分享(一)——域名&空间&备案&解析</a>
+    <a href="essay02.html">建站分享(二)——域名&空间&备案&解析</a>
+    <a href="essay03.html">建站分享(三)——服务器的配置</a>
 </aside>
 <article>
     <p>
@@ -60,8 +62,8 @@
     </h3>
     <p>
         Xshell的下载链接：
-        <a href="http://rj.baidu.com/soft/detail/15201.html?ald" target="_blank">Xshell（端模拟软件）</a>
-        &nbsp;&nbsp;&nbsp;Xftp的下载链接：
+        <a href="http://rj.baidu.com/soft/detail/15201.html?ald" target="_blank">Xshell（端模拟软件）</a>&nbsp;&nbsp;&nbsp;
+        Xftp的下载链接：
         <a href="http://rj.baidu.com/soft/detail/18249.html?ald" target="_blank">Xftp（用于上传文件到 linux 服务器）</a>
     </p>
     <p>
@@ -83,13 +85,26 @@
     <p>
         首先要用Xftp软件，将我们下载下来的那个sh-1.x.x拷贝至root文件夹下，默认打开应该就是这个文件夹。左边显示的是本地文件，找到下载的文件，拖动到右边即可。如图：
         <img src="img/008.png" alt="拷贝sh文件">
-        然后我们需要利用Xshell控制我们的服务器安装这个sh-1.x.x<strong>（我的是1.5.5，所以之后以1.5.5为例）</strong> 输入：
     </p>
-    <pre>
-        chmod –R 777 sh-1.5.5
-        cd sh-1.5.5
-        ./install.sh
-    </pre>
+    <p>
+        然后我们需要利用Xshell控制我们的服务器安装这个sh-1.x.x<strong>（我的是1.5.5，所以之后以1.5.5为例）</strong> 输入命令："ll"，返回如下图所示<img src="img/009.png" alt="ll文件夹">
+    </p>
+    <p>
+        然后分步骤敲入安装命令（以下为 centos 系统下安装示例）。
+    </p>
+    <p>
+        输入命令："chmod –R 777 sh-1.5.5" "cd sh-1.5.5" "./install.sh"
+    </p>
+    <p>777是给最高权限，然后安装。接下来会进入各种选择界面：</p>
+    <p>1.根据需要选择nginx或者apache服务器，我选择的是nginx服务器，所以输入1，然后回车。<img src="img/010.png" alt="选择服务器"></p>
+    <p>2.选择nginx版本，这里我选择了最高版本</p>
+    <p>3.选择php还是tomcat，这里我选择了php</p>
+    <p>4.选择php版本，我依然选择了最高的</p>
+    <p>5.选择mysql版本，我选择了最高版本</p>
+    <p>之后应该就会进入正式安装环节，持续时间大概半小时。出现类似下图一堆ok的就是安装完成了。<img src="img/011.png" alt="安装sh-1.5.5完成"></p>
+    <p>官方提示》》》<strong style="color: red;">注：Ubuntu16.04及以上版本和Aliyun Linux17.1系统版本暂不支持，</strong>我就因为这个被坑了下！！！</p>
+    <p>安装完毕之后，我们做一次check。输入：“netstat -tunpl”可以看到，正在运行的服务及端口，9000 端口是php进程服务，3306端口是mysql服务，80端口是httpd或者nginx 服务，21端口是ftp服务。如果信息无误说明安装没什么问题。</p>
+    <p>至此我们的服务器就已经搭建完成了。</p>
 </article>
 <script src="../common/icp.js"></script>
 <script src="../js/common.js"></script>
