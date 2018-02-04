@@ -15,110 +15,6 @@
     <title>PHOTO</title>
     <!--common.css-->
     <link rel="stylesheet" href="css/common.css">
-    <style>
-        /*照片墙样式*/
-        .wrap {
-            width: 100%;
-            height: 500px;
-            position: absolute;
-            top: 414px;
-            background-color: #333;
-            overflow: hidden;
-            -webkit-perspective: 800px;
-        }
-
-        /*照片样式*/
-        /*photo负责位移(x,y)坐标，和旋转(角度)*/
-        .photo {
-            width: 200px;
-            height: 300px;
-            position: absolute;
-            z-index: 1;
-            box-shadow: 0 0 1px rgba(0, 0, 0, .01);
-        }
-
-        .photo .side {
-            width: 100%;
-            height: 100%;
-            background-color: #eee;
-            position: absolute;
-            top: 0;
-            right: 0;
-            padding: 20px;
-        }
-
-        .photo .side-front {
-        }
-
-        .photo .side-front .image {
-            width: 100%;
-            overflow: hidden;
-        }
-
-        .photo .side-front .image img {
-            width: 100%;
-        }
-
-        .photo .side-front .caption {
-            text-align: center;
-            font-size: 1.6rem;
-            line-height: 50px;
-        }
-
-        .photo .side-back {
-        }
-
-        .photo .side-back .desc {
-            color: #666;
-            font-size: 1.4rem;
-            line-height: 1.5em;
-        }
-
-        /*当前选中的海报样式*/
-        .photo_center {
-            left: 50%;
-            top: 50%;
-            margin: -170px 0 0 -120px;
-            z-index: 999;
-        }
-
-        /*photo-wrap负责翻转*/
-        .photo-wrap {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            -webkit-transform-style: preserve-3d;
-            -webkit-transition: all .6s;
-        }
-
-        .photo-wrap .side-front {
-            -webkit-transform: rotateY(0deg);
-        }
-
-        .photo-wrap .side-back {
-            -webkit-transform: rotateY(180deg);
-        }
-
-        .photo-wrap .side {
-            -webkit-backface-visibility: hidden;
-        }
-
-        .photo_front .photo-wrap {
-            -webkit-transform: rotateY(0deg);
-            -moz-transform: rotateY(0deg);
-            -ms-transform: rotateY(0deg);
-            -o-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-        }
-
-        .photo_back .photo-wrap {
-            -webkit-transform: rotateY(180deg);
-            -moz-transform: rotateY(180deg);
-            -ms-transform: rotateY(180deg);
-            -o-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-        }
-    </style>
     <!--JavaScript优先使用CDN-->
 </head>
 <body onselect="return false;">
@@ -128,36 +24,10 @@
     <hr class="hr-style-two">
 </header>
 
-<!--2.改写视图，为模板字符串-->
-<div class="wrap" id="wrap">
-    <div class="photo photo_center photo_front" onclick="turn(this)" id="photo_{{index}}">
-
-        <!--photo-wrap负责翻转-->
-        <div class="photo-wrap">
-            <div class="side side-front">
-                <p class="image"><img src="{{img}}"/></p>
-                <p class="caption">测试图片</p>
-            </div>
-            <div class="side side-back">
-                <p class="desc">描述信息</p>
-            </div>
-        </div>
-    </div>
+<div style="margin: 10px auto; width: 400px; text-align: center;">
+    <a href="photo/photo.html"><img src="img/test.jpg" alt="test" width="400"></a>
 </div>
 
-<script>
-
-    // 1.翻面控制
-    function turn(elem) {
-        var cls = elem.className;
-        if (/photo_front/.test(cls)) {
-            cls = cls.replace(/photo_front/, 'photo_back')
-        } else {
-            cls = cls.replace(/photo_back/, 'photo_front')
-        }
-        return elem.className = cls;
-    }
-</script>
 <script src="common/footer.js"></script>
 <script src="js/common.js"></script>
 </body>
