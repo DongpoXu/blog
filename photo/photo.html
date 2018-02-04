@@ -19,9 +19,10 @@
         /*照片墙样式*/
         .wrap {
             width: 100%;
-            height: 500px;
+            height: 760px;
             position: absolute;
-            top: 414px;
+            top: 50%;
+            margin-top: -380px;
             background-color: #333;
             overflow: hidden;
             -webkit-perspective: 800px;
@@ -45,6 +46,7 @@
             top: 0;
             right: 0;
             padding: 20px;
+            box-sizing: border-box;
         }
 
         .photo .side-front {
@@ -126,34 +128,22 @@
 
 <!--2.改写视图，为模板字符串-->
 <div class="wrap" id="wrap">
-    <div class="photo photo_center photo_front" onclick="turn(this)" id="photo_{{index}}">
+    <div class="photo photo_front" onclick="turn(this)" id="photo_{{index}}">
 
         <!--photo-wrap负责翻转-->
         <div class="photo-wrap">
             <div class="side side-front">
                 <p class="image"><img src="img/{{img}}"/></p>
-                <p class="caption">测试图片</p>
+                <p class="caption">{{caption}}</p>
             </div>
             <div class="side side-back">
-                <p class="desc">描述信息</p>
+                <p class="desc">{{desc}}</p>
             </div>
         </div>
     </div>
 </div>
-
-<script>
-
-    // 1.翻面控制
-    function turn(elem) {
-        var cls = elem.className;
-        if (/photo_front/.test(cls)) {
-            cls = cls.replace(/photo_front/, 'photo_back')
-        } else {
-            cls = cls.replace(/photo_back/, 'photo_front')
-        }
-        return elem.className = cls;
-    }
-</script>
+<script src="js/data.js"></script>
+<script src="js/photo.js"></script>
 <script src="../common/footer.js"></script>
 <script src="../js/common.js"></script>
 </body>
