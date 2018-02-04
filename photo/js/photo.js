@@ -18,10 +18,10 @@ function addPhotos() {
             .replace('{{img}}', data[s].img)
             .replace('{{caption}}', data[s].caption)
             .replace('{{desc}}', data[s].desc);
-
         html.push(_html);
-        nav.push('<span id="nav_'+s+'" onclick="turn(g(\'#photo_'+s+'\'))" class="i"></span>');
+        nav.push('<span id="nav_' + s + '" onclick="turn(g(\'#photo_' + s + '\'))" class="i"></span>');
     }
+    html.push('<div class="nav">' + nav.join('') + '</div>');
     g('#wrap').innerHTML = html.join('');
     rsort(random([0, data.length]));
 }
@@ -52,7 +52,7 @@ function range() {
     };
     range.wrap = wrap;
     range.photo = photo;
-    range.left.x = [0 , wrap.w / 2 - photo.w];
+    range.left.x = [0, wrap.w / 2 - photo.w];
     range.left.y = [0 - photo.h, wrap.h];
     range.right.x = [wrap.w / 2 + photo.w / 2, wrap.w + photo.w];
     range.right.y = range.left.y;
@@ -64,7 +64,13 @@ function rsort(n) {
     var _photo = g('.photo');
     var photos = [];
     for (s = 0; s < _photo.length; s++) {
-        _photo[s].className = _photo[s].className.replace(/photo_center/, ' ')
+        _photo[s].className = _photo[s].className.replace(/\s*photo_center\s*/, ' ');
+        _photo[s].className = _photo[s].className.replace(/\s*photo_front\s*/, ' ');
+        _photo[s].className = _photo[s].className.replace(/\s*photo_back\s*/, ' ');
+        _photo[s].className += ' photo_front';
+        _photo[s].style.left = '';
+        _photo[s].style.top = '';
+        _photo[s].style['-webkit-transform'] = 'rotate(360deg)';
         photos.push(_photo[s]);
     }
     var photo_center = g('#photo_' + n);
@@ -77,26 +83,40 @@ function rsort(n) {
     //不能同名
     var ranges = range();
     for (s in photos_left) {
-        var photo = photos_left[s];
-        photo.style.left = random(ranges.left.x) + 'px';
-        photo.style.top = random(ranges.left.y) + 'px';
-        photo.style['-webkit-transform'] = 'rotate(' + random([-150, 150]) + 'deg)';
+        var photoLeft = photos_left[s];
+        photoLeft.style.left = random(ranges.left.x) + 'px';
+        photoLeft.style.top = random(ranges.left.y) + 'px';
+        photoLeft.style['-webkit-transform'] = 'rotate(' + random([-150, 150]) + 'deg)';
     }
     for (s in photos_right) {
-        var photo = photos_right[s];
-        photo.style.left = random(ranges.right.x) + 'px';
-        photo.style.top = random(ranges.right.y) + 'px';
-        photo.style['-webkit-transform'] = 'rotate(' + random([-150, 150]) + 'deg)';
+        var photoRight = photos_right[s];
+        photoRight.style.left = random(ranges.right.x) + 'px';
+        photoRight.style.top = random(ranges.right.y) + 'px';
+        photoRight.style['-webkit-transform'] = 'rotate(' + random([-150, 150]) + 'deg)';
     }
+    //控制按钮处理
+    var navs = g('.i');
+    for (s = 0; s < navs.length; s++) {
+        navs[s].className = navs[s].className.replace(/\s*i_current\s*/, ' ');
+        navs[s].className = navs[s].className.replace(/\s*i_back\s*/, ' ');
+    }
+    g('#nav_' + n).className += ' i_current ';
 }
 
 // 1.翻面控制
 function turn(elem) {
     var cls = elem.className;
+    var n = elem.id.split('_')[1];
+
+    if (!/photo_center/.test(cls)) {
+        return rsort(n);
+    }
     if (/photo_front/.test(cls)) {
         cls = cls.replace(/photo_front/, 'photo_back')
+        g('#nav_' + n).className += ' i_back';
     } else {
         cls = cls.replace(/photo_back/, 'photo_front')
+        g('#nav_' + n).className = g('#nav_' + n).className.replace(/\s*i_back\s*/, ' ')
     }
     return elem.className = cls;
 }
