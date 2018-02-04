@@ -52,9 +52,9 @@ function range() {
     };
     range.wrap = wrap;
     range.photo = photo;
-    range.left.x = [0, wrap.w / 2 - photo.w];
-    range.left.y = [0 - photo.h, wrap.h];
-    range.right.x = [wrap.w / 2 + photo.w / 2, wrap.w + photo.w];
+    range.left.x = [0, wrap.w / 2 - photo.w / 2];
+    range.left.y = [0, wrap.h - photo.h/2];
+    range.right.x = [wrap.w / 2 + photo.w / 2, wrap.w];
     range.right.y = range.left.y;
     return range;
 }
