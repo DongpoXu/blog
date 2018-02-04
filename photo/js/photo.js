@@ -53,7 +53,7 @@ function range() {
     range.wrap = wrap;
     range.photo = photo;
     range.left.x = [0, wrap.w / 2 - photo.w / 2];
-    range.left.y = [0, wrap.h - photo.h/2];
+    range.left.y = [0, wrap.h - photo.h / 2];
     range.right.x = [wrap.w / 2 + photo.w / 2, wrap.w];
     range.right.y = range.left.y;
     return range;
@@ -71,7 +71,7 @@ function rsort(n) {
         _photo[s].style.left = '';
         _photo[s].style.top = '';
         // scale(1.3)是为了实现中心缩放
-        _photo[s].style['-webkit-transform'] = 'rotate(360deg) scale(1.3)';
+        _photo[s].style['transform'] = _photo[s].style['-webkit-transform'] = 'rotate(360deg) scale(1.3)';
         photos.push(_photo[s]);
     }
     var photo_center = g('#photo_' + n);
@@ -87,13 +87,13 @@ function rsort(n) {
         var photoLeft = photos_left[s];
         photoLeft.style.left = random(ranges.left.x) + 'px';
         photoLeft.style.top = random(ranges.left.y) + 'px';
-        photoLeft.style['-webkit-transform'] = 'rotate(' + random([-150, 150]) + 'deg) scale(1)';
+        photoLeft.style['transform'] = photoLeft.style['-webkit-transform'] = 'rotate(' + random([-150, 150]) + 'deg) scale(1)';
     }
     for (s in photos_right) {
         var photoRight = photos_right[s];
         photoRight.style.left = random(ranges.right.x) + 'px';
         photoRight.style.top = random(ranges.right.y) + 'px';
-        photoRight.style['-webkit-transform'] = 'rotate(' + random([-150, 150]) + 'deg) scale(1)';
+        photoRight.style['transform'] = photoRight.style['-webkit-transform'] = 'rotate(' + random([-150, 150]) + 'deg) scale(1)';
     }
     //控制按钮处理
     var navs = g('.i');
