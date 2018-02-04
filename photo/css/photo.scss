@@ -18,6 +18,11 @@
   z-index: 1;
   box-shadow: 0 0 1px rgba(0, 0, 0, .01);
   -webkit-transition: all 1s;
+
+  //修复闪动bug
+  left: 50%;
+  top: 50%;
+  margin: -170px 0 0 -120px;
 }
 
 .photo .side {
@@ -152,9 +157,18 @@
   background-color: #555;
 }
 
+//旋转优化
+.photo-wrap {
+  -webkit-transform-origin: 0% 50%;
+}
 
+.photo_front .photo-wrap {
+  transform: translate(0px, 0px) rotateY(0deg);
+}
 
-
+.photo_back .photo-wrap {
+  transform: translate(200px, 0px) rotateY(180deg);
+}
 
 
 
