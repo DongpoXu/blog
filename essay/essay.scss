@@ -12,6 +12,22 @@ a {
   }
 }
 
+#navigationBox {
+  margin: 20px 20px 0 0;
+}
+
+.articleNavigation {
+  width: 30%;
+  height: 100px;
+  background-color: #ddd;
+  border: 10px solid #aaa;
+  border-radius: 30px;
+  padding: 20px;
+  margin-left: 40px;
+  float: left;
+  box-sizing: border-box;
+}
+
 #essay-header {
   margin: 60px 5% 0;
   padding: 10px;
