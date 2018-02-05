@@ -32,5 +32,5 @@ function checkKey() {
         }
     }
 }
-E
+
 checkKey();

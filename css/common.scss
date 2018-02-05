@@ -224,13 +224,13 @@ a {
   -ms-transition: all .6s;
   -o-transition: all .6s;
   transition: all .6s;
-  a{
+  a {
     color: #000;
   }
-  &:hover{
+  &:hover {
     background: rgba(33, 33, 33, .5);
     color: #fff;
-    a{
+    a {
       color: #fff;
     }
   }
