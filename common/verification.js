@@ -1,4 +1,4 @@
-var passWord = "许东坡";
+var passWord = "密码";
 
 function setKey(c_name, value) {
     document.cookie = c_name + "=" + value;
@@ -20,7 +20,7 @@ function getKey(c_name) {
 function checkKey() {
     username = getKey('username');
     if (username === passWord) {
-        alert('欢迎@^_^@' + username + '!')
+        alert('欢~@^_^@~迎');
     }
     else {
         username = prompt('请输入密码：', "");
