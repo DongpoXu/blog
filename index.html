@@ -16,20 +16,10 @@
     <!--common.css-->
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/main.css">
-
     <!--JQuery优先使用CDN，如果CDN无法访问，则引用本地文件-->
 </head>
 <body>
-<script>
-    loopy()
-    function loopy() {
-        var sWord ="";
-        while (sWord !== "许东坡") {
-            sWord = prompt("本站暂不开放，请输入密码访问！")
-        }
-        alert("AH...你好朋友，允许访问，欢迎光临！")
-    }
-</script>
+<script src="common/verification.js"></script>
 <script src="common/navBar.js"></script>
 <header id="common-header">
     <div class="intro-header" style="background-image:url('img/bg/bg-minions.jpg')"></div>
