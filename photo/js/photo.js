@@ -68,14 +68,17 @@ function rsort(n) {
         _photo[s].className = _photo[s].className.replace(/\s*photo_front\s*/, ' ');
         _photo[s].className = _photo[s].className.replace(/\s*photo_back\s*/, ' ');
         _photo[s].className += ' photo_front';
-        _photo[s].style.left = '';
-        _photo[s].style.top = '';
         // scale(1.3)是为了实现中心缩放
         _photo[s].style['transform'] = _photo[s].style['-webkit-transform'] = 'rotate(360deg) scale(1.3)';
         photos.push(_photo[s]);
     }
     var photo_center = g('#photo_' + n);
+    // 将中心位置的照片位置清除
     photo_center.className += ' photo_center';
+    // photo_center.style.left = '50%';
+    // photo_center.style.top = '50%';
+    // photo_center.style.margin = '-140px 0 0 -100px';
+    // photo_center.style.zIndex = '5';
     photo_center = photos.splice(n, 1)[0];
 
     //把海报分为左、右两个区域
@@ -102,6 +105,9 @@ function rsort(n) {
         navs[s].className = navs[s].className.replace(/\s*i_back\s*/, ' ');
     }
     g('#nav_' + n).className += ' i_current ';
+    for (s = 0; s < _photo.length; s++) {
+        _photo[s].className = _photo[s].className.replace(/\s*photo_position\s*/, ' ');
+    }
 }
 
 // 1.翻面控制
