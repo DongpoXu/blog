@@ -25,9 +25,7 @@
   -ms-transition: all 0.6s;
   -o-transition: all 0.6s;
   transition: all 0.6s;
-}
 
-.photo_position {
   //添加初始位置会产生轨迹
   //但是会在移动端产生闪动bug
   //所以觉得应该将left和top在js中写入

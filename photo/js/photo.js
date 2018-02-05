@@ -77,6 +77,8 @@ function rsort(n) {
     photo_center.className += ' photo_center';
     photo_center.style.left = '';
     photo_center.style.top = '';
+    // photo_center.style.left = '50%';
+    // photo_center.style.top = '50%';
     // photo_center.style.margin = '-140px 0 0 -100px';
     // photo_center.style.zIndex = '5';
     photo_center = photos.splice(n, 1)[0];
