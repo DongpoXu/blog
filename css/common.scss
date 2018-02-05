@@ -213,12 +213,17 @@ a {
 #ICP {
   bottom: 0;
   background: rgba(100, 100, 100, .2);
+  color: #000;
   font-size: 1.2rem;
   position: fixed;
   text-align: center;
   width: 100%;
   z-index: 5;
-  color: #000;
+  -webkit-transition: all .6s;
+  -moz-transition: all .6s;
+  -ms-transition: all .6s;
+  -o-transition: all .6s;
+  transition: all .6s;
   a{
     color: #000;
   }
