@@ -18,12 +18,12 @@ function resolt(elem) {
         elem.style.zIndex = "5";
     }
 }
-
+var templete = document.getElementById("testDiv").innerHTML;
 function addPhotos() {
-    var templete = document.getElementById("testDiv").innerHTML;
     var html = [];
     var oNumBlock = document.getElementById("blockNum");
     var oNum = oNumBlock.value;
+    console.log(oNum);
     for (i = 0; i < oNum; i++) {
         html.push(templete);
     }
