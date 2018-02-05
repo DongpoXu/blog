@@ -1,8 +1,14 @@
-function resolt() {
+function resolt(elem) {
     var oBlock = document.getElementsByClassName("testBlock");
     for (i in oBlock) {
-        oBlock[i].style.top = random([0, 270]) + 'px';
-        oBlock[i].style.left = random([0, 770]) + 'px';
+        oBlock[i].style.top = random([0, 270]) + "px";
+        oBlock[i].style.left = random([0, 770]) + "px";
+        oBlock[i].style.backgroundColor = "#0000cc";
+        oBlock[i].style.zIndex = "1";
+        elem.style.top = "50%";
+        elem.style.left = "50%";
+        elem.style.backgroundColor = "red";
+        elem.style.zIndex = 5;
     }
 }
 
@@ -12,7 +18,7 @@ function addPhotos() {
     for (i = 0; i < 100; i++) {
         html.push(templete);
     }
-    document.getElementsByClassName("testDiv")[0].innerHTML = html.join('');
+    document.getElementsByClassName("testDiv")[0].innerHTML = html.join("");
 }
 
 addPhotos();
