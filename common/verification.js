@@ -1,4 +1,5 @@
-var cPassWord = "密码";
+/*safari中cookies不支持中文，正在找寻编解码方式。*/
+var cPassWord = "160324";
 
 function setKey(c_name, value) {
     document.cookie = c_name + "=" + value;
