@@ -1,13 +1,14 @@
-div.testDiv {
+#testDiv {
   position: relative;
-  width: 800px;
+  width: 100%;
   height: 300px;
+  bottom: 0;
   border: 1px solid #000000;
   background-color: #1ABC9C;
   margin: 10px auto;
 }
 
-div.testBlock {
+.testBlock {
   position: absolute;
   top: 0;
   left: 0;

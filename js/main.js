@@ -1,27 +1,34 @@
 function resolt(elem) {
+    var oDiv = document.getElementById("testDiv");
     var oBlock = document.getElementsByClassName("testBlock");
-    for (i in oBlock) {
-        oBlock[i].style.top = random([0, 270]) + "px";
-        oBlock[i].style.left = random([0, 770]) + "px";
+    var bh = oBlock[0].clientHeight;
+    var bw = oBlock[0].clientWidth;
+    var h = [0, oDiv.clientHeight - bh];
+    var w = [0, oDiv.clientWidth - bw];
+    for (var i = 0; i < oBlock.length; i++) {
+        oBlock[i].style.top = random(h) + 'px';
+        oBlock[i].style.left = random(w) + "px";
         oBlock[i].style.backgroundColor = "#0000cc";
         oBlock[i].style.zIndex = "1";
         elem.style.top = "50%";
         elem.style.left = "50%";
+        elem.style.marginTop = -bh / 2 + "px";
+        elem.style.marginLeft = -bw / 2 + "px";
         elem.style.backgroundColor = "red";
-        elem.style.zIndex = 5;
+        elem.style.zIndex = "5";
     }
 }
 
 function addPhotos() {
-    var templete = document.getElementsByClassName("testDiv")[0].innerHTML;
+    var templete = document.getElementById("testDiv").innerHTML;
     var html = [];
-    for (i = 0; i < 100; i++) {
+    var oNumBlock = document.getElementById("blockNum");
+    var oNum = oNumBlock.value;
+    for (i = 0; i < oNum; i++) {
         html.push(templete);
     }
-    document.getElementsByClassName("testDiv")[0].innerHTML = html.join("");
+    document.getElementById("testDiv").innerHTML = html.join("");
 }
-
-addPhotos();
 
 //随机生成一个值 支持取值范围。 random([min,max]);
 function random(range) {
