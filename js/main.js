@@ -17,7 +17,7 @@ function resolt(elem) {
         elem.style.backgroundColor = "red";
         elem.style.zIndex = "5";
     }
-}E
+}
 var templete = document.getElementById("testDiv").innerHTML;
 function addPhotos() {
     var html = [];
