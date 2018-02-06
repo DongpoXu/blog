@@ -1,12 +1,11 @@
 #testDiv {
-  position: relative;
   width: 90%;
   height: 300px;
-
   bottom: 0;
-  border: 1px solid #000000;
-  background-color: #1ABC9C;
+  background-color: Seashell;
+  box-shadow: #777777;
   margin: 10px auto;
+  z-index: 5;
 }
 
 .testBlock {
@@ -28,5 +27,5 @@
   position: fixed;
   right: 1%;
   top: 40%;
-  z-index: 10;
+  z-index: 1;
 }

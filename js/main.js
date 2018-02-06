@@ -6,10 +6,12 @@ function resolt(elem) {
     var oBlock = document.getElementsByClassName("testBlock");
     var bh = oBlock[0].clientHeight;
     var bw = oBlock[0].clientWidth;
-    var ah =oDiv.clientHeight - bh;
-    var aw =oDiv.clientWidth - bw;
-    var h = [-ah/2, ah/2];
-    var w = [-aw/2, aw/2];
+    // var ah =oDiv.clientHeight - bh;
+    // var aw =oDiv.clientWidth - bw;
+    var ah = window.innerHeight - bh * 2;
+    var aw = window.innerWidth - bw * 2;
+    var h = [-ah / 2, ah / 2];
+    var w = [-aw / 2, aw / 2];
     for (var i = 0; i < oBlock.length; i++) {
         oBlock[i].style.transform = "translate3d(" + random(w) + "px," + random(h) + "px," + random([0, 700]) + "px) rotate(" + random([-720, 720]) + "deg) rotateY(" + random([-720, 720]) + "deg) rotateX(" + random([-720, 720]) + "deg) rotateZ(" + random([-720, 720]) + "deg)";
         // oBlock[i].style.top = random(h) + 'px';
@@ -21,7 +23,7 @@ function resolt(elem) {
         // elem.style.left = "50%";
         // elem.style.marginTop = -bh / 2 + "px";
         // elem.style.marginLeft = -bw / 2 + "px";
-        elem.style.backgroundColor = "white";
+        elem.style.backgroundColor = "black";
         elem.style.zIndex = "5";
         elem.style.transform = "translate3d(0,0,800px) rotate(0deg) rotateY(0deg) rotateX(0deg) rotateZ(0deg)";
     }
