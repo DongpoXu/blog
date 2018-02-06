@@ -19,10 +19,10 @@ function resolt(elem) {
         // oBlock[i].style.transform = 'translate3d(' + random(h) + '+"px",' + random(w) + '+"px",' + random([0, 1000]) + '+"px")';
         oBlock[i].style.backgroundColor = "rgb(" + random([0, 255]) + "," + random([0, 255]) + "," + random([0, 255]) + ")";
         // oBlock[i].style.zIndex = "1";
-        elem.style.top = "50%";
-        elem.style.left = "50%";
-        elem.style.marginTop = -bh / 2 + "px";
-        elem.style.marginLeft = -bw / 2 + "px";
+        // elem.style.top = "50%";
+        // elem.style.left = "50%";
+        // elem.style.marginTop = -bh / 2 + "px";
+        // elem.style.marginLeft = -bw / 2 + "px";
         elem.style.backgroundColor = "black";
         elem.style.zIndex = "5";
         elem.style.transform = "translate3d(0,0,800px) rotate(0deg) rotateY(0deg) rotateX(0deg) rotateZ(0deg)";
