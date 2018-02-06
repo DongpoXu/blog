@@ -1,3 +1,5 @@
+/*测试方块的处理*/
+
 // 对方块进行排序
 function resolt(elem) {
     var oDiv = document.getElementById("testDiv");
@@ -7,16 +9,19 @@ function resolt(elem) {
     var h = [0, oDiv.clientHeight - bh];
     var w = [0, oDiv.clientWidth - bw];
     for (var i = 0; i < oBlock.length; i++) {
-        oBlock[i].style.top = random(h) + 'px';
-        oBlock[i].style.left = random(w) + "px";
+        oBlock[i].style.transform = "translate3d(" + random(w) + "px," + random(h) + "px," + random([0, 700]) + "px) rotate(" + random([-720, 720]) + "deg) rotateY(" + random([-720, 720]) + "deg) rotateX(" + random([-720, 720]) + "deg) rotateZ(" + random([-720, 720]) + "deg)";
+        // oBlock[i].style.top = random(h) + 'px';
+        // oBlock[i].style.left = random(w) + "px";
+        // oBlock[i].style.transform = 'translate3d(' + random(h) + '+"px",' + random(w) + '+"px",' + random([0, 1000]) + '+"px")';
         oBlock[i].style.backgroundColor = "#0000cc";
-        oBlock[i].style.zIndex = "1";
-        elem.style.top = "50%";
-        elem.style.left = "50%";
-        elem.style.marginTop = -bh / 2 + "px";
-        elem.style.marginLeft = -bw / 2 + "px";
+        // oBlock[i].style.zIndex = "1";
+        // elem.style.top = "50%";
+        // elem.style.left = "50%";
+        // elem.style.marginTop = -bh / 2 + "px";
+        // elem.style.marginLeft = -bw / 2 + "px";
         elem.style.backgroundColor = "red";
         elem.style.zIndex = "5";
+        elem.style.transform = "translate3d(" + (oDiv.clientWidth - bw) / 2 + "px," + (oDiv.clientHeight - bh) / 2 + "px,800px) rotate(0deg) rotateY(0deg) rotateX(0deg) rotateZ(0deg)";
     }
 }
 
@@ -44,7 +49,7 @@ function random(range) {
     return number;
 }
 
-//canvas始终的处理
+/*canvas时钟的处理*/
 var oClock = document.getElementById("clock");
 var cbg = oClock.getContext('2d');
 var width = cbg.canvas.width;
