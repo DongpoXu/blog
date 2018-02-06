@@ -20,16 +20,10 @@ function getKey(c_key) {
 
 function checkKey() {
     var passWord = getKey('passWord');
-    if (passWord !== cPassWord) {
+    while (passWord !== cPassWord) {
         passWord = prompt('请输入密码：', "");
-        if (passWord === cPassWord) {
-            setKey('passWord', passWord);
-        }
-        else {
-            alert("密码不正确,无法进入本站!!");
-            window.opener = null;
-            window.close();
-        }
+        if (passWord === cPassWord) setKey('passWord', passWord);
+        else alert("密码不正确,无法进入本站!!");
     }
 }
 
