@@ -1,7 +1,8 @@
 #testDiv {
   position: relative;
-  width: 100%;
+  width: 90%;
   height: 300px;
+
   bottom: 0;
   border: 1px solid #000000;
   background-color: #1ABC9C;
@@ -10,8 +11,10 @@
 
 .testBlock {
   position: absolute;
-  //top: 0;
-  //left: 0;
+  top: 50%;
+  left: 50%;
+  margin-top: -15px;
+  margin-left: -15px;
   -webkit-transition: all 2s;
   -webkit-perspective: 800px;
   -webkit-perspective-origin: 50% 50%;

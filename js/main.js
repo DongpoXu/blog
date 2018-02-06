@@ -6,22 +6,24 @@ function resolt(elem) {
     var oBlock = document.getElementsByClassName("testBlock");
     var bh = oBlock[0].clientHeight;
     var bw = oBlock[0].clientWidth;
-    var h = [0, oDiv.clientHeight - bh];
-    var w = [0, oDiv.clientWidth - bw];
+    var ah =oDiv.clientHeight - bh;
+    var aw =oDiv.clientWidth - bw;
+    var h = [-ah/2, ah/2];
+    var w = [-aw/2, aw/2];
     for (var i = 0; i < oBlock.length; i++) {
         oBlock[i].style.transform = "translate3d(" + random(w) + "px," + random(h) + "px," + random([0, 700]) + "px) rotate(" + random([-720, 720]) + "deg) rotateY(" + random([-720, 720]) + "deg) rotateX(" + random([-720, 720]) + "deg) rotateZ(" + random([-720, 720]) + "deg)";
         // oBlock[i].style.top = random(h) + 'px';
         // oBlock[i].style.left = random(w) + "px";
         // oBlock[i].style.transform = 'translate3d(' + random(h) + '+"px",' + random(w) + '+"px",' + random([0, 1000]) + '+"px")';
-        oBlock[i].style.backgroundColor = "#0000cc";
+        oBlock[i].style.backgroundColor = "rgb(" + random([0, 255]) + "," + random([0, 255]) + "," + random([0, 255]) + ")";
         // oBlock[i].style.zIndex = "1";
         // elem.style.top = "50%";
         // elem.style.left = "50%";
         // elem.style.marginTop = -bh / 2 + "px";
         // elem.style.marginLeft = -bw / 2 + "px";
-        elem.style.backgroundColor = "red";
+        elem.style.backgroundColor = "black";
         elem.style.zIndex = "5";
-        elem.style.transform = "translate3d(" + (oDiv.clientWidth - bw) / 2 + "px," + (oDiv.clientHeight - bh) / 2 + "px,800px) rotate(0deg) rotateY(0deg) rotateX(0deg) rotateZ(0deg)";
+        elem.style.transform = "translate3d(0,0,800px) rotate(0deg) rotateY(0deg) rotateX(0deg) rotateZ(0deg)";
     }
 }
 
