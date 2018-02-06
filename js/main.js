@@ -21,7 +21,7 @@ function resolt(elem) {
         // elem.style.left = "50%";
         // elem.style.marginTop = -bh / 2 + "px";
         // elem.style.marginLeft = -bw / 2 + "px";
-        elem.style.backgroundColor = "black";
+        elem.style.backgroundColor = "white";
         elem.style.zIndex = "5";
         elem.style.transform = "translate3d(0,0,800px) rotate(0deg) rotateY(0deg) rotateX(0deg) rotateZ(0deg)";
     }
