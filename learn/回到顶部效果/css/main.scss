@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#main-bg {
+  width: 1190px;
+  margin: 0 auto;
+}
+
+#btn {
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  right: 5%;
+  bottom: 5%;
+  display: none;
+  background: url(../img/top_bg.png) no-repeat left top;
+}
+
+#btn:hover {
+  background: url(../img/top_bg.png) no-repeat 0 -40px;
+}
