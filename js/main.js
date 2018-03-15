@@ -2,7 +2,8 @@
 
 // 对方块进行排序
 function resolt(elem) {
-    var oDiv = document.getElementById("testDiv");
+    "use strict";
+    // var oDiv = document.getElementById("testDiv");
     var oBlock = document.getElementsByClassName("testBlock");
     var bh = oBlock[0].clientHeight;
     var bw = oBlock[0].clientWidth;
@@ -12,12 +13,23 @@ function resolt(elem) {
     var aw = window.innerWidth - bw * 2;
     var h = [-ah / 2, ah / 2];
     var w = [-aw / 2, aw / 2];
-    for (var i = 0; i < oBlock.length; i++) {
-        oBlock[i].style.transform = "translate3d(" + random(w) + "px," + random(h) + "px," + random([0, 700]) + "px) rotate(" + random([-720, 720]) + "deg) rotateY(" + random([-720, 720]) + "deg) rotateX(" + random([-720, 720]) + "deg) rotateZ(" + random([-720, 720]) + "deg)";
+    var i;
+    for (i = 0; i < oBlock.length; i += 1) {
+        oBlock[i].style.transform = "translate3d(" +
+                                    random(w) + "px," +
+                                    random(h) + "px," +
+                                    random([0, 700]) + "px) rotate(" +
+                                    random([-720, 720]) + "deg) rotateY(" +
+                                    random([-720, 720]) + "deg) rotateX(" +
+                                    random([-720, 720]) + "deg) rotateZ(" +
+                                    random([-720, 720]) + "deg)";
         // oBlock[i].style.top = random(h) + 'px';
         // oBlock[i].style.left = random(w) + "px";
         // oBlock[i].style.transform = 'translate3d(' + random(h) + '+"px",' + random(w) + '+"px",' + random([0, 1000]) + '+"px")';
-        oBlock[i].style.backgroundColor = "rgb(" + random([0, 255]) + "," + random([0, 255]) + "," + random([0, 255]) + ")";
+        oBlock[i].style.backgroundColor = "rgb(" +
+                                        random([0, 255]) + "," +
+                                        random([0, 255]) + "," +
+                                        random([0, 255]) + ")";
         // oBlock[i].style.zIndex = "1";
         // elem.style.top = "50%";
         // elem.style.left = "50%";
@@ -25,7 +37,11 @@ function resolt(elem) {
         // elem.style.marginLeft = -bw / 2 + "px";
         elem.style.backgroundColor = "black";
         elem.style.zIndex = "5";
-        elem.style.transform = "translate3d(0,0,800px) rotate(0deg) rotateY(0deg) rotateX(0deg) rotateZ(0deg)";
+        elem.style.transform = "translate3d(0,0,800px) " +
+                                "rotate(0deg) " +
+                                "rotateY(0deg) " +
+                                "rotateX(0deg) " +
+                                "rotateZ(0deg)";
     }
 }
 
@@ -33,11 +49,13 @@ var templete = document.getElementById("testDiv").innerHTML;
 
 // 根据输入值添加方块
 function addPhotos() {
+    "use strict";
     var html = [];
     var oNumBlock = document.getElementById("blockNum");
     var oNum = oNumBlock.value;
     console.log(oNum);
-    for (i = 0; i < oNum; i++) {
+    var i;
+    for (i = 0; i < oNum; i += 1) {
         html.push(templete);
     }
     document.getElementById("testDiv").innerHTML = html.join("");
@@ -45,6 +63,7 @@ function addPhotos() {
 
 // 随机生成一个值 支持取值范围。 random([min,max]);
 function random(range) {
+    "use strict";
     var max = Math.max(range[0], range[1]);
     var min = Math.min(range[0], range[1]);
 
@@ -55,13 +74,14 @@ function random(range) {
 
 /*canvas时钟的处理*/
 var oClock = document.getElementById("clock");
-var cbg = oClock.getContext('2d');
+var cbg = oClock.getContext("2d");
 var width = cbg.canvas.width;
 var height = cbg.canvas.height;
 var r = width / 2;
 var rem = width / 200;
 
 function drawBackground() {
+    "use strict";
     cbg.save();
     cbg.translate(r, r);
     cbg.beginPath();
@@ -79,11 +99,12 @@ function drawBackground() {
         cbg.fillText(num, x, y);
     });
 
+    var i, rad, x, y;
     //标识点
-    for (var i = 0; i < 60; i++) {
-        var rad = 2 * Math.PI / 60 * i;
-        var x = Math.cos(rad) * (r - 18 * rem);
-        var y = Math.sin(rad) * (r - 18 * rem);
+    for (i = 0; i < 60; i += 1) {
+        rad = 2 * Math.PI / 60 * i;
+        x = Math.cos(rad) * (r - 18 * rem);
+        y = Math.sin(rad) * (r - 18 * rem);
         cbg.beginPath();
         if (i % 5 === 0) {
             cbg.fillStyle = "#000";
@@ -98,6 +119,7 @@ function drawBackground() {
 
 //画时针
 function drawHour(hour, minute) {
+    "use strict";
     cbg.save();
     cbg.beginPath();
     var rad = 2 * Math.PI / 12 * (hour + minute / 60);
@@ -112,6 +134,7 @@ function drawHour(hour, minute) {
 
 //画分针
 function drawMinute(minute) {
+    "use strict";
     cbg.save();
     cbg.beginPath();
     var rad = 2 * Math.PI / 60 * minute;
@@ -126,6 +149,7 @@ function drawMinute(minute) {
 
 //画秒针
 function drawSecond(second) {
+    "use strict";
     cbg.save();
     cbg.beginPath();
     cbg.fillStyle = "red";
@@ -141,6 +165,7 @@ function drawSecond(second) {
 
 //中心点
 function drawDot() {
+    "use strict";
     cbg.beginPath();
     cbg.fillStyle = "white";
     cbg.arc(0, 0, 3 * rem, 0, 2 * Math.PI, false);
@@ -149,6 +174,7 @@ function drawDot() {
 
 //绘制
 function draw() {
+    "use strict";
     cbg.clearRect(0, 0, width, height);
     var now = new Date();
     var hour = now.getHours();
