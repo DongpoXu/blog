@@ -1,11 +1,11 @@
 document.writeln("<nav class=\'navBar\'>");
-document.writeln("    <a href=\'https://xudongpo.xin/about.html\'>XDP</a><a href=\'https://xudongpo.xin/index.html\' id=\'backHome\'><i class=\'fa fa-home\'></i></a>");
+document.writeln("    <a href=\'https://xudongpo.xin/about.html\'>XDP</a><a href=\'https://xudongpo.xin/backToTop.html\' id=\'backHome\'><i class=\'fa fa-home\'></i></a>");
 document.writeln("    <div id=\'dropDownList\'>");
 document.writeln("        <button id=\'dropButton\' type=\'button\'>");
 document.writeln("            MENU<i class=\'fa fa-bars\'></i>");
 document.writeln("        </button>");
 document.writeln("        <ul id=\'dropList\'>");
-document.writeln("            <li><a href=\'https://xudongpo.xin/index.html\'>HOME<i class=\'fa fa-home\'></i></a></li>");
+document.writeln("            <li><a href=\'https://xudongpo.xin/backToTop.html\'>HOME<i class=\'fa fa-home\'></i></a></li>");
 document.writeln("            <li><a href=\'https://xudongpo.xin/learn.html\'>LEARN<i class=\'fa fa-book\'></i></a></li>");
 document.writeln("            <li><a href=\'https://xudongpo.xin/essay.html\'>ESSAY<i class=\'fa fa-pencil\'></i></a></li>");
 document.writeln("            <li><a href=\'https://xudongpo.xin/live.html\'>LIVE<i class=\'fa fa-heart\'></i></a></li>");
