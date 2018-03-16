@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>learnReact</title>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+</head>
+<body>
+<div id="app"></div>
+
+<script type="text/babel">
+    let MessageBox = React.createClass({
+        getInitialState: function () {
+            return {
+                isVisible: true,
+                titleMessage: 'hello~ state',
+            }
+        },
+        render: function () {
+            let subMessages = [];
+            for (let ii = 0; ii < 10; ii++) {
+                subMessages.push(
+                    <SubMessage key={'subMsg' + ii}/>
+                )
+            }
+
+            return (
+                <div>
+                    <h1> Hello Word! </h1>
+                    {subMessages}
+                </div>
+            )
+        }
+    });
+
+    let SubMessage = React.createClass({
+        render: function () {
+            return (
+                <div>
+                    <h3>写代码很有意思</h3>
+                    <Footer/>
+                </div>
+            )
+        }
+    });
+
+    let Footer = React.createClass({
+        render: function () {
+            return (
+                <small>因为我们在用代码创造</small>
+            )
+        }
+    });
+
+    ReactDOM.render(<MessageBox/>,
+        document.getElementById('app'),
+        function () {
+            console.log("渲染完成~");
+        }
+    )
+</script>
+</body>
+</html>
