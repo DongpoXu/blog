@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1.5.1(jQuery在其他库之后引入)</title>
+    <!--引入 prototype-->
+    <script src="lib/prototype.js"></script>
+    <!--引入 jQuery-->
+    <script src="../../../jquery-3.2.1/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<div id="div1">
+    <p id="pp1">Test-prototype(将被隐藏)</p>
+    <p>Test-jQuery---1(将被绑定单击事件)</p>
+</div>
+<div id="div2">
+    <p id="pp2">Test-prototype(将被隐藏)</p>
+    <p>Test-jQuery---2(将被绑定单击事件)</p>
+</div>
+<div id="div3">
+    <p id="pp3">Test-prototype(将变红)</p>
+    <p>Test-jQuery---3(将被绑定单击事件)</p>
+</div>
+<div id="div4">
+    <p id="pp4">Test-prototype(将变红)</p>
+    <p>Test-jQuery---4(将被绑定单击事件)</p>
+</div>
+<script>
+    /*
+     * 方法一
+     * 移交$的控制权
+     */
+    jQuery.noConflict();    //将变量$的控制权移交给prototype.js
+    jQuery(function () {    //依然可以使用jQuery
+        /*
+         * 此处$("#div1").find("p")本来为$("#div1 > p")
+         * 但是提示不高效，可能是缓存问题，先记录
+         */
+        jQuery("#div1").find("p").click(function () {
+            alert(jQuery(this).text());
+        });
+    });
+    $("pp1").style.display = 'none';     //使用prototype.js隐藏元素
+    /*
+     * 方法二
+     * 自定义快捷方式
+     */
+    var $jq = jQuery.noConflict();
+    $jq(function () {
+        $jq("#div2 > p").click(function () {
+            alert($jq(this).text());
+        });
+    });
+    $("pp2").style.display = 'none';     //使用prototype.js隐藏元素
+    /*
+     * 方法三
+     * 内部使用$
+     */
+    jQuery.noConflict();        //将变量$的控制权让渡给prototype.js
+    jQuery(function ($) {       //使用jQuery设定页面加载时执行的函数
+        $("#div3").find("p").click(function () {      //函数内部继续使用$方法
+            alert($(this).text());
+        });
+    });
+    $("pp3").style.color = 'red';    //使用prototype.js改变元素颜色
+    /*
+     * 方法四
+     * 匿名函数
+     */
+    //将变量$的控制权让渡给prototype.js 应该可以省略，因为方法三有
+    (function ($) {
+        $(function () {
+            $("#div4").find("p").click(function () {
+                alert($(this).text());
+            });
+        });
+    })(jQuery);
+    $("pp4").style.color = 'red';    //使用prototype.js改变元素颜色
+</script>
+</body>
+</html>
