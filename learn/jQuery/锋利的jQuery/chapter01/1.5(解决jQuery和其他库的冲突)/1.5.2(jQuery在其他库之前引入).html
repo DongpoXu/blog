@@ -9,17 +9,17 @@
     <script src="lib/prototype.js"></script>
 </head>
 <body>
-<div id="div1">
-    <p id="pp1">Test-prototype(将被隐藏)</p>
+<div id="div">
+    <p id="pp">Test-prototype(将被隐藏)</p>
     <p>Test-jQuery---1(将被绑定单击事件)</p>
 </div>
 <script>
     jQuery(function () {    //直接使用jQuery，无需调用"jQuery.noConflict()"函数
-        jQuery("#div1").find("p").click(function () {
+        jQuery("#div").find("p").click(function () {
             alert(jQuery(this).text());     //注：jQuery不能替换为 $ 符号
         });
     });
-    $("pp1").style.display = 'none';    //使用prototype.js
+    $("pp").style.display = 'none';    //使用prototype.js
 </script>
 </body>
 </html>
