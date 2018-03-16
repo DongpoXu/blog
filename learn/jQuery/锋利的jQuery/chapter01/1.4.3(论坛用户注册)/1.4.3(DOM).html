@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>论坛注册DOM</title>
+    <script src="../../../jquery-3.2.1/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<input type="checkbox" id="cr"/><label for="cr">我已经阅读了上面制度。</label>
+
+<script>
+    $(document).ready(function () {     //等待DOM元素加载完毕
+        var $cr = $("#cr");             //jQuery对象
+        var cr = $cr[0];                //DOM对象，或者$cr.get(0)
+        $cr.click(function () {
+            if (cr.checked) {           //DOM方式判断
+                alert("感谢你的支持！你可以继续操作。");
+            }
+        })
+    });
+</script>
+</body>
+</html>

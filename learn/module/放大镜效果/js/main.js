@@ -46,3 +46,5 @@ window.onload = function () {
         oBigBoxImg.style.top = -percentY * (oBigBoxImg.offsetHeight - oBigBox.offsetHeight) + "px";
     }
 };
+
+

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>论坛注册jQuery</title>
+    <script src="../../../jquery-3.2.1/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<input type="checkbox" id="cr"><label for="cr">我已经阅读了上面制度。</label>
+
+<script>
+    $(function () {             //等待DOM加载完毕，注意是DOM绘制完毕，并不是所有相关均加载完毕。
+        var $cr = $("#cr");     //jQuery对象
+        $cr.click(function () {
+            if ($cr.is(":checked")) {       //jQuery判断方式
+                alert("感谢你的支持！你可以继续操作。");
+            }
+        })
+    });
+</script>
+</body>
+</html>
