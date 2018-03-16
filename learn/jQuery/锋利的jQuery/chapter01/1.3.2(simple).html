@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>chapter01-1.3.2(simple)</title>
+    <script src="../../jquery-3.2.1/jquery-3.2.1.js"></script>
+</head>
+<body>
+<script>
+    /*
+     * 网页中所有DOM结构绘制完毕后就执行
+     * 可能DOM元素关联的东西并没有加载完
+     * 可以同时编写多个
+     */
+    $(document).ready(function () {
+        alert("Hello World!");
+    });
+    $(document).ready(function () {
+        alert("Hello World!");
+    });
+    //简化写法
+    $(function () {
+        alert("Hello World!");
+    });
+</script>
+</body>
+</html>
