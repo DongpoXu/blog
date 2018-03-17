@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片提示效果</title>
+    <script src="../../../jquery-3.2.1/jquery-3.2.1.min.js"></script>
+</head>
+<style type="text/css">
+    body {
+        margin: 0;
+        padding: 40px;
+        background: #fff;
+        font: 80% Arial, Helvetica, sans-serif;
+        color: #555;
+        line-height: 180%;
+    }
+
+    img {
+        border: none;
+    }
+
+    ul, li {
+        margin: 0;
+        padding: 0;
+    }
+
+    li {
+        list-style: none;
+        float: left;
+        display: inline;
+        margin-right: 10px;
+        border: 1px solid #aaa;
+    }
+
+    /* tooltip */
+    #tooltip {
+        position: absolute;
+        border: 1px solid #ccc;
+        background: #333;
+        padding: 2px;
+        display: none;
+        color: #fff;
+    }
+</style>
+<body>
+<h3>有效果：</h3>
+<ul>
+    <li><a href="img/apple_1_bigger.jpg" class="tooltip" title="苹果 iPod"><img src="img/apple_1.jpg" alt="苹果 iPod"/></a>
+    </li>
+    <li><a href="img/apple_2_bigger.jpg" class="tooltip" title="苹果 iPod-nano"><img src="img/apple_2.jpg"
+                                                                                   alt="苹果 iPod-nano"/></a></li>
+    <li><a href="img/apple_3_bigger.jpg" class="tooltip" title="苹果 iPhone"><img src="img/apple_3.jpg" alt="苹果 iPhone"/></a>
+    </li>
+    <li><a href="img/apple_4_bigger.jpg" class="tooltip" title="苹果 Mac"><img src="img/apple_4.jpg" alt="苹果 Mac"/></a>
+    </li>
+</ul>
+<br/><br/><br/><br/>
+<h3>无效果：</h3>
+<ul>
+    <li><a href="img/apple_1_bigger.jpg" title="苹果 iPod"><img src="img/apple_1.jpg" alt="苹果 iPod"/></a></li>
+    <li><a href="img/apple_2_bigger.jpg" title="苹果 iPod-nano"><img src="img/apple_2.jpg" alt="苹果 iPod-nano"/></a></li>
+    <li><a href="img/apple_3_bigger.jpg" title="苹果 iPhone"><img src="img/apple_3.jpg" alt="苹果 iPhone"/></a></li>
+    <li><a href="img/apple_4_bigger.jpg" title="苹果 Mac"><img src="img/apple_4.jpg" alt="苹果 Mac"/></a></li>
+</ul>
+<script>
+    $(function () {
+        var x = 10;
+        var y = 20;
+        $("a.tooltip").mouseover(function (e) {
+            this.myTitle = this.title;
+            this.title = "";
+            var imgTitle = this.myTitle ? "<br/>" + this.myTitle : "";
+            var tooltip = "<div id = 'tooltip'><img src = '" + this.href + "' alt='产品预览图'/>" + imgTitle + "</div>";
+            $("body").append(tooltip);      //将创建的div添加至文档中
+            $("#tooltip")
+                .css({
+                    "top": (e.pageY + y) + "px",
+                    "left": (e.pageX + x) + "px"
+                }).show("fast");        //设置x坐标和y坐标并且显示
+        }).mouseout(function () {
+            this.title = this.myTitle;
+            $("#tooltip").remove();
+        }).mouseover(function (e) {
+            $("#tooltip")
+                .css({
+                    "top": (e.pageY + y) + "px",
+                    "left": (e.pageX + x) + "px"
+                });
+        });
+    });
+</script>
+</body>
+</html>
