@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JQ例子2</title>
+    <script src="../../../jquery-3.2.1/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<table id="tb">
+    <tbody>
+    <tr>
+        <td>第一行</td>
+        <td>第一行</td>
+    </tr>
+    <tr>
+        <td>第二行</td>
+        <td>第二行</td>
+    </tr>
+    <tr>
+        <td>第三行</td>
+        <td>第三行</td>
+    </tr>
+    <tr>
+        <td>第四行</td>
+        <td>第四行</td>
+    </tr>
+    <tr>
+        <td>第五行</td>
+        <td>第五行</td>
+    </tr>
+    <tr>
+        <td>第六行</td>
+        <td>第六行</td>
+    </tr>
+    </tbody>
+</table>
+
+<script>
+    $(function () {
+        /*
+         * 获取id为tb的元素，然后寻找下面的tbody标签
+         * 再寻找tbody下索引值是偶数的tr元素，改变它的背景色
+         */
+        $("#tb tbody tr:even").css("backgroundColor","#888");
+    });
+</script>
+</body>
+</html>

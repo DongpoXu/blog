@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JQ例子1</title>
+    <script src="../../../jquery-3.2.1/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<p>测试 1</p>
+<p>测试 2</p>
+
+<script>
+    $(function () {
+        $("p").click(function () {
+            alert($(this).text());
+        });
+    });
+</script>
+</body>
+</html>

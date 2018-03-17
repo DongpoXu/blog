@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS例子2</title>
+</head>
+<body>
+<table id="tb">
+    <tbody>
+    <tr>
+        <td>第一行</td>
+        <td>第一行</td>
+    </tr>
+    <tr>
+        <td>第二行</td>
+        <td>第二行</td>
+    </tr>
+    <tr>
+        <td>第三行</td>
+        <td>第三行</td>
+    </tr>
+    <tr>
+        <td>第四行</td>
+        <td>第四行</td>
+    </tr>
+    <tr>
+        <td>第五行</td>
+        <td>第五行</td>
+    </tr>
+    <tr>
+        <td>第六行</td>
+        <td>第六行</td>
+    </tr>
+    </tbody>
+</table>
+
+<script>
+    window.onload = function () {
+        var item = document.getElementById("tb");       //获取id为tb的元素
+        var tbody = item.getElementsByTagName("tbody")[0];      //获取表格的第一个tbody元素
+        var trs = tbody.getElementsByTagName("tr");     //获取tbody元素下的所有tr元素
+        for (var i = 0; i < trs.length; i++) {          //循环tr元素
+            if (i % 2 === 0) {                          //取模（取余数。例如：0%2=0，1%2=1，2%2=0，3%2=1）
+                trs[i].style.backgroundColor = "#888";  //改变符合条件的tr元素的背景色
+            }
+        }
+    };
+</script>
+</body>
+</html>

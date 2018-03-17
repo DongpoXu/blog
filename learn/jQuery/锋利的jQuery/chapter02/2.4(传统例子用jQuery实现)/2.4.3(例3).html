@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JQ例子3</title>
+    <script src="../../../jquery-3.2.1/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<input type="checkbox" value="1" name="check" checked="checked"/>
+<input type="checkbox" value="2" name="check"/>
+<input type="checkbox" value="3" name="check" checked="checked"/>
+<input type="button" value="你选中的个数" id="btn"/>
+
+<script>
+    $(function () {
+        $("#btn").click(function () {
+            //先使用属性选择器，然后用表单对象属性过滤，最后获取jQuery对象的长度
+            var items = $("input[name='check']:checked");
+            alert("选中的个数为：" + items.length);
+        });
+    });
+</script>
+</body>
+</html>

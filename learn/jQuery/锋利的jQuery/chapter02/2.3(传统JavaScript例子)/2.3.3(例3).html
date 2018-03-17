@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS例子3</title>
+</head>
+<body>
+<input type="checkbox" value="1" name="check" checked="checked"/>
+<input type="checkbox" value="2" name="check"/>
+<input type="checkbox" value="3" name="check" checked="checked"/>
+<input type="button" value="你选中的个数" id="btn"/>
+
+<script>
+    window.onload = function () {
+        var btn = document.getElementById("btn");   //获取id为btn的元素
+        btn.onclick = function () {                 //给元素添加onclick事件
+            var arrays = new Array();               //创建一个数组对象
+            var items = document.getElementsByName("check");    //获取name为check的一组元素
+
+            for (var i = 0; i < items.length; i++) {
+                if (items[i].checked) {             //判断是否选中
+                    arrays.push(items[i].value);    //把符合条件的数据添加到数组中
+                }
+            }
+            alert("选中的个数为：" + arrays.length);
+        };
+    };
+</script>
+</body>
+</html>
