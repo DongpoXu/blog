@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>品牌列表</title>
+    <script src="../../../jquery-3.2.1/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- 需求分析： -->
+<!-- 当用户进入网站页面时，品牌列表默认是精简显示的（即不完整的品牌列表） -->
+<!-- 用户可以点击商品列表下方的“显示全部品牌”按钮来显示全部品牌列表 -->
+<!-- 单击“显示全部品牌”按钮的同时，列表会将推荐的品牌的名字高亮显示，按钮里的文字也换成“精简显示品牌” -->
+<!-- 再次单击“精简显示品牌”按钮，即又回到初始状态 -->
+
+<!-- 1.首先设计HTML结构 -->
+<div class="SubCategoryBox">
+    <ul>
+        <li><a href="#">佳能</a><i>(30440)</i></li>
+        <li><a href="#">索尼</a><i>(27220)</i></li>
+        <li><a href="#">三星</a><i>(20808)</i></li>
+        <li><a href="#">尼康</a><i>(17821)</i></li>
+        <li><a href="#">松下</a><i>(12289)</i></li>
+        <li><a href="#">卡西欧</a><i>(8242)</i></li>
+        <li><a href="#">富士</a><i>(14894)</i></li>
+        <li><a href="#">柯达</a><i>(9520)</i></li>
+        <li><a href="#">宾得</a><i>(2195)</i></li>
+        <li><a href="#">理光</a><i>(4114)</i></li>
+        <li><a href="#">奥林巴斯</a><i>(12205)</i></li>
+        <li><a href="#">明基</a><i>(1466)</i></li>
+        <li><a href="#">爱国者</a><i>(3091)</i></li>
+        <li><a href="#">其它品牌相机</a><i>(7275)</i></li>
+    </ul>
+    <div class="showMore">
+        <!-- 此处more.html是单独写好的,在用户浏览器不支持JavaScript的情况下浏览。 -->
+        <a href="2.6(more).html"><span>显示全部品牌</span></a>
+    </div>
+</div>
+
+<!-- 2.添加交互效果 -->
+<!-- (1)从第7条开始隐藏后面的品牌（最后一条除外） -->
+<!-- (2)添加点击事件，双向的 -->
+<script>
+    $(function () {
+        var $category = $("ul li:gt(5):not(:last)");    //获取第六个之后的除了最后一个的li
+        $category.hide();                               //隐藏上面获取到的jQuery对象
+        var $toggleBtn = $("div.showMore > a");         //获取按钮
+        $toggleBtn.click(function () {
+            if ($category.is(":visible")) {
+                $category.hide();                           //隐藏品牌
+                $(this).find("span")
+                    .css("background", "url(img/down.gif) no-repeat left center")
+                    .text("精简显示品牌");
+                $("ul li")
+                    .removeClass("promoted");
+            } else {
+                $category.show();                           //显示全部品牌
+                $(this).find("span")
+                    .css("background", "url(img/up.gif) no-repeat left center")
+                    .text("精简显示品牌");
+                $("ul li")
+                    .filter(":contains('佳能'),:contains('尼康'),:contains('奥林巴斯')")
+                    .addClass("promoted");
+            }
+            return false;                               //阻止超链接跳转
+        });
+        /*
+         * 此处不知为何有问题，估计是toggle使用的不熟练。问题等待解决。
+         */
+        // $toggleBtn.toggle(function () {
+        //     $category.hide();                           //隐藏品牌
+        //     $(this).find("span")
+        //         .css("background", "url(img/down.gif) no-repeat left center")
+        //         .text("精简显示品牌");
+        //     $("ul li")
+        //         .removeClass("promoted");
+        //     // return false;                            //阻止超链接跳转
+        // }, function () {
+        //     $category.show();                           //显示全部品牌
+        //     $(this).find("span")
+        //         .css("background", "url(img/up.gif) no-repeat left center")
+        //         .text("精简显示品牌");
+        //     $("ul li")
+        //         .filter(":contains('佳能'),:contains('尼康'),:contains('奥林巴斯')")
+        //         .addClass("promoted");
+        //     return false;                               //阻止超链接跳转
+        // });
+    });
+</script>
+</body>
+</html>
