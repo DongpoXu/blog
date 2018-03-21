@@ -1,26 +1,2 @@
-h1 {
-  margin: 0 auto;
-  text-align: center; }
-
-div {
-  margin: 10px 20px; }
-  div h2,
-  div h3,
-  div p {
-    margin: 10px;
-    font-size: 1rem; }
-
-h3 {
-  font-weight: normal; }
-
-table {
-  display: inline-block;
-  margin: 10px;
-  border-collapse: collapse; }
-  table th, table td {
-    border: 1px solid #123123;
-    font-weight: normal;
-    text-align: center;
-    padding: 5px; }
-
+h1{margin:0 auto;text-align:center}div{margin:10px 20px}div h2,div h3,div p{margin:10px}div h2{font-size:1.6rem}div h3{font-size:1.4rem}div p{font-size:1.4rem}h3{font-weight:normal}table{display:inline-block;margin:10px;border-collapse:collapse}table th,table td{border:1px solid #123123;font-weight:normal;text-align:center;padding:5px}
 /*# sourceMappingURL=note.css.map */

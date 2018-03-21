@@ -5,11 +5,17 @@ h1 {
 
 div {
   margin: 10px 20px;
-  h2,
-  h3,
-  p {
+  h2, h3, p {
     margin: 10px;
-    font-size: 1rem;
+  }
+  h2 {
+    font-size: 1.6rem;
+  }
+  h3 {
+    font-size: 1.4rem;
+  }
+  p {
+    font-size: 1.4rem;
   }
 }
 
