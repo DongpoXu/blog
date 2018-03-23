@@ -3,8 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <title>事件冒泡</title>
+    <script src="../../jquery-3.2.1/jquery-3.2.1.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-size: 13px;
+            line-height: 130%;
+            padding: 60px;
+        }
+
+        .content {
+            width: 340px;
+            border: 1px solid #0050D0;
+            background: #96E555
+        }
+
+        h2 {
+            padding: 10px 0;
+        }
+
+        span {
+            width: 300px;
+            margin: 10px;
+            background: #666666;
+            cursor: pointer;
+            color: white;
+            display: block;
+        }
+
+        p {
+            width: 300px;
+            background: #888;
+            color: white;
+            height: 16px;
+        }
+
+        .box {
+            float: left;
+            margin-left: 20px;
+        }
+    </style>
 </head>
 <body>
 
+<div class="box">
+    <h2>事件冒泡</h2>
+    <div id="div1" class="content">
+        外层div元素
+        <span id="span1">内层span元素</span>
+        外层div元素
+    </div>
+    <div id="msg1"></div>
+</div>
+
+<div class="box">
+    <h2>阻止事件冒泡（stopPropagation();）</h2>
+    <div id="div2" class="content">
+        外层div元素
+        <span id="span2">内层span元素</span>
+        外层div元素
+    </div>
+    <div id="msg2"></div>
+</div>
+
+<div class="box">
+    <h2>停止事件冒泡（return false;）</h2>
+    <div id="div3" class="content">
+        外层div元素
+        <span id="span3">内层span元素</span>
+        外层div元素
+    </div>
+    <div id="msg3"></div>
+</div>
+
+<script>
+    /*
+     * 事件冒泡顺序
+     */
+    $(document).ready(function () {
+        //为span元素绑定click事件
+        $("#span1").bind("click", function () {
+            var txt = $("#msg1").html() + "<p>内层元素span元素被点击。</p>";
+            $("#msg1").html(txt);
+        });
+        //为div元素绑定click事件
+        $("#div1").bind("click", function () {
+            var txt = $("#msg1").html() + "<p>外层div元素被点击。</p>";
+            $("#msg1").html(txt);
+        });
+        //为body元素绑定事件
+        $("body").bind("click", function () {
+            var txt = $("#msg1").html() + "<p>body元素被点击。<p/>";
+            $("#msg1").html(txt);
+        });
+    });
+</script>
+<script>
+    /*
+     * 阻止事件冒泡
+     * event.stopPropagation();
+     */
+    $(function () {
+        // 为span元素绑定click事件
+        $("#span2").bind("click", function (event) {
+            var txt = $("#msg2").html() + "<p>内层span元素被点击。</p>";
+            $("#msg2").html(txt);
+            event.stopPropagation();    //阻止事件冒泡
+        });
+        // 为div元素绑定click事件
+        $("#div2").bind("click", function (event) {
+            var txt = $("#msg2").html() + "<p>外层div元素被点击。</p>";
+            $("#msg2").html(txt);
+            event.stopPropagation();    //阻止事件冒泡
+        });
+        // 为body元素绑定click事件
+        $("body").bind("click", function () {
+            var txt = $('#msg2').html() + "<p>body元素被点击.<p/>";
+            $('#msg2').html(txt);
+        });
+    });
+</script>
+<script>
+    /*
+     * 阻止事件冒泡
+     * return false;
+     */
+    $(function () {
+        // 为span元素绑定click事件
+        $("#span3").bind("click", function () {
+            var txt = $("#msg3").html() + "<p>内层span元素被点击。</p>";
+            $("#msg3").html(txt);
+            return false;
+        });
+        // 为div元素绑定click事件
+        $("#div3").bind("click", function () {
+            var txt = $("#msg3").html() + "<p>外层div元素被点击。</p>";
+            $("#msg3").html(txt);
+            return false;
+        });
+        // 为body元素绑定click事件
+        $("body").bind("click", function () {
+            var txt = $('#msg3').html() + "<p>body元素被点击.<p/>";
+            $('#msg3').html(txt);
+        });
+    });
+</script>
 </body>
 </html>
