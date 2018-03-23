@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件冒泡</title>
+    <script src="../../jquery-3.2.1/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+<div style="float: left;">
+    <form action="test.html">
+        用户名：<input type="text" id="username1"/>
+        <br/>
+        <input type="submit" value="提交" id="sub1"/>
+    </form>
+    <div id="msg1"></div>
+</div>
+
+<div style="float: left;">
+    <form action="test.html">
+        用户名：<input type="text" id="username2"/>
+        <br/>
+        <input type="submit" value="提交" id="sub2"/>
+    </form>
+    <div id="msg2"></div>
+</div>
+
+<script>
+    /*
+     * 阻止默认行为
+     * event.preventDefault();
+     */
+    $(document).ready(function () {
+        $("#sub1").bind("click", function (event) {
+            var username = $("#username1").val();     //获取元素的值
+            if (username === "") {      //判断值是否为空
+                $("#msg1").html("<p>文本框的值不能为空。</p>");   //提示信息
+                event.preventDefault();     //阻止默认行为，此处是表单提交
+            }
+        });
+    });
+</script>
+<script>
+    /*
+     * 阻止默认行为
+     * return false;
+     */
+    $(function () {
+        $("#sub2").bind("click", function (event) {
+            var username = $("#username2").val();     //获取元素的值
+            if (username === "") {      //判断值是否为空
+                $("#msg2").html("<p>文本框的值不能为空。</p>");   //提示信息
+                return false;
+            }
+        });
+    });
+</script>
+</body>
+</html>
