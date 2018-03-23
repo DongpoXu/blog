@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>点击展开说明</title>
-    <script src="../../jquery-3.2.1/jquery-3.2.1.min.js"></script>
+    <script src="../../../jquery-3.2.1/jquery-3.2.1.min.js"></script>
     <style>
         * {
             margin: 0;
@@ -50,10 +50,13 @@
 </div>
 <script>
     $(function () {
-        $("#panel h5.head").mouseover(function () {
-            $(this).next().show();
-        }).mouseout(function () {
-            $(this).next().hide();
+        $("#panel h5.head").bind("click", function () {
+            var $content = $(this).next();
+            if ($content.is(":visible")) {
+                $content.hide();
+            } else {
+                $content.show();
+            }
         });
     });
 </script>
