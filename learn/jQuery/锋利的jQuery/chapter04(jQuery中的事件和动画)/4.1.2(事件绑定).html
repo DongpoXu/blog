@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件绑定</title>
+    <script src="../../jquery-3.2.1/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="panel1" class="panel">
+    <h2>点击展开</h2>
+    <h5 class="head">
+        什么是jQuery？
+    </h5>
+    <div class="content">
+        jQuery是继Prototype之后又一个优秀的JavaScript库，它是一个由 John Resig
+        创建于2006年1月的开源项目。jQuery凭借简洁的语法和跨平台的兼容性，极大地简化了JavaScript开发人员遍历HTML文档、操作DOM、处理事件、执行动画和开发Ajax。它独特而又优雅的代码风格改变了JavaScript程序员的设计思路和编写程序的方式。
+    </div>
+</div>
+
+<div id="panel2" class="panel">
+    <h2>鼠标滑过展开</h2>
+    <h5 class="head">
+        什么是jQuery？
+    </h5>
+    <div class="content">
+        jQuery是继Prototype之后又一个优秀的JavaScript库，它是一个由 John Resig
+        创建于2006年1月的开源项目。jQuery凭借简洁的语法和跨平台的兼容性，极大地简化了JavaScript开发人员遍历HTML文档、操作DOM、处理事件、执行动画和开发Ajax。它独特而又优雅的代码风格改变了JavaScript程序员的设计思路和编写程序的方式。
+    </div>
+</div>
+
+<div id="panel3" class="panel">
+    <h2>鼠标滑过展开绑定</h2>
+    <h5 class="head">
+        什么是jQuery？
+    </h5>
+    <div class="content">
+        jQuery是继Prototype之后又一个优秀的JavaScript库，它是一个由 John Resig
+        创建于2006年1月的开源项目。jQuery凭借简洁的语法和跨平台的兼容性，极大地简化了JavaScript开发人员遍历HTML文档、操作DOM、处理事件、执行动画和开发Ajax。它独特而又优雅的代码风格改变了JavaScript程序员的设计思路和编写程序的方式。
+    </div>
+</div>
+
+<script>
+    /*
+     * 鼠标点击展开
+     * 绑定
+     */
+    $(function () {
+        $("#panel1 h5.head").bind("click", function () {
+            var $content = $(this).next();
+            if ($content.is(":visible")) {
+                $content.hide();
+            } else {
+                $content.show();
+            }
+        });
+    });
+    /*
+     * 鼠标滑过展开
+     * 不绑定
+     */
+    $(function () {
+        $("#panel2 h5.head").mouseover(function () {
+            $(this).next().show();
+        }).mouseout(function () {
+            $(this).next().hide();
+        });
+    });
+    /*
+     * 鼠标滑过展开
+     * 绑定
+     */
+    $(function () {
+        $("#panel3 h5.head").bind("mouseover", function () {
+            $(this).next().show();
+        }).bind("mouseout", function () {
+            $(this).next().hide();
+        });
+    });
+</script>
+</body>
+</html>
