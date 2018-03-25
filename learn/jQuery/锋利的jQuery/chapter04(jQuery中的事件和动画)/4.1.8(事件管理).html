@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件管理</title>
+    <!--<script src="../../jquery-3.2.1/jquery-3.2.1.min.js"></script>-->
+    <script src="jquery.js"></script>
+    <style>
+        body {
+            font-size: 13px;
+            line-height: 130%;
+            padding: 60px;
+        }
+
+        body > div {
+            float: left;
+            margin-left: 40px;
+        }
+
+        p {
+            width: 200px;
+            background: #888;
+            color: white;
+            margin: 0;
+        }
+
+        body > div > div {
+            width: 100px;
+            height: 50px;
+        }
+
+        .over {
+            color: red;
+            background: #888;
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    <h2>绑定多个事件</h2>
+    <div id="div1">滑入滑出效果</div>
+</div>
+
+<div>
+    <h2>事件添加命名空间</h2>
+    <h2>便于管理</h2>
+    <div id="div2">测试块</div>
+    <input type="button" value="根据命名空间删除事件" id="input2">
+    <div id="txt2"></div>
+</div>
+
+<div>
+    <h2>相同的事件名称</h2>
+    <h2>不同命名空间执行方法</h2>
+    <h2></h2>
+    <div id="div3">测试块</div>
+    <button>根据不同的命名空间触发事件</button>
+    <div id="txt3"></div>
+</div>
+
+<script>
+    $(function () {
+        //绑定多个事件
+        $("#div1").bind("mouseover mouseout", function () {
+            $(this).toggleClass("over");
+        });
+        //事件添加命名空间，便于管理
+        $("#div2").bind("click.plugin", function () {
+            $("#txt2").append("<p>click事件</p>");
+        });
+        $("#div2").bind("mouseover.plugin", function () {
+            $("#txt2").append("<p>mouseover事件</p>");
+        });
+        $("#div2").bind("dblclick", function () {
+            $("#txt2").append("<p>dblclick事件</p>");
+        });
+        $("#input2").click(function () {
+            $("#div2").unbind(".plugin");             //删除命名空间为plugin的事件
+        });
+        /*
+         * 相同的事件名称，不同命名空间执行方法
+         * 注意：新版jQuery不支持这个方法
+         */
+        $("#div3").bind("click", function () {
+            $("#txt3").append("<p>click事件</p>");
+        });
+        $("#div3").bind("click.space", function () {
+            $("#txt3").append("<p>click.space事件</p>");
+        });
+        $("button").click(function () {
+            //注意：click后面的感叹号，为了匹配所有不包含在命名空间中的click方法
+            $("#div3").trigger("click!");
+        });
+    });
+</script>
+</body>
+</html>
