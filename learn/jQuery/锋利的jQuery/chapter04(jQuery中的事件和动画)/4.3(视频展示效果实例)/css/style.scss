@@ -3,25 +3,104 @@
   padding: 0;
 }
 
-li {
+ul, li {
   list-style: none;
 }
 
+a {
+  text-decoration: none;
+  color: #3d95ac;
+}
+
+a:hover {
+  color: red;
+}
+
 #videoShow {
-  padding: 20px;
-  margin: 20px;
-  border: 1px solid #777;
+  width: 600px;
+  margin: 20px 0 1px 60px;
+  border: 1px solid #ddd;
 }
 
 #videoBar {
-  height: 40px;
+  height: 30px;
+  line-height: 30px;
+  background-color: #dddddd; //本来是个图片，不过可以用阴影效果做出来。
+  padding-left: 10px;
   h2 {
-    height: 40px;
-    line-height: 40px;
-    font-size: 20px;
-    font-weight: bold;
-  }
-  .tips {
     float: left;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+  .dot {
+    ul {
+      float: left;
+      padding: 0 5px;
+      li {
+        line-height: 30px;
+        margin: 9px 3px; //注意有1px的border，所以是9px。
+        float: left;
+        width: 10px;
+        height: 10px;
+        border: 1px solid #dddddd;
+        border-radius: 50%;
+        background-color: #fff;
+        cursor: pointer; //加上就会有小手手
+        &:hover, &.current {
+          //&.current这个写法不错的哟~~，一不小心就发现了
+          background-color: #41aca1;
+        }
+      }
+    }
+  }
+  .turnButton {
+    float: left;
+    span {
+      float: left;
+      background: url(../img/btn_cartoon.gif) no-repeat;
+      display: block;
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      overflow: hidden;
+      cursor: pointer;
+      &.prev {
+        background-position: 0 -397px;
+      }
+      &.next {
+        background-position: -30px -397px;
+      }
+    }
+  }
+  .more {
+    float: right;
+    padding-right: 15px;
+  }
+}
+
+#videoContent {
+  position: relative;
+  height: 160px; //浮动之后，边框不会包裹下半部分，是因为下半部分脱离了文档流。
+  overflow: hidden;
+  .videoContentList {
+    position: absolute;
+    width: 3500px; //设定一个隔离层用于存放li，否则li回换行~~~~
+    ul {
+      float: left;
+      li {
+        float: left;
+        display: inline;
+        margin: 10px 0;
+        padding: 6px 11px;
+        h4, span {
+          font-size: 13px;
+          color: #666;
+          em {
+            color: #888;
+          }
+        }
+      }
+    }
   }
 }
