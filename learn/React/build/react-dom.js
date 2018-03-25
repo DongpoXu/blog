@@ -19,7 +19,7 @@
   } else if (typeof define === "function" && define.amd) {
     define(['react'], f);
 
-  // <script>
+  // <js>
   } else {
     var g;
     if (typeof window !== "undefined") {

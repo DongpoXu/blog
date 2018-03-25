@@ -1121,7 +1121,7 @@ function getTargetInstForInputEventIE(topLevelType, targetInst) {
     //
     // 99% of the time, keydown and keyup aren't necessary. IE8 fails to fire
     // propertychange on the first input event after setting `value` from a
-    // script and fires only keydown, keypress, keyup. Catching keyup usually
+    // js and fires only keydown, keypress, keyup. Catching keyup usually
     // gets it and catching keydown lets us fire an event for the first
     // keystroke if user does a key repeat (it'll be a little delayed: right
     // before the second keystroke). Other input methods (e.g., paste) seem to
@@ -2006,7 +2006,7 @@ var Danger = {
       }
 
       // Render each group of markup with similar wrapping `nodeName`.
-      var renderNodes = createNodesFromMarkup(markupListByNodeName.join(''), emptyFunction // Do nothing special with <script> tags.
+      var renderNodes = createNodesFromMarkup(markupListByNodeName.join(''), emptyFunction // Do nothing special with <js> tags.
       );
 
       for (var j = 0; j < renderNodes.length; ++j) {
@@ -6782,7 +6782,7 @@ ReactDOMComponent.Mixin = {
       var el;
       if (namespaceURI === DOMNamespaces.html) {
         if (this._tag === 'script') {
-          // Create the script via .innerHTML so its "parser-inserted" flag is
+          // Create the js via .innerHTML so its "parser-inserted" flag is
           // set to true and it does not execute
           var div = ownerDocument.createElement('div');
           var type = this._currentElement.type;
@@ -18488,11 +18488,11 @@ function getNodeName(markup) {
 /**
  * Creates an array containing the nodes rendered from the supplied markup. The
  * optionally supplied `handleScript` function will be invoked once for each
- * <script> element that is rendered. If no `handleScript` function is supplied,
- * an exception is thrown if any <script> elements are rendered.
+ * <js> element that is rendered. If no `handleScript` function is supplied,
+ * an exception is thrown if any <js> elements are rendered.
  *
  * @param {string} markup A string of valid HTML markup.
- * @param {?function} handleScript Invoked once for each rendered <script>.
+ * @param {?function} handleScript Invoked once for each rendered <js>.
  * @return {array<DOMElement|DOMTextNode>} An array of rendered nodes.
  */
 function createNodesFromMarkup(markup, handleScript) {
@@ -18514,7 +18514,7 @@ function createNodesFromMarkup(markup, handleScript) {
 
   var scripts = node.getElementsByTagName('script');
   if (scripts.length) {
-    !handleScript ? "development" !== 'production' ? invariant(false, 'createNodesFromMarkup(...): Unexpected <script> element rendered.') : invariant(false) : void 0;
+    !handleScript ? "development" !== 'production' ? invariant(false, 'createNodesFromMarkup(...): Unexpected <js> element rendered.') : invariant(false) : void 0;
     createArrayFromMixed(scripts).forEach(handleScript);
   }
 

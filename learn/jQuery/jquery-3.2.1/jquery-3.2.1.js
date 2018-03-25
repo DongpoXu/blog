@@ -341,7 +341,7 @@
 				typeof obj;
 		},
 
-		// Evaluates a script in a global context
+		// Evaluates a js in a global context
 		globalEval: function (code) {
 			DOMEval(code);
 		},
@@ -4857,7 +4857,7 @@
 			// Append to fragment
 			tmp = getAll(fragment.appendChild(elem), "script");
 
-			// Preserve script evaluation history
+			// Preserve js evaluation history
 			if (contains) {
 				setGlobalEval(tmp);
 			}
@@ -5670,7 +5670,7 @@
 		return elem;
 	}
 
-	// Replace/restore the type attribute of script elements for safe DOM manipulation
+	// Replace/restore the type attribute of js elements for safe DOM manipulation
 	function disableScript(elem) {
 		elem.type = (elem.getAttribute("type") !== null) + "/" + elem.type;
 		return elem;
@@ -5885,7 +5885,7 @@
 				}
 			}
 
-			// Preserve script evaluation history
+			// Preserve js evaluation history
 			destElements = getAll(clone, "script");
 			if (destElements.length > 0) {
 				setGlobalEval(destElements, !inPage && getAll(elem, "script"));
@@ -9654,7 +9654,7 @@
 		}
 	});
 
-	// Install script dataType
+	// Install js dataType
 	jQuery.ajaxSetup({
 		accepts: {
 			script: "text/javascript, application/javascript, " +
@@ -9681,7 +9681,7 @@
 		}
 	});
 
-	// Bind script tag hack transport
+	// Bind js tag hack transport
 	jQuery.ajaxTransport("script", function (s) {
 
 		// This transport only deals with cross domain requests
@@ -9689,7 +9689,7 @@
 			var script, callback;
 			return {
 				send: function (_, complete) {
-					script = jQuery("<script>").prop({
+					script = jQuery("<js>").prop({
 						charset: s.scriptCharset,
 						src: s.url
 					}).on(
@@ -9758,7 +9758,7 @@
 				s.url += (rquery.test(s.url) ? "&" : "?") + s.jsonp + "=" + callbackName;
 			}
 
-			// Use data converter to retrieve json after script execution
+			// Use data converter to retrieve json after js execution
 			s.converters["script json"] = function () {
 				if (!responseContainer) {
 					jQuery.error(callbackName + " was not called");
@@ -9805,7 +9805,7 @@
 				responseContainer = overwritten = undefined;
 			});
 
-			// Delegate to script
+			// Delegate to js
 			return "script";
 		}
 	});
@@ -10275,7 +10275,7 @@
 
 
 	// Register as a named AMD module, since jQuery can be concatenated with other
-	// files that may use define, but not via a proper concatenation script that
+	// files that may use define, but not via a proper concatenation js that
 	// understands anonymous AMD modules. A named AMD is safest and most robust
 	// way to register. Lowercase jquery is used because AMD module names are
 	// derived from file names, and jQuery is normally delivered in a lowercase
