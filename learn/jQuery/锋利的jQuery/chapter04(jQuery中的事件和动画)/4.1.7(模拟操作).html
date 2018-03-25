@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模拟操作</title>
+    <script src="../../jquery-3.2.1/jquery-3.2.1.min.js"></script>
+    <style>
+        body {
+            font-size: 13px;
+            line-height: 130%;
+            padding: 60px;
+        }
+
+        body > div {
+            float: left;
+            margin-left: 40px;
+        }
+
+        p {
+            width: 200px;
+            background: #888;
+            color: white;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    <h2>tigger()常用模拟</h2>
+    <button id="btn1">常用模拟</button>
+    <div id="test1"></div>
+</div>
+
+<div>
+    <h2>tigger()触发自定义事件</h2>
+    <button id="btn2">自定义事件</button>
+    <div id="test2"></div>
+</div>
+
+<div>
+    <h2>tigger()传递数据</h2>
+    <button id="btn3">传递数据</button>
+    <div id="test3"></div>
+</div>
+
+<div>
+    <h2>tiggerHandler()阻止默认操作</h2>
+    <button id="btn4">tigger</button>
+    <button id="btn5">tiggerHandler</button>
+    <input type="text">
+    <div id="test4"></div>
+</div>
+
+<script>
+    $(function () {
+        $('#btn1').bind("click", function () {              //绑定click
+            $('#test1').append("<p>我的绑定函数1</p>");
+        }).bind("click", function () {
+            $('#test1').append("<p>我的绑定函数2</p>");
+        }).bind("click", function () {
+            $('#test1').append("<p>我的绑定函数3</p>");
+        });
+        $('#btn1').trigger("click");                        //模拟触发click
+    });
+    /*
+     * 自定义事件
+     * 通过tigger()触发
+     */
+    $(function () {
+        $('#btn2').bind("myClick", function () {            //绑定myClick
+            $('#test2').append("<p>我的自定义事件.</p>");
+        });
+        $('#btn2').click(function () {                      //按下按键
+            $(this).trigger("myClick");                     //模拟触发myClick
+        }).trigger("myClick");
+    });
+    /*
+     * 通过tigger()传递数据
+     */
+    $(function () {
+        $("#btn3").bind("myClick", function (event, message1, message2) {
+            $("#test3").append("<p>" + message1 + message2 + "</p>");
+        });
+        $("#btn3").click(function () {
+            $(this).trigger("myClick", ["数据1", "数据2"]);
+        });
+    });
+    /*
+     * 通过tiggerHandler()方法取消浏览器对事件的默认操作
+     * 程序中通过input的焦点事件判别
+     * 点击tigger按钮，input获得焦点
+     * 点击tiggerHandler按钮，input不获得焦点
+     */
+    $(function () {
+        $("#btn4").bind("click", function () {
+            $("input").trigger("focus");
+        });
+        $("#btn5").bind("click", function () {
+            $("input").triggerHandler("focus");
+        });
+        $("input").focus(function () {
+            $("#test4").append("<p>focus.</p>");
+        });
+    });
+</script>
+</body>
+</html>
