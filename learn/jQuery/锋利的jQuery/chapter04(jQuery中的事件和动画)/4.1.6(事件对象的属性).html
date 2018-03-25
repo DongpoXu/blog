@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件对象的属性</title>
+    <script src="../../jquery-3.2.1/jquery-3.2.1.min.js"></script>
+    <style>
+        div {
+            float: left;
+            margin-left: 40px;
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    <h2>获取事件类型</h2>
+    <h2>
+        <a href="#" id="event1">event.type</a>
+    </h2>
+</div>
+
+<div>
+    <h2>获取事件对象</h2>
+    <h2>
+        <a href="http://google.com" id="event2">event.target</a>
+    </h2>
+</div>
+
+<div>
+    <h2>获取光标相对位置</h2>
+    <h2>
+        <a href="#" id="event3">event.pageX/.pageY</a>
+    </h2>
+</div>
+
+<div>
+    <h2>获取鼠标按下</h2>
+    <h2>
+        <a href="#" id="event4">event.which</a>
+    </h2>
+</div>
+
+<div>
+    <h2>获取键盘按下</h2>
+    <h2>
+        <input type="text" value="event.which" id="event5">
+    </h2>
+</div>
+<div>
+    <h2>获取ctrl键</h2>
+    <h2>
+        <input type="text" id="event6" value="按住ctrl键，然后再点其他任何键" style="width:200px"/>
+    </h2>
+</div>
+
+<script>
+    $(function () {
+        $("#event1").click(function (event) {
+            alert(event.type);      //获取事件类型
+            return false;           //阻止链接跳转
+        });
+    });
+    $(function () {
+        $("#event2").click(function (event) {
+            var tg = event.target;  //获取事件对象
+            alert(tg.href);
+            return false;           //阻止链接跳转
+        });
+    });
+    /*
+     * 通过event.pageX和event.pageY获取光标相对于页面的x坐标和y坐标
+     */
+    $(function () {
+        $("#event3").click(function (event) {
+            alert("Current mouse position: " + event.pageX + ", " + event.pageY);   //获取鼠标当前相对于页面的坐标
+            return false;           //阻止链接跳转
+        });
+    });
+    $(function () {
+        $("#event4").mousedown(function (event) {
+            alert(event.which);     //获取鼠标当前相对于页面的坐标
+            return false;           //阻止链接跳转
+        });
+    });
+    $(function () {
+        $("#event5").keyup(function (event) {
+            alert(event.which);
+        });
+    });
+    $(function () {
+        $("#event6").keyup(function (event) {
+            alert(event.metaKey + " " + event.ctrlKey);
+            $(this).blur();         //失焦事件，与focus相反
+        });
+    });
+</script>
+</body>
+</html>
