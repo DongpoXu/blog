@@ -14,10 +14,7 @@ $(function () {
         var pageCount = Math.ceil(len / i);         //向下取整
 
         if (!$show.is(":animated")) {
-            if (page === pageCount) {
-                // $show.animate({left: "0px"}, 0);   //跳转至第一个版面
-                // page = 1;
-            } else {
+            if (page !== pageCount) {
                 $show.animate({left: "-=" + width}, "slow");
                 page++;
                 if (page === pageCount) {
@@ -38,6 +35,7 @@ $(function () {
              * 所以并不需要最后一张动画完毕才切换dot
              * 可以方便的实现无缝对接
              */
+            console.log(page);
             $("div.dot>ul>li").eq(page - 1).addClass("current").siblings().removeClass("current");
         }
     });
@@ -51,17 +49,15 @@ $(function () {
 
         if (!$show.is(":animated")) {
             if (page === 1) {
-                // $show.animate({left: "0px"}, 0);   //跳转至第一个版面
-                // page = 1;
+                page = pageCount;       //如果初始为首页，则page跳转至隐藏页面
+                $show.animate({left: "-=" + width * (pageCount - 1)}, 0);
+                $show.animate({left: "+=" + width}, "slow");
+                page--;
             } else {
                 $show.animate({left: "+=" + width}, "slow");
                 page--;
-                if (page === pageCount) {
-                    //无缝对接方式同上
-                    $show.animate({left: "-=" + width * (pageCount - 1)}, 0);   //跳转至第一个版面
-                    page = pageCount;
-                }
             }
+            console.log(page);
             $("div.dot>ul>li").eq(page - 1).addClass("current").siblings().removeClass("current");
         }
     });
