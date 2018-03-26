@@ -39,6 +39,10 @@ $(function () {
             $("div.dot>ul>li").eq(page - 1).addClass("current").siblings().removeClass("current");
         }
     });
+    /*
+     * 回翻
+     * 注意回翻是到一回到最后。
+     */
     $("span.prev").click(function () {
         var $show = $("div.videoContentList");       //要显示的内容
         var $content = $("#videoContent");           //显示区域
