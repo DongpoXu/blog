@@ -3,8 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <title>单行文本框应用</title>
+    <script src="../../../jquery-3.2.1/jquery-3.2.1.min.js"></script>
+    <style>
+        .focus {
+            border: 1px solid #f00;
+            background-color: #fcc;
+        }
+    </style>
 </head>
 <body>
+<form action="#" method="post" id="regForm">
+    <fieldset>
+        <legend>个人基本信息</legend>
+        <div>
+            <label for="username">名称：</label>
+            <input id="username" type="text">
+        </div>
+        <div>
+            <label for="pass">密码：</label>
+            <input id="pass" type="password">
+        </div>
+        <div>
+            <label for="msg">详细信息：</label>
+            <textarea name="msg" id="msg" cols="30" rows="10"></textarea>
+        </div>
+    </fieldset>
+</form>
 
+<script>
+    $(function () {
+        $(":input").focus(function () {
+            $(this).addClass("focus");
+        }).blur(function () {
+            $(this).removeClass("focus");
+        });
+    });
+</script>
 </body>
 </html>

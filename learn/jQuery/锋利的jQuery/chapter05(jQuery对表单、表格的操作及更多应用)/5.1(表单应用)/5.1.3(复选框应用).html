@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>复选框应用</title>
+    <script src="../../../jquery-3.2.1/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<form>
+    你爱好的运动是？
+    <br/>
+    <input type="checkbox" name="items" value="足球"/>足球
+    <input type="checkbox" name="items" value="篮球"/>蓝球
+    <input type="checkbox" name="items" value="羽毛球"/>羽毛球
+    <input type="checkbox" name="items" value="乒乓球"/>乒乓球
+    <br/>
+    <input type="button" id="checkedAll" value="全 选"/>
+    <input type="button" id="checkedNo" value="全不选"/>
+    <input type="button" id="checkedRev" value="反 选"/>
+    <input type="button" id="send" value="提 交"/>
+</form>
+
+<script>
+    $(function () {
+        //全选操作
+        $("#checkedAll").click(function () {
+            $("[name=items]:checkbox").attr("checked", true);
+        });
+        //全不选操作
+        $("#checkedNo").click(function () {
+            $("[name=items]:checkbox").attr("checked", false);
+        });
+        //反选操作
+        $("#checkedRev").click(function () {
+            $("[name=items]:checkbox").each(function () {
+                //此处应该用原生JavaScript方法显得更有效
+                //jQuery的方法为:$(this).attr("checked",!(this).attr("checked"));
+                this.checked = !this.checked;
+            });
+        });
+        //提交按钮
+        $("#send").click(function () {
+            var str = "你选中的是：\r\n";
+            $("[name=items]:checkbox:checked").each(function () {
+                str += $(this).val() + "\r\n";
+            });
+            alert(str);
+        });
+    });
+</script>
+</body>
+</html>

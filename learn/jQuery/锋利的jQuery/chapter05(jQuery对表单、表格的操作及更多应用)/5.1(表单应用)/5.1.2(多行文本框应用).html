@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>多行文本框应用</title>
+    <script src="../../../jquery-3.2.1/jquery-3.2.1.min.js"></script>
+    <style>
+        .msg {
+            width: 500px;
+            height: 300px;
+            border: 1px solid #1ABC9C;
+        }
+
+        .msgCaption span {
+            font-size: 16px;
+            display: inline-block;
+            padding: 10px;
+            color: #4d85ac;
+        }
+    </style>
+</head>
+<body>
+<form>
+    <div class="msg">
+        <div class="msgCaption">
+            <span class="bigger">放大</span>
+            <span class="smaller">缩小</span>
+        </div>
+        <div>
+        <textarea name="textArea" id="comment" cols="30" rows="8">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores deleniti dicta expedita id libero magnam, ratione voluptatem. Aliquam dignissimos ex hic illum nam nemo obcaecati placeat quae, quisquam tenetur voluptatibus!
+        </textarea>
+        </div>
+    </div>
+</form>
+
+<script>
+    $(function () {
+        var $comment = $("#comment");               //获取textarea
+        $(".bigger").click(function () {            //给放大按钮添加点击事件
+            if (!$comment.is(":animated")) {        //判断是否处于动画状态
+                if ($comment.height() < 500) {      //如果当前高度小于500
+                    //重新设置高度，在原有的基础上加50
+                    $comment.animate({height: "+=50"}, 400);    //添加动画事件
+                }
+            }
+        });
+        $(".smaller").click(function () {
+            if (!$comment.is(":animated")) {
+                if ($comment.height() > 50) {
+                    //在原有基础上减50
+                    $comment.animate({height: "-=50"}, 400);
+                }
+            }
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>下拉框应用</title>
+    <script src="../../../jquery-3.2.1/jquery-3.2.1.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div.centent {
+            float: left;
+            text-align: center;
+            margin: 10px;
+        }
+
+        span {
+            display: block;
+            margin: 2px 2px;
+            padding: 4px 10px;
+            background: #898989;
+            cursor: pointer;
+            font-size: 12px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<div class="centent">
+    <select multiple name="sel1" id="select1" style="width: 100px;height: 160px;">
+        <option value="1">选项1</option>
+        <option value="2">选项2</option>
+        <option value="3">选项3</option>
+        <option value="4">选项4</option>
+        <option value="5">选项5</option>
+        <option value="6">选项6</option>
+        <option value="7">选项7</option>
+        <option value="8">选项8</option>
+    </select>
+    <div>
+        <span id="add">选中后添加到右边&gt;&gt;</span>
+        <span id="add_all">全部添加到右边&gt;&gt;</span>
+    </div>
+</div>
+<div class="centent">
+    <select multiple name="sel2" id="select2" style="width: 100px;height: 160px;">
+    </select>
+    <div>
+        <span id="remove">&lt;&lt;选中删除到左边</span>
+        <span id="remove_all">&lt;&lt;全部删除到左边</span>
+
+    </div>
+</div>
+
+<script>
+    $(function () {
+        //添加单一项
+        $("#add").click(function () {
+            var $options = $("#select1 option:selected");
+            $options.appendTo("#select2");                   //追加给对方
+        });
+        //删除单一项
+        $("#remove").click(function () {
+            var $options = $("#select2 option:selected");
+            $options.appendTo("#select1");                   //追加给对方
+        });
+        //添加所有项
+        $("#add_all").click(function () {
+            var $options = $("#select1 option");
+            $options.appendTo("#select2");                   //追加给对方
+        });
+        //删除所有项
+        $("#remove_all").click(function () {
+            var $options = $("#select2 option");
+            $options.appendTo("#select1");                   //追加给对方
+        });
+        //添加双击事件
+        $("#select1").dblclick(function () {
+            var $options = $("option:selected", this);
+            $options.appendTo("#select2");                   //追加给对方
+        });
+        //删除双击事件
+        $("#select2").dblclick(function () {
+            var $options = $("option:selected", this);
+            $options.appendTo("#select1");                   //追加给对方
+        });
+    });
+</script>
+</body>
+</html>
