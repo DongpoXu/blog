@@ -60,7 +60,7 @@
         $("#filterName").keyup(function () {
             $("table tbody tr").hide()
                 .filter(":contains('" + ($(this).val()) + "')").show(); //" + ($(this).val()) + "是一个变量
-        });
+        }).keyup();         //DOM加载完成时，绑定事件完成之后立即触发。
     });
 </script>
 </body>
