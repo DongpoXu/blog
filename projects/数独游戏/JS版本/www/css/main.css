@@ -49,6 +49,30 @@ body > * {
 .container .row > span:last-child {
   border-right-width: 2px;
 }
+.container .row > span.empty {
+  color: #fff;
+}
+.container .row > span.fixed {
+  background-color: #eee;
+}
+.container .row > span.error {
+  background-color: lightpink;
+}
+.container .row > span.error.empty {
+  color: lightpink;
+}
+.container .row > span.mark1 {
+  background: lightblue;
+}
+.container .row > span.mark1.empty {
+  color: lightblue;
+}
+.container .row > span.mark2 {
+  background: lightgreen;
+}
+.container .row > span.mark2.empty {
+  color: lightgreen;
+}
 .container .row.row_g_bottom > span {
   border-bottom-width: 1px;
 }
@@ -57,6 +81,68 @@ body > * {
 }
 .container .row:last-child > span {
   border-bottom-width: 2px;
+}
+.popup {
+  padding-left: 5%;
+  position: absolute;
+  padding-left: 0;
+}
+.popup .row > span {
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  width: 10%;
+  border: 1px solid #ccc;
+  border-right-width: 0;
+  border-bottom-width: 0;
+  background: #fff;
+}
+.popup .row > span.col_g_right {
+  border-right-width: 1px;
+}
+.popup .row > span:first-child {
+  border-left-width: 2px;
+}
+.popup .row > span:last-child {
+  border-right-width: 2px;
+}
+.popup .row > span.empty {
+  color: #fff;
+}
+.popup .row > span.fixed {
+  background-color: #eee;
+}
+.popup .row > span.error {
+  background-color: lightpink;
+}
+.popup .row > span.error.empty {
+  color: lightpink;
+}
+.popup .row > span.mark1 {
+  background: lightblue;
+}
+.popup .row > span.mark1.empty {
+  color: lightblue;
+}
+.popup .row > span.mark2 {
+  background: lightgreen;
+}
+.popup .row > span.mark2.empty {
+  color: lightgreen;
+}
+.popup .row.row_g_bottom > span {
+  border-bottom-width: 1px;
+}
+.popup .row:first-child > span {
+  border-top-width: 2px;
+}
+.popup .row:last-child > span {
+  border-bottom-width: 2px;
+}
+.popup .row > span {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
 }
 .dashboard {
   position: absolute;
