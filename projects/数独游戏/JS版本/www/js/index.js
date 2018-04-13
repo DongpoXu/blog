@@ -423,7 +423,7 @@ module.exports = function () {
     _createClass(Sudoku, [{
         key: "make",
         value: function make() {
-            var leavel = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 2;
+            var leavel = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 4;
 
             //const shouldRid = Math.random() * 9 < leavel;
             //生成迷盘

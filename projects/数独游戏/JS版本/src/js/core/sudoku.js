@@ -12,11 +12,11 @@ module.exports = class Sudoku {
         this.solutionMatrix = generator.matrix;
     }
 
-    make(leavel = 2) {
+    make(leavel = 4) {
         //const shouldRid = Math.random() * 9 < leavel;
         //生成迷盘
         this.puzzleMatrix = this.solutionMatrix.map(row => {
             return row.map(cell => Math.random() * 9 < leavel ? 0 : cell);
         })
     }
-}
+};
