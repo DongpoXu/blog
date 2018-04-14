@@ -9,7 +9,7 @@ document.writeln("            <li><a href=\'https://xudongpo.xin/index.html\'>HO
 document.writeln("            <li><a href=\'https://xudongpo.xin/learn.html\'>LEARN<i class=\'fa fa-book\'></i></a></li>");
 document.writeln("            <li><a href=\'https://xudongpo.xin/essay.html\'>ESSAY<i class=\'fa fa-pencil\'></i></a></li>");
 document.writeln("            <li><a href=\'https://xudongpo.xin/live.html\'>LIVE<i class=\'fa fa-heart\'></i></a></li>");
-document.writeln("            <li><a href=\'https://xudongpo.xin/photo.html\'>PHOTO<i class=\'fa fa-photo\'></i></a></li>");
+document.writeln("            <li><a href=\'https://xudongpo.xin/project.html\'>PROJECT<i class=\'fa fa-print\'></i></a></li>");
 document.writeln("            <li><a href=\'https://xudongpo.xin/about.html\'>ABOUT<i class=\'fa fa-github\'></i></a></li>");
 document.writeln("        </ul>");
 document.writeln("    </div>");

@@ -14,18 +14,18 @@
     <link rel="bookmark" type="image/x-icon" href="https://xudongpo.xin/img/icon/radish.ico">
     <title>PHOTO</title>
     <!--common.css-->
-    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../../css/common.css">
     <link rel="stylesheet" href="css/photo.css">
     <!--JavaScript优先使用CDN-->
 </head>
 <body onselect="return false;">
-<script src="../common/navBar.js"></script>
+<script src="../../common/navBar.js"></script>
 
 <!--2.改写视图，为模板字符串-->
 <div class="wrap" id="wrap">
     <div class="photo" onclick="turn(this)" id="photo_{{index}}">
 
-        <!--photo-wrap负责翻转-->
+        <!--CSS3+JS散列画廊特效-wrap负责翻转-->
         <div class="photo-wrap">
             <div class="side side-front">
                 <p class="image"><img src="img/{{img}}"/></p>
@@ -39,7 +39,7 @@
 </div>
 <script src="data/data.js"></script>
 <script src="js/photo.js"></script>
-<script src="../common/footer.js"></script>
-<script src="../js/common.js"></script>
+<script src="../../common/footer.js"></script>
+<script src="../../js/common.js"></script>
 </body>
 </html>
