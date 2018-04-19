@@ -123,10 +123,12 @@ var matrixToolkit = {
         //取到当前行数据
         var row = matrix[rowIndex];
 
+        //随机生成一个列数据
         var column = this.makeRow().map(function (v, i) {
             return matrix[i][colIndex];
         });
-        console.log(column);
+        //        console.log(column);
+        //获取宫信息
 
         var _boxToolkit$convertTo = boxToolkit.convertToBoxIndex(rowIndex, colIndex),
             boxIndex = _boxToolkit$convertTo.boxIndex;
@@ -304,6 +306,7 @@ var Grid = function () {
     }, {
         key: "check",
         value: function check() {
+            this._popupnum.hide();
             //从界面获取需要检查的数据
             var data = this._$container.children().map(function (rowIndex, div) {
                 return $(div).children().map(function (colIndex, span) {
@@ -340,6 +343,7 @@ var Grid = function () {
     }, {
         key: "reset",
         value: function reset() {
+            this._popupnum.hide();
             this._$container.find("span:not(.fixed)").removeClass("error mark1 mark2").addClass("empty").text(0);
         }
 
@@ -350,6 +354,7 @@ var Grid = function () {
     }, {
         key: "clear",
         value: function clear() {
+            this._popupnum.hide();
             this._$container.find("span.error").removeClass("error");
         }
 
@@ -361,6 +366,7 @@ var Grid = function () {
     }, {
         key: "rebuild",
         value: function rebuild() {
+            this._popupnum.hide();
             this._$container.empty();
             this.build();
             this.layout();
@@ -368,9 +374,13 @@ var Grid = function () {
     }, {
         key: "bindPopup",
         value: function bindPopup(popup) {
+            var _this = this;
+
+            this._popupnum = popup;
             this._$container.on("click", "span", function (e) {
                 var $cell = $(e.target);
                 if ($cell.is(".fixed")) {
+                    _this._popupnum.hide();
                     return;
                 }
                 popup.popup($cell);
@@ -715,7 +725,6 @@ module.exports = function () {
 
         this._$panel.on("click", "span", function (e) {
             var $cell = _this._$targetCell;
-
             var $span = $(e.target);
             if ($span.hasClass("mark1")) {
                 //mark1回填样式
@@ -738,7 +747,7 @@ module.exports = function () {
                 //1-9回填数字
                 $cell.removeClass("empty").text($span.text());
             }
-            _this.hide();
+            // this.hide();
         });
     }
 
@@ -751,15 +760,19 @@ module.exports = function () {
                 left = _$cell$position.left,
                 top = _$cell$position.top;
 
+            var le = "" + left;
+            if (le > 205) {
+                le -= 86;
+            }
             this._$panel.css({
-                "left": left + "px",
+                "left": le + "px",
                 "top": top + "px"
             }).show();
         }
     }, {
         key: "hide",
         value: function hide() {
-            this._$panel.hide();
+            this._$panel.hide().addClass("hidden");
         }
     }]);
 

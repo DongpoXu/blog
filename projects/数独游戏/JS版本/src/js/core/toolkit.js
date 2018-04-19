@@ -36,8 +36,10 @@ const matrixToolkit = {
         //取到当前行数据
         const row = matrix[rowIndex];
 
+        //随机生成一个列数据
         const column = this.makeRow().map((v, i) => matrix[i][colIndex]);
-        console.log(column);
+//        console.log(column);
+        //获取宫信息
         const {boxIndex} = boxToolkit.convertToBoxIndex(rowIndex, colIndex);
         const box = boxToolkit.getBoxCells(matrix, boxIndex);
         for (let i = 0; i < 9; i++) {

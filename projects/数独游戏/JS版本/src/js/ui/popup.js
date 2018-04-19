@@ -6,7 +6,6 @@ module.exports = class Popup {
 
         this._$panel.on("click", "span", e => {
             const $cell = this._$targetCell;
-
             const $span = $(e.target);
             if ($span.hasClass("mark1")) {
                 //mark1回填样式
@@ -33,22 +32,25 @@ module.exports = class Popup {
                 $cell.removeClass("empty")
                     .text($span.text());
             }
-            this.hide();
+            // this.hide();
         })
     }
 
     popup($cell) {
         this._$targetCell = $cell;
         const {left, top} = $cell.position();
+        let le = `${left}`;
+        if (le > 205) {
+            le -= 86;
+        }
         this._$panel
             .css({
-                "left": `${left}px`,
+                "left": le + "px",
                 "top": `${top}px`
-            })
-            .show();
+            }).show();
     }
 
     hide() {
-        this._$panel.hide();
+        this._$panel.hide().addClass("hidden");
     }
 };
