@@ -2,28 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;"
+          name="viewport"/>
     <title>第三天：让简历有点色彩</title>
-    <style>
-        hr {
-            height: 2px;
-            border: none;
-            border-top: 2px solid #78ac5f;
-        }
-
-        body {
-            background-color: #f1b5eb;
-        }
-
-        div {
-            background-color: #7cac69;
-        }
-
-        h6 {
-            font-size: 10px;
-            padding: 0;
-            margin: 0 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="style03.css">
 </head>
 <body>
 
@@ -221,19 +203,114 @@
 <ul>
     <li>
         <h3>问：什么是CSS，CSS是如何工作的？</h3>
-        <p>答：</p>
+        答：
+        <ul>
+            <li>什么是CSS：
+                <abbr title="Cascading Style Sheets">CSS</abbr>指的是层叠样式表，定义如何显示HTML元素，文档样式通常存储在样式表中，多个样式表可以层叠为一。
+            </li>
+            <li>CSS是如何工作的：
+                html中包含CSS样式表，浏览器加载html，对html的标签进行解析，解析到style标签或者link标签时，加载样式表或者外部样式表，然后浏览器解析css样式，将css样式与html一起展示出来。
+            </li>
+        </ul>
     </li>
     <li>
         <h3>问：CSS的基本语法是怎样的？</h3>
-        <p>答：</p>
+        <p>
+            答：CSS规则主要由两部分构成：选择器，以及一条或多条声明：selector {declaration1; declaration2; ... declarationN }
+        </p>
     </li>
     <li>
         <h3>问：CSS选择器是什么概念，简单选择器和属性选择器是什么？</h3>
-        <p>答：</p>
+        <p>答：要使某个样式应用于特定的HTML元素，首先需要找到该元素。在CSS中，执行这一任务的表现规则称为CSS选择器。它为获取目标元素之后施加样式提供了极大的灵活性。</p>
+        <ol>
+            <li>基本选择器</li>
+            <li>层次选择器</li>
+            <li>伪类选择器</li>
+            <li>
+                伪元素
+                <ul>
+                    <li>动态伪类选择器</li>
+                    <li>目标伪类选择器</li>
+                    <li>语言伪类选择器</li>
+                    <li>UI元素状态伪类选择器</li>
+                    <li>结构伪类选择器</li>
+                    <li>否定伪类选择器</li>
+                </ul>
+            </li>
+            <li>属性选择器</li>
+        </ol>
+        <dl>
+            <dt>简单选择器</dt>
+            <dd>类型选择器(p,div)</dd>
+            <dd>类选择器(.)</dd>
+            <dd>ID选择器(#)</dd>
+            <dd>通用选择器(*)</dd>
+            <dt>属性选择器</dt>
+            <dd>简单属性选择器(*[title])</dd>
+            <dd>根据具体值属性选择(p[class="important warning"] {color: red;})</dd>
+            <dd>根据部分属性值选择(p[class~="important"] {color: red;})</dd>
+            <dd>子串匹配属性选择器(a[href*="w3school.com.cn"] {color: red;})</dd>
+            <dd>详见<a href="http://www.w3school.com.cn/css/css_selector_attribute.asp">CSS
+                属性选择器详解</a></dd>
+        </dl>
     </li>
     <li>
         <h3>问：文本样式都有哪些相关属性，对应哪些值？</h3>
-        <p>答：</p>
+        <p>答：部分文本样式</p>
+        <table>
+            <tr>
+                <td>文本缩进：</td>
+                <td>text-indent</td>
+            </tr>
+            <tr>
+                <td>文本对齐：</td>
+                <td>text-align</td>
+            </tr>
+            <tr>
+                <td>字间隔：</td>
+                <td>word-spacing</td>
+            </tr>
+            <tr>
+                <td>字母间隔：</td>
+                <td>letter-spacing</td>
+            </tr>
+            <tr>
+                <td>字母转换：</td>
+                <td>text-transform</td>
+            </tr>
+            <tr>
+                <td>文本装饰：</td>
+                <td>text-decoration</td>
+            </tr>
+            <tr>
+                <td>处理空白符：</td>
+                <td>white-space</td>
+            </tr>
+            <tr>
+                <td>文本方向：</td>
+                <td>decoration</td>
+            </tr>
+            <tr>
+                <td>文本颜色：</td>
+                <td>color</td>
+            </tr>
+            <tr>
+                <td>文字字体：</td>
+                <td>font-family</td>
+            </tr>
+            <tr>
+                <td>背景颜色：</td>
+                <td>background-color</td>
+            </tr>
+            <tr>
+                <td>文本阴影：</td>
+                <td>text-shadow</td>
+            </tr>
+            <tr>
+                <td>......</td>
+                <td>......</td>
+            </tr>
+        </table>
     </li>
 </ul>
 </body>
