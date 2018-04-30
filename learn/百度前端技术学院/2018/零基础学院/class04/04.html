@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;"
           name="viewport"/>
-    <title>第三天：让简历有点色彩</title>
+    <title>第四天，背景边框列表链接和更复杂的选择器</title>
     <link rel="stylesheet" href="style04.css">
 </head>
 <body>
@@ -14,23 +14,77 @@
 <hr/>
 <h2>课程目标：</h2>
 <p>
-    初步了解什么是CSS，掌握基本的CSS概念，语法，学习如何设置一些简单的样式
+    掌握CSS稍微复杂的一些选择器，还有背景，边框等一些CSS样式属性
 </p>
 
 <hr/>
 <h2>正式任务：</h2>
-<p><strong>为简历添加样式:</strong>实践以下样式并确保使用到简单选择器和属性选择器</p>
 <ul>
-    <li>color</li>
-    <li>font-family</li>
-    <li>font-style</li>
-    <li>font-weight</li>
-    <li>font-size</li>
-    <li>text-align</li>
-    <li>text-decoration</li>
-    <li>text-indent</li>
-    <li>line-height</li>
-    <li>text-shadow</li>
+    <li>
+        <h3>阅读</h3>
+        <ul>
+            <li><a href="http://www.w3school.com.cn/css/css_background.asp">W3School-背景</a></li>
+        </ul>
+    </li>
+    <li>
+        <h3>编码</h3>
+        <p><strong>练习背景样式设置</strong>实践以下样式</p>
+        <ul>
+            <li>background</li>
+            <li>background-color</li>
+            <li>background-image</li>
+            <li>background-repeat</li>
+            <li>background-position</li>
+        </ul>
+    </li>
+    <li>
+        <h3>阅读</h3>
+        <ul>
+            <li><a href="http://www.w3school.com.cn/css/css_border.asp">W3School-边框</a></li>
+        </ul>
+    </li>
+    <li>
+        <h3>编码</h3>
+        <p><strong>练习边框样式设置</strong>实践以下样式</p>
+        <ul>
+            <li>border</li>
+            <li>border-color</li>
+            <li>border-style</li>
+            <li>border-width</li>
+            <li>border上下左右</li>
+        </ul>
+    </li>
+    <li>
+        <h3>阅读</h3>
+        <ul>
+            <li><a href="http://www.w3school.com.cn/css/css_list.asp">W3School-列表</a></li>
+        </ul>
+    </li>
+    <li>
+        <h3>编码</h3>
+        <p><strong>练习列表样式设置</strong>实践以下样式</p>
+        <ul>
+            <li>list-style</li>
+            <li>list-style-type</li>
+            <li>list-style-image</li>
+        </ul>
+    </li>
+    <li>
+        <h3>阅读</h3>
+        <ul>
+            <li><a href="http://www.w3school.com.cn/css/css_link.asp">W3School-链接</a></li>
+        </ul>
+    </li>
+    <li>
+        <h3>编码</h3>
+        <p><strong>练习链接样式设置</strong>实践以下样式</p>
+        <ul>
+            <li>a:link</li>
+            <li>a:visited</li>
+            <li>a:hover</li>
+            <li>a:active</li>
+        </ul>
+    </li>
 </ul>
 <hr/>
 <h2>学习笔记：</h2>
@@ -39,7 +93,7 @@
     <tr>
         <td>日期：</td>
         <td>
-            <time>2018-4-26</time>
+            <time>2018-4-27</time>
         </td>
     </tr>
     <tr>
@@ -48,7 +102,7 @@
     </tr>
     <tr>
         <td>目标：</td>
-        <td>个人简历样式添加，使用并理解各类样式。掌握验证概念</td>
+        <td>个人简历样式添加，使用并理解各类样式。掌握概念</td>
     </tr>
     <tr>
         <td>是否达成：</td>
@@ -202,115 +256,18 @@
 <h2>验证：</h2>
 <ul>
     <li>
-        <h3>问：什么是CSS，CSS是如何工作的？</h3>
-        答：
-        <ul>
-            <li>什么是CSS：
-                <abbr title="Cascading Style Sheets">CSS</abbr>指的是层叠样式表，定义如何显示HTML元素，文档样式通常存储在样式表中，多个样式表可以层叠为一。
-            </li>
-            <li>CSS是如何工作的：
-                html中包含CSS样式表，浏览器加载html，对html的标签进行解析，解析到style标签或者link标签时，加载样式表或者外部样式表，然后浏览器解析css样式，将css样式与html一起展示出来。
-            </li>
-        </ul>
+        <h3>背景，边框，列表，链接相关属性</h3>
+        <p> 答：</p>
     </li>
     <li>
-        <h3>问：CSS的基本语法是怎样的？</h3>
+        <h3>CSS 各种选择器的概念，使用方法及使用场景</h3>
         <p>
             答：CSS规则主要由两部分构成：选择器，以及一条或多条声明：selector {declaration1; declaration2; ... declarationN }
         </p>
     </li>
     <li>
-        <h3>问：CSS选择器是什么概念，简单选择器和属性选择器是什么？</h3>
+        <h3>CSS 选择器的优先级</h3>
         <p>答：要使某个样式应用于特定的HTML元素，首先需要找到该元素。在CSS中，执行这一任务的表现规则称为CSS选择器。它为获取目标元素之后施加样式提供了极大的灵活性。</p>
-        <ol>
-            <li>基本选择器</li>
-            <li>层次选择器</li>
-            <li>伪类选择器</li>
-            <li>
-                伪元素
-                <ul>
-                    <li>动态伪类选择器</li>
-                    <li>目标伪类选择器</li>
-                    <li>语言伪类选择器</li>
-                    <li>UI元素状态伪类选择器</li>
-                    <li>结构伪类选择器</li>
-                    <li>否定伪类选择器</li>
-                </ul>
-            </li>
-            <li>属性选择器</li>
-        </ol>
-        <dl>
-            <dt>简单选择器</dt>
-            <dd>类型选择器(p,div)</dd>
-            <dd>类选择器(.)</dd>
-            <dd>ID选择器(#)</dd>
-            <dd>通用选择器(*)</dd>
-            <dt>属性选择器</dt>
-            <dd>简单属性选择器(*[title])</dd>
-            <dd>根据具体值属性选择(p[class="important warning"] {color: red;})</dd>
-            <dd>根据部分属性值选择(p[class~="important"] {color: red;})</dd>
-            <dd>子串匹配属性选择器(a[href*="w3school.com.cn"] {color: red;})</dd>
-            <dd>详见<a href="http://www.w3school.com.cn/css/css_selector_attribute.asp">CSS
-                属性选择器详解</a></dd>
-        </dl>
-    </li>
-    <li>
-        <h3>问：文本样式都有哪些相关属性，对应哪些值？</h3>
-        <p>答：部分文本样式</p>
-        <table>
-            <tr>
-                <td>文本缩进：</td>
-                <td>text-indent</td>
-            </tr>
-            <tr>
-                <td>文本对齐：</td>
-                <td>text-align</td>
-            </tr>
-            <tr>
-                <td>字间隔：</td>
-                <td>word-spacing</td>
-            </tr>
-            <tr>
-                <td>字母间隔：</td>
-                <td>letter-spacing</td>
-            </tr>
-            <tr>
-                <td>字母转换：</td>
-                <td>text-transform</td>
-            </tr>
-            <tr>
-                <td>文本装饰：</td>
-                <td>text-decoration</td>
-            </tr>
-            <tr>
-                <td>处理空白符：</td>
-                <td>white-space</td>
-            </tr>
-            <tr>
-                <td>文本方向：</td>
-                <td>decoration</td>
-            </tr>
-            <tr>
-                <td>文本颜色：</td>
-                <td>color</td>
-            </tr>
-            <tr>
-                <td>文字字体：</td>
-                <td>font-family</td>
-            </tr>
-            <tr>
-                <td>背景颜色：</td>
-                <td>background-color</td>
-            </tr>
-            <tr>
-                <td>文本阴影：</td>
-                <td>text-shadow</td>
-            </tr>
-            <tr>
-                <td>......</td>
-                <td>......</td>
-            </tr>
-        </table>
     </li>
 </ul>
 </body>

@@ -8,11 +8,6 @@ body {
     background-color: #f1b5eb;
 }
 
-div {
-    background-color: #7cac69;
-    padding: 30px 20px;
-}
-
 h6 {
     font-size: 14px;
     padding: 0;
@@ -20,12 +15,22 @@ h6 {
     font-weight: normal;
 }
 
+div {
+    background-color: #7cac69;
+    padding: 30px 20px;
+    border: 10px solid #6b7980;
+}
+
+div div {
+    border: 3px dotted #f15261;
+}
+
 div h1, div h2 {
     margin: 3px;
     font-family: "微软雅黑 Light";
 }
 
-div h1{
+div h1 {
     text-shadow: 5px 5px 5px #1b6d85;
 }
 
@@ -54,4 +59,13 @@ div a {
 div a:hover {
     color: #f19add;
     font-style: italic;
+}
+
+ul li {
+    list-style: square;
+}
+
+div ul li {
+    list-style-image: url("砖墙.png");
+    list-style-type: square;
 }
