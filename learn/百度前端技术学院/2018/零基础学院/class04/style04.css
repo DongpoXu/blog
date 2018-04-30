@@ -56,9 +56,21 @@ div a {
     text-decoration: none;
 }
 
+div a:link {
+    color: #5757d6;
+}
+
+div a:active {
+    color: #71d691;
+}
+
 div a:hover {
     color: #f19add;
     font-style: italic;
+}
+
+div a:visited {
+    color: #622424;
 }
 
 ul li {
