@@ -1,0 +1,39 @@
+#resume {
+    border: 1px solid #999;
+    background-color: #fff;
+    padding: 10px;
+    margin: 20px;
+}
+
+#resume h1 {
+    font-size: 36px;
+}
+
+#resume h2 {
+    font-size: 30px;
+}
+
+#resume ul, #resume p {
+    font-size: 20px;
+}
+
+#resume ul {
+    padding: 0;
+}
+
+#resume li {
+    list-style-type: none;
+    display: inline-block;
+}
+
+#resume li:nth-child(odd) {
+    padding-right: 15px;
+}
+
+#resume li:nth-child(even) {
+    padding-right: 30px;
+}
+
+#resume p {
+    padding-top: 3px;
+}
