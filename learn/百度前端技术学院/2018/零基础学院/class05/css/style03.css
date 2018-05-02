@@ -33,6 +33,19 @@ article ul, article p, article h3 {
     font-size: 16px;
     display: inline-block;
     padding-left: 30px;
+
+}
+
+article p, article h3 {
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 20px;
+    margin: 0;
+}
+
+article h3 {
+    float: left;
 }
 
 article li {
@@ -46,12 +59,4 @@ article li:nth-child(odd) {
 
 article li:nth-child(even) {
     padding-right: 30px;
-}
-
-article h3 {
-    margin-bottom: 3px;
-}
-
-article p {
-    margin-top: 3px;
 }
