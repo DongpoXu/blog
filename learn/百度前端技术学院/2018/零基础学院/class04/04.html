@@ -280,9 +280,17 @@
             <li>
                 <ul>列表相关属性
                     <li>列表图片：{list-style-image:url(...)}</li>
-                    <li>列表位置：{list-style-position:inside|outside	|inherit}</li>
+                    <li>列表位置：{list-style-position:inside|outside |inherit}</li>
                     <li>列表类型：{list-style-type:...|none}</li>
                     <li>列表简写：{list-style:square inside url('...gif');}</li>
+                </ul>
+            </li>
+            <li>
+                <ul>链接相关属性
+                    <li>a:link - 普通的、未被访问的链接</li>
+                    <li>a:visited - 用户已访问的链接</li>
+                    <li>a:hover - 鼠标指针位于链接的上方</li>
+                    <li>a:active - 正在被点击的链接</li>
                 </ul>
             </li>
         </ul>
@@ -294,6 +302,35 @@
     <li>
         <h3>CSS 选择器的优先级</h3>
         <p>答：</p>
+        <ol>
+            <li>!important总是优先于其他规则</li>
+            <li>出现顺序：越后出现的权重越大</li>
+            <li>
+                特殊性：
+                <table>
+                    <tr>
+                        <td>内联样式:</td>
+                        <td>1000</td>
+                    </tr>
+                    <tr>
+                        <td>ID属性:</td>
+                        <td>100</td>
+                    </tr>
+                    <tr>
+                        <td>类属性/属性选择/伪类:</td>
+                        <td>010</td>
+                    </tr>
+                    <tr>
+                        <td>元素/伪元素:</td>
+                        <td>001</td>
+                    </tr>
+                </table>
+            </li>
+        </ol>
+        特殊性:
+        ID属性100;
+        类属性/属性选择/伪类010;
+        元素/伪元素001
     </li>
 </ul>
 </body>
