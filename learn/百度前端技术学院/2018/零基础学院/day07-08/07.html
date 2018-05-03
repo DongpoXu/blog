@@ -6,6 +6,7 @@
           name="viewport;"/>
     <title>第七天到第八天：学习布局</title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -27,13 +28,15 @@
             <li>实现一个<a href="html/07.1.html" target="_blank">两栏布局</a>，左侧占30%宽度，右侧占70%宽度</li>
             <li>实现一个<a href="html/07.2.html" target="_blank">两栏布局</a>，左侧固定宽度，右侧根据浏览器宽度进行自适应变化</li>
             <li>实现一个<a href="html/07.3.html" target="_blank">两栏布局</a>，右侧固定宽度，左侧根据浏览器宽度进行自适应变化</li>
-            <li>实现一个<a href="html/07.4.html" target="_blank">三栏布局</a>，左侧右侧固定宽度，中间部分宽度随浏览器宽度变化而自适应变化</li>
-            <li>实现一个<a href="html/07.5.html" target="_blank">三栏布局</a>，左侧中间固定宽度，右侧部分宽度随浏览器宽度变化而自适应变化</li>
+            <li>实现一个<a href="html/07.4.html" target="_blank">三栏布局</a>，左侧右侧固定宽度，中间部分宽度随浏览器宽度变化而自适应变化
+            </li>
+            <li>实现一个<a href="html/07.5.html" target="_blank">三栏布局</a>，左侧中间固定宽度，右侧部分宽度随浏览器宽度变化而自适应变化
+            </li>
         </ul>
     </li>
     <li>
         <h3>编码</h3>
-        <p>参照如下设计稿实现HTML页面及CSS样式。链接：./psd</p>
+        <p>实现<a href="#design">设计稿</a>。链接：./psd</p>
         <ul>设计稿描述:
             <li>设计稿分为头部，中间的Banner，主导航，内容区域，底部</li>
             <li>头部区域为100%宽的一个深色背景，头部中间有一块960px的定宽居中区域，里面包括了左边的Logo和右上角导航</li>
@@ -54,7 +57,7 @@
             <time>2018-5-2</time>
         </td>
     </tr>
-    <tr>
+    <tr>s
         <td>学习时间：</td>
         <td>2天</td>
     </tr>
@@ -76,9 +79,58 @@
     </tr>
 </table>
 <h3>设计稿详情：</h3>
+<!--开始-->
 <div id="design">
-
+    <!--设计稿头部-->
+    <header>
+        <div>
+            <span>Logo</span>
+            <ul>
+                <li>Github</li>
+                <li>Register</li>
+                <li>Login</li>
+            </ul>
+        </div>
+    </header>
+    <!--导航栏-->
+    <nav>
+        <div>
+            <ul>
+                <li>1</li>
+                <li class="active">2</li>
+                <li>3</li>
+                <li>4</li>
+            </ul>
+        </div>
+    </nav>
+    <!--主体-->
+    <main>
+        <div>
+            <ul>
+                <li class="active">HOME</li>
+                <li>PROFILE</li>
+                <li>ABOUT</li>
+            </ul>
+        </div>
+        <article>
+            <div class="content1">This is Content 1</div>
+            <div class="content2">Content 2</div>
+            <div class="content3">Content 3</div>
+            <div class="content4">Content 4</div>
+            <div class="content5">Content 5</div>
+            <div class="content6">Content 6</div>
+            <div class="content7">Content 7</div>
+            <div class="content8">Content 8</div>
+            <div class="content9">Content 9</div>
+            <div class="content10">Content 10</div>
+        </article>
+    </main>
+    <!--页脚-->
+    <footer>
+        © 2018 ife.baidu.com
+    </footer>
 </div>
+<!--结束-->
 
 <hr/>
 <h2>验证：</h2>
