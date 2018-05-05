@@ -444,63 +444,51 @@ div.page06 .contact-msg li {
     padding: 13px 0;
 }
 
+/*页脚css*/
 
 footer {
-    padding: 88px 0 124px 0;
-    background: #141414;
+    padding-top: 88px;
+    padding-bottom: 124px;
+    background: #000;
 }
 
-.footer-container {
-    width: 1166px;
+footer .container {
+    width: 1168px;
     margin: 0 auto;
-
-}
-
-footer .row {
     display: flex;
 }
 
-footer .row .item {
-    flex: 1;
-    margin-right: 150px;
+footer .item {
+    width: 150px;
+    padding-right: 150px;
+    vertical-align: top;
 }
 
-footer .row .item h4, .social h4 {
+footer h4 {
     margin-bottom: 36px;
     font-size: 14px;
     color: #fff;
 }
 
 footer .social {
-    flex-basis: 260px;
-    width: 260px;
+    width: 300px;
+    vertical-align: top;
 }
 
-footer .vertical, footer .horizontal {
-    list-style-type: none;
-}
-
-footer .horizontal {
-    font-size: 0;
-}
-
-footer .row .item .vertical li {
+footer .item ul li, footer .social p {
     margin-bottom: 30px;
 }
 
-footer .row .item .vertical li a, footer .row .item p, .social p {
+footer a, footer p {
     font-size: 16px;
-    color: rgba(255, 255, 255, 0.3);
+    color: #555;
     text-decoration: none;
 }
 
-footer .social p {
-    margin-bottom: 30px;
-}
-
-footer .horizontal li {
+footer .social ul li {
     display: inline-block;
     margin-right: 28px;
+    opacity: 0.5;
 }
 
 
