@@ -368,7 +368,7 @@ div.page06 .contact-input {
     width: 468px;
     height: 560px;
     border: 1px solid #999;
-    border-radius: 5px;
+    border-radius: 10px;
     text-align: center;
 }
 
@@ -379,7 +379,7 @@ div.page06 .contact-input h3 {
 }
 
 div.page06 textarea, div.page06 input {
-    border-radius: 3px;
+    border-radius: 5px;
     width: 348px;
     margin-top: 30px;
     padding-left: 20px;
