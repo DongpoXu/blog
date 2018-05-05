@@ -69,6 +69,14 @@ header .login-input button {
 }
 
 /*分页部分*/
+div.page01, div.page03, div.page04, div.page05, div.page06 {
+    background-color: #fff;
+}
+
+div.page03, div.page04, div.page05 {
+    border-bottom: 1px solid #999;
+}
+
 /*分页一*/
 div.page01 {
     height: 710px;
@@ -197,9 +205,344 @@ div.page02 .pic p {
     width: 8px;
     height: 8px;
 }
+
 div.page02 .pic img {
     border: 1px solid #ddd;
     border-right: 0;
     border-radius: 35px 0 0 35px;
     padding: 30px 0 30px 60px;
 }
+
+/*分页三*/
+
+div.page03 {
+    height: 579px;
+}
+
+div.page03 .title {
+    width: 960px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+div.page03 .title h2 {
+    font-size: 42px;
+    padding-top: 100px;
+    padding-bottom: 84px;
+}
+
+div.page03 .content {
+    width: 960px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+div.page03 .content-item {
+    text-align: center;
+    width: 270px;
+}
+
+div.page03 .content-item img {
+    padding-bottom: 34px;
+}
+
+div.page03 .content-item p {
+    font-size: 16px;
+    line-height: 26px;
+    color: #999;
+}
+
+/*分页四*/
+
+div.page04 {
+    height: 999px;
+}
+
+div.page04 .container {
+    width: 1180px;
+    padding-top: 75px;
+    padding-bottom: 65px;
+}
+
+div.page04 .content-01, div.page04 .content-02 {
+    padding: 40px 0;
+}
+
+div.page04 .content-01 {
+    padding-left: 20px;
+}
+
+div.page04 img {
+    display: inline-block;
+    padding-left: 80px;
+}
+
+div.page04 .item {
+    display: inline-block;
+    width: 320px;
+    vertical-align: top;
+    padding-left: 100px;
+}
+
+div.page04 .item h4 {
+    padding-top: 75px;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+div.page04 .item p {
+    width: 313px;
+    padding-top: 32px;
+    font-size: 16px;
+    line-height: 26px;
+    color: #999;
+}
+
+/*分页五*/
+
+div.page05 {
+    height: 1079px;
+}
+
+div.page05 .title {
+    width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+div.page05 .title h2 {
+    font-size: 42px;
+    padding-top: 100px;
+    padding-bottom: 34px;
+}
+
+div.page05 .title p {
+    font-size: 18px;
+    line-height: 24px;
+    padding-bottom: 47px;
+    color: #999;
+}
+
+div.page05 .content {
+    width: 1005px;
+    margin: 0 auto;
+}
+
+div.page05 .content li {
+    position: relative;
+    display: inline-block;
+    padding: 15px;
+    cursor: pointer;
+}
+
+div.page05 .content .mask {
+    position: absolute;
+    opacity: 0;
+    left: 15px;
+    top: 15px;
+    z-index: 1;
+    background: url("../img/icon_08.png");
+    width: 470px;
+    height: 340px;
+}
+
+div.page05 .content .mask:hover {
+    opacity: 0.6;
+}
+
+/*分页六*/
+
+div.page06 {
+    height: 700px;
+}
+
+div.page06 .contact {
+    width: 1000px;
+    padding-top: 72px;
+    margin: 0 auto;
+}
+
+div.page06 .contact-input {
+    display: inline-block;
+    width: 468px;
+    height: 560px;
+    border: 1px solid #999;
+    border-radius: 5px;
+    text-align: center;
+}
+
+div.page06 .contact-input h3 {
+    font-size: 16px;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+div.page06 textarea, div.page06 input {
+    border-radius: 3px;
+    width: 348px;
+    margin-top: 30px;
+    padding-left: 20px;
+    font-size: 14px;
+    color: #999;
+    font-family: "微软雅黑 Light";
+}
+
+div.page06 .contact-input textarea {
+    padding-top: 20px;
+    height: 122px;
+}
+
+div.page06 .contact-input input {
+    height: 48px;
+    border: 1px solid #999;
+}
+
+div.page06 .contact-input button {
+    height: 48px;
+    width: 368px;
+    margin-top: 30px;
+    border: 1px solid #000;
+    border-radius: 3px;
+    background-color: #000;
+    color: #fff;
+}
+
+div.page06 .contact-msg {
+    display: inline-block;
+    width: 360px;
+    height: 560px;
+    padding-left: 130px;
+    vertical-align: top;
+}
+
+div.page06 .contact-msg h2 {
+    font-size: 42px;
+    padding-top: 90px;
+    padding-bottom: 34px;
+    font-weight: normal;
+}
+
+div.page06 .contact-msg > p {
+    padding-bottom: 55px;
+    color: #999;
+    line-height: 24px;
+}
+
+div.page06 .contact-msg img, div.page06 .contact-msg li p {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+div.page06 .contact-msg li p {
+    line-height: 22px;
+    padding-left: 15px;
+    font-weight: bold;
+}
+
+div.page06 .contact-msg li {
+    padding: 13px 0;
+}
+
+
+footer {
+    padding: 88px 0 124px 0;
+    background: #141414;
+}
+
+.footer-container {
+    width: 1166px;
+    margin: 0 auto;
+
+}
+
+footer .row {
+    display: flex;
+}
+
+footer .row .item {
+    flex: 1;
+    margin-right: 150px;
+}
+
+footer .row .item h4, .social h4 {
+    margin-bottom: 36px;
+    font-size: 14px;
+    color: #fff;
+}
+
+footer .social {
+    flex-basis: 260px;
+    width: 260px;
+}
+
+footer .vertical, footer .horizontal {
+    list-style-type: none;
+}
+
+footer .horizontal {
+    font-size: 0;
+}
+
+footer .row .item .vertical li {
+    margin-bottom: 30px;
+}
+
+footer .row .item .vertical li a, footer .row .item p, .social p {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.3);
+    text-decoration: none;
+}
+
+footer .social p {
+    margin-bottom: 30px;
+}
+
+footer .horizontal li {
+    display: inline-block;
+    margin-right: 28px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
