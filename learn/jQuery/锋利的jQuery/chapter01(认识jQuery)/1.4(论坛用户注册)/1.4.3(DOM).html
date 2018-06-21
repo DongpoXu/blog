@@ -10,8 +10,8 @@
 
 <script>
     $(document).ready(function () {     //等待DOM元素加载完毕
-        var $cr = $("#cr");             //jQuery对象
-        var cr = $cr[0];                //DOM对象，或者$cr.get(0)
+        let $cr = $("#cr");             //jQuery对象
+        let cr = $cr[0];                //DOM对象，或者$cr.get(0)
         $cr.click(function () {
             if (cr.checked) {           //DOM方式判断
                 alert("感谢你的支持！你可以继续操作。");

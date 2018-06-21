@@ -14,3 +14,4 @@ document.writeln("            <li><a href=\'https://xudongpo.xin/about.html\'>AB
 document.writeln("        </ul>");
 document.writeln("    </div>");
 document.writeln("</nav>");
+document.writeln("<div id=\"particles-js\"></div>");
